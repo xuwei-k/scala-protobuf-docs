@@ -8,13 +8,14 @@ object build extends Build with NpmCliBase {
   lazy val buildWithCheck = taskKey[Unit]("lintAll testAll build")
 
   // tutでsbtの設定を書く都合上、scalaVersionはわざと指定しないでsbtと同じ2.10.xを使う
-  val root = project.settings(
+  val root = project.in(file(".")).settings(
     tutSettings,
     tutSourceDirectory := srcDir,
     tutTargetDirectory := compiledSrcDir,
     GitBook.settings,
     TextLint.settings,
     LinkTest.settings,
+    watchSources ++= ((baseDirectory.value / "gitbook") * "*.md").get,
     fullResolvers ~= {_.filterNot(_.name == "jcenter")},
     libraryDependencies <+= sbtDependency,
     resolvers += Classpaths.sbtPluginReleases,
