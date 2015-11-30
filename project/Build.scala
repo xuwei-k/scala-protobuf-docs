@@ -21,6 +21,7 @@ object build extends Build with NpmCliBase {
     resolvers += Classpaths.sbtPluginReleases,
     addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.15"),
     libraryDependencies ++= (
+      ("com.github.os72" % "protoc-jar" % "3.0.0-b1") ::
       Nil
     ),
     lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,

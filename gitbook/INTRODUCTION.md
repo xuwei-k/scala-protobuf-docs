@@ -1,3 +1,3 @@
 # ScalaでのProtocol Buffer
 
-ScalaでProtocol Bufferを使用する方法について
+これは、ScalaでProtocol Bufferを使用する方法についてのドキュメントです。
