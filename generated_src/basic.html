@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>基本的な使い方 | ScalaでのProtocol Buffer</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../generated_src/setup.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4"
+        data-chapter-title="基本的な使い方"
+        data-filepath="generated_src/basic.md"
+        data-basepath=".."
+        data-revision="Mon Nov 30 2015 08:58:29 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="generated_src/scala-and-protobuf.html">
+            
+                
+                    <a href="../generated_src/scala-and-protobuf.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        ScalaにおけるProtocol Buffer事情
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="generated_src/scalapb-and-libraries.html">
+            
+                
+                    <a href="../generated_src/scalapb-and-libraries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        ScalaPBと関連ライブラリやツール
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="generated_src/setup.html">
+            
+                
+                    <a href="../generated_src/setup.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        セットアップ
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4" data-path="generated_src/basic.html">
+            
+                
+                    <a href="../generated_src/basic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        基本的な使い方
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >ScalaでのProtocol Buffer</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x57FA;&#x672C;&#x7684;&#x306A;&#x4F7F;&#x3044;&#x65B9;">&#x57FA;&#x672C;&#x7684;&#x306A;&#x4F7F;&#x3044;&#x65B9;</h1>
+<p>&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x6B21;&#x306B;&#x3001;ScalaPB&#x306E;&#x5177;&#x4F53;&#x7684;&#x306A;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;&#x4E00;&#x756A;&#x5358;&#x7D14;&#x306A;&#x4F7F;&#x3044;&#x65B9;&#x3068;&#x3057;&#x3066;&#x306F;</p>
+<ul>
+<li><code>src/main/protobuf/</code> &#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4EE5;&#x4E0B;&#x306B;<code>.proto</code>&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7F6E;&#x304F;</li>
+<li>&#x305D;&#x306E;&#x5F8C;sbt&#x3067;<code>compile</code>&#x3092;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x3001;sbt&#x304C;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x81EA;&#x52D5;&#x3067;Scala&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x3001;&#x305D;&#x308C;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;</li>
+</ul>
+<p>&#x3068;&#x3044;&#x3046;&#x624B;&#x9806;&#x3067;&#x3059;&#x3002;
+&quot;sbt&#x304C;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&quot;&#x3068;&#x306F;&#x3001;&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F;<code>target/scala-2.11/src_managed/main/compiled_protobuf/</code>
+&#x306A;&#x3069;&#x3067;&#x3059;&#x3002;&#x4ED6;&#x306E;&#x5927;&#x62B5;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x7CFB;&#x306E;sbt plugin&#x306B;&#x5171;&#x901A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306F;sbt&#x304C;&#x5B8C;&#x5168;&#x306B;&#x81EA;&#x52D5;&#x3067;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x3082;&#x306E;&#x306A;&#x306E;&#x3067;&#x3001;&#x3053;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4EE5;&#x4E0B;&#x306E;Scala&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x76F4;&#x63A5;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x60F3;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x3068;&#x3057;&#x3066;&#x3082;&#x3001;&#x751F;&#x6210;&#x5143;&#x306E;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3092;&#x3084;&#x308A;&#x76F4;&#x3059;&#x3068;&#x3001;&#x7DE8;&#x96C6;&#x5185;&#x5BB9;&#x304C;&#x4E0A;&#x66F8;&#x304D;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x306B;&#x3001;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;<code>src/main/protobuf/user.proto</code>&#x3068;&#x3044;&#x3046;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;int64&#x306E;id&#x3068;string&#x306E;name&#x3092;&#x6301;&#x3063;&#x305F;User&#x3068;&#x3044;&#x3046;message&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3059;&#x308B;&#x3068;</p>
+<pre><code class="lang-protobuf">syntax = <span class="hljs-string">&quot;proto3&quot;</span>;
+
+<span class="hljs-keyword">package</span> example;
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-built_in">int64</span> id = <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">string</span> name = <span class="hljs-number">2</span>;
+}
+</code></pre>
+<p>&#x5927;&#x4F53;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;Scala&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_1" id="reffn_1">1</a></sup>
+&#x3044;&#x304F;&#x3064;&#x304B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x666E;&#x901A;&#x306E;case class&#x3067;&#x3059;&#x3002;&#x578B;&#x306E;&#x5BFE;&#x5FDC;(int64&#x304C;scala.Long&#x306B;&#x306A;&#x308B;&#x3001;&#x306A;&#x3069;)&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;Java&#x3068;&#x540C;&#x3058;&#x306A;&#x306E;&#x3067;&#x3001;protocol buffer&#x306E;Java&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-annotation">@SerialVersionUID</span>(<span class="hljs-number">0</span>L)
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>(</span>
+    id: <span class="hljs-type">Long</span> = <span class="hljs-number">0</span>L,
+    name: <span class="hljs-type">String</span> = <span class="hljs-string">&quot;&quot;</span>
+    ) <span class="hljs-keyword">extends</span> com.trueaccord.scalapb.<span class="hljs-type">GeneratedMessage</span> <span class="hljs-keyword">with</span> com.trueaccord.scalapb.<span class="hljs-type">Message</span>[<span class="hljs-type">User</span>] <span class="hljs-keyword">with</span> com.trueaccord.lenses.<span class="hljs-type">Updatable</span>[<span class="hljs-type">User</span>] {
+    <span class="hljs-annotation">@transient</span>
+    <span class="hljs-keyword">lazy</span> <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">serializedSize</span>:</span> <span class="hljs-type">Int</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writeTo</span>(</span>output: com.google.protobuf.<span class="hljs-type">CodedOutputStream</span>): <span class="hljs-type">Unit</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mergeFrom</span>(</span>__input: com.google.protobuf.<span class="hljs-type">CodedInputStream</span>): <span class="hljs-type">User</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withId</span>(</span>__v: <span class="hljs-type">Long</span>): <span class="hljs-type">User</span> = copy(id = __v)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withName</span>(</span>__v: <span class="hljs-type">String</span>): <span class="hljs-type">User</span> = copy(name = __v)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getField</span>(</span>__field: com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">FieldDescriptor</span>): <span class="hljs-type">Any</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">companion</span> =</span> <span class="hljs-type">User</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">User</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span></span> <span class="hljs-title">com</span>.<span class="hljs-title">trueaccord</span>.<span class="hljs-title">scalapb</span>.<span class="hljs-title">GeneratedMessageCompanion</span>[</span><span class="hljs-type">User</span>]  {
+  <span class="hljs-keyword">implicit</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">messageCompanion</span>:</span> com.trueaccord.scalapb.<span class="hljs-type">GeneratedMessageCompanion</span>[<span class="hljs-type">User</span>]  = <span class="hljs-keyword">this</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fromFieldsMap</span>(</span>__fieldsMap: <span class="hljs-type">Map</span>[com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">FieldDescriptor</span>, <span class="hljs-type">Any</span>]): <span class="hljs-type">User</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">descriptor</span>:</span> com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">Descriptor</span> = <span class="hljs-type">UserProto</span>.descriptor.getMessageTypes.get(<span class="hljs-number">0</span>)
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">messageCompanionForField</span>(</span>__field: com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">FieldDescriptor</span>): com.trueaccord.scalapb.<span class="hljs-type">GeneratedMessageCompanion</span>[_] = <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">MatchError</span>(__field)
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">enumCompanionForField</span>(</span>__field: com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">FieldDescriptor</span>): com.trueaccord.scalapb.<span class="hljs-type">GeneratedEnumCompanion</span>[_] = <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">MatchError</span>(__field)
+  <span class="hljs-keyword">lazy</span> <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">defaultInstance</span> =</span> <span class="hljs-type">User</span>(
+  )
+  <span class="hljs-keyword">implicit</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserLens</span>[</span><span class="hljs-type">UpperPB</span>](_l: com.trueaccord.lenses.<span class="hljs-type">Lens</span>[<span class="hljs-type">UpperPB</span>, <span class="hljs-type">User</span>]) <span class="hljs-keyword">extends</span> com.trueaccord.lenses.<span class="hljs-type">ObjectLens</span>[<span class="hljs-type">UpperPB</span>, <span class="hljs-type">User</span>](_l) {
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">id</span>:</span> com.trueaccord.lenses.<span class="hljs-type">Lens</span>[<span class="hljs-type">UpperPB</span>, <span class="hljs-type">Long</span>] = field(_.id)((c_, f_) =&gt; c_.copy(id = f_))
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span>:</span> com.trueaccord.lenses.<span class="hljs-type">Lens</span>[<span class="hljs-type">UpperPB</span>, <span class="hljs-type">String</span>] = field(_.name)((c_, f_) =&gt; c_.copy(name = f_))
+  }
+  <span class="hljs-keyword">final</span> <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">ID_FIELD_NUMBER</span> =</span> <span class="hljs-number">1</span>
+  <span class="hljs-keyword">final</span> <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">NAME_FIELD_NUMBER</span> =</span> <span class="hljs-number">2</span>
+}
+</code></pre>
+<blockquote id="fn_1">
+<sup>1</sup>. &#x5168;&#x90E8;&#x306E;&#x5B9F;&#x88C5;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x8CBC;&#x308B;&#x3068;&#x9577;&#x3044;&#x306E;&#x3067;&#x3001;&#x7701;&#x7565;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../generated_src/setup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: セットアップ"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"include-codeblock":{},"japanese-support":{},"footnote-string-to-number":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
