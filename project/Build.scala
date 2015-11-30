@@ -17,6 +17,7 @@ object build extends Build with NpmCliBase {
     LinkTest.settings,
     fullResolvers ~= {_.filterNot(_.name == "jcenter")},
     libraryDependencies <+= sbtDependency,
+    resolvers += Classpaths.sbtPluginReleases,
     addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.15"),
     libraryDependencies ++= (
       Nil
