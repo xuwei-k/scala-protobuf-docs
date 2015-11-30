@@ -1,0 +1,41 @@
+sudo: false
+language: scala
+jdk:
+- oraclejdk8
+before_install:
+- npm install
+cache:
+  directories:
+  - "$HOME/.ivy2/cache"
+  - "$HOME/.sbt/boot"
+  - node_modules
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+script:
+- sbt build
+after_success:
+- echo -e "Host github.com\n\tStrictHostKeyChecking no\nIdentityFile ~/.ssh/deploy.key\n"
+  >> ~/.ssh/config
+- openssl aes-256-cbc -k "$SERVER_KEY" -in .travis/deploy_key.enc -d -a -out deploy.key
+- cp deploy.key ~/.ssh/
+- chmod 600 ~/.ssh/deploy.key
+- git config --global user.email "6b656e6a69@gmail.com"
+- git config --global user.name "xuwei-k"
+- mv gitbook/_book ../ && git fetch origin gh-pages:gh-pages && git clean -fdx &&
+  git checkout gh-pages && rm -rf ./* && cp -r ../_book/* ./ && git add . && git commit
+  -a -m "auto commit on travis $TRAVIS_JOB_NUMBER $TRAVIS_COMMIT"
+- if [[ "${TRAVIS_BRANCH}" == "master" && "${TRAVIS_PULL_REQUEST}" == "false" ]];
+  then git push git@github.com:xuwei-k/scala-protobuf-docs.git gh-pages:gh-pages ;
+  fi
+after_script:
+- find $HOME/.sbt -name "*.lock" | xargs rm
+- find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
+- find $HOME/.ivy2/cache -name "*SNAPSHOT*" | xargs rm -rf
+env:
+  global:
+    secure: PqG85xAVFbimZvcHXnys70g5QsxX7inxFG8svvPmD2GlLVAXOwNeNAUIlSVdFAiWYDt9AMTc7shfJE0Y1HrBq+pk8pCn7XFM6CVRdBUrDOT3jPJFqD/qljvcQB28BeaM5dcQWougwln+V4XLPKvfBoCWVoGVrTL2fPncaqY9Jby5dFR4bIHQnVIUYZGrnGVzC428lN9grX9EBQPVrb5grq2lZBOs5HBGC9VEcfCvWpYf3sa4ef8sIvuQ5shRsceVje5D5bsFXr4HTu+tTV7aULni5ZVFdoPI0hqO6iaGZBEamHawTFg5Jimlz32BKNRbp8Qcw8z9S+2F4rYiRLOTGNggJdaGSmnATH+sQJOHomqhGXjhhC76TwYujpC+hwJDbhciIl6rTjAuaSyPOO47yd3JYt2UJQ0C48oFZkyP1F5tWajRzv+7n3wKN3X4f8nY+J+xwZ8lkEq+r1DjT905OUnuIy3MPBOfJ9ABIVxsFxFAW2hdOFPqabigdjzigLpQ2TIlsLokDRfHL61oCBmiJEnjNQyhK41RKeD3taO/91lvWjPyuJ334xgEQBxEtc4fX0ceB1ireb1mQpiJeFaoXY+CwSCymG73EtCrFjrzQv7KfTUK0xdZIusdVP4wJ/cR/S7ekVWf5mjTNeim+Vw5DNXvSLgtQF5mPKNFrbsZw7k=
