@@ -9,6 +9,7 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
 - [sbt-scalapb](https://github.com/trueaccord/sbt-scalapb)
  - ScalaPBをsbtから使うためのplugin
  - ScalaPBを使う場合は、このpluginを設定することにより使うことになる
+ - ScalaPBとsbt-scalapbは、リポジトリこそ別だが、作者も同じだし、リリースサイクルも基本的に同じようである[^scalapb-and-plugin]
 - [Lenses](https://github.com/trueaccord/Lenses)
  - ScalaPBが自動で生成するcase classがデフォルトで強制的に依存するライブラリ
  - Lensというのは、Haskell界隈などを中心に使われる関数型のテクニック
@@ -24,5 +25,6 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
    - しかし、makeなどの作業[^protoc]が必要になるため、基本これを使用したほうが楽になるはずなので、特に理由がなければこれを使用するべき
 
 
+[^scalapb-and-plugin]: 単にクロスビルドやScalaのversionの都合上、リポジトリが分かれていたほうがいい、という判断だと思われる
 [^lens]: つまり、使う必要がなければLensは使わなくてよいです
 [^protoc]: protocol bufferの本体はC++で書かれているため
