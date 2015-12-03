@@ -3,6 +3,7 @@
 この資料では[ScalaPB](https://github.com/trueaccord/ScalaPB)というsbt-pluginを使用します。
 現在、Scalaでは、いくつかのprotocol-bufferに関するsbt pluginやライブラリがあります。
 
+- https://github.com/sbt/sbt-scalabuff
 - https://github.com/sbt/sbt-protobuf
 - https://github.com/trueaccord/sbt-scalapb
 - https://github.com/finagle/finagle-protobuf
