@@ -12,6 +12,10 @@
 なぜ他のものではなくScalaPBがオススメなのか?というのを簡単に説明します。
 まずScalaPB以外のものについてですが
 
+- [sbt-scalabuff](https://github.com/sbt/sbt-scalabuff)
+ - メンテされてない？
+ - 名前ややこしいけれど、sbt-protobufとは別物です
+
 - [finagle-protobuf](https://github.com/finagle/finagle-protobuf)
  - finagleと組み合わせないかぎり必要無さそう
  - そもそもメンテが活発ではない？
