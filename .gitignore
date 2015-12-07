@@ -4,7 +4,7 @@
 .DS_Store
 
 ### gitbook ###
-gitbook/generated_src
+gitbook/*.md
 gitbook/_book
 gitbook/book.epub
 gitbook/book.pdf

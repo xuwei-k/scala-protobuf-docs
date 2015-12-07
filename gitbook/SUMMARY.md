@@ -1,5 +1,0 @@
-- [ScalaにおけるProtocol Buffer事情](generated_src/scala-and-protobuf.md)
-- [ScalaPBと関連ライブラリやツール](generated_src/scalapb-and-libraries.md)
-- [セットアップ](generated_src/setup.md)
-- [基本的な使い方](generated_src/basic.md)
-- [その他資料](generated_src/other_references.md)
