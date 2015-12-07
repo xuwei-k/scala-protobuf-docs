@@ -48,7 +48,7 @@
  - 独自のclassに自動でマッピングする機能
 - ScalaCheck[^scalacheck]でテストされている
 - Lensが自動生成される
-- [gRPCに対応予定](https://github.com/trueaccord/ScalaPB/pull/58)
+- [gRPCに対応している](https://github.com/trueaccord/ScalaPB/issues/44)
 
 というような理由から、これ以降はScalaPB前提で話を進めます
 
