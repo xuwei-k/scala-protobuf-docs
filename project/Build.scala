@@ -15,7 +15,6 @@ object build extends Build with NpmCliBase {
     GitBook.settings,
     TextLint.settings,
     LinkTest.settings,
-    watchSources ++= ((baseDirectory.value / "gitbook") * "*.md").get,
     fullResolvers ~= {_.filterNot(_.name == "jcenter")},
     libraryDependencies <+= sbtDependency,
     resolvers += Classpaths.sbtPluginReleases,
