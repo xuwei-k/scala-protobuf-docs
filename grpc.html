@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>その他資料 | ScalaでのProtocol Buffer</title>
+        <title>gRPC | ScalaでのProtocol Buffer</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.4">
@@ -37,8 +37,10 @@
         
     
     
+    <link rel="next" href="./other_references.html" />
     
-    <link rel="prev" href="./grpc.html" />
+    
+    <link rel="prev" href="./basic.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="6"
-        data-chapter-title="その他資料"
-        data-filepath="other_references.md"
+        data-level="5"
+        data-chapter-title="gRPC"
+        data-filepath="grpc.md"
         data-basepath="."
         data-revision="Tue Dec 08 2015 14:15:30 GMT+0000 (UTC)"
         data-innerlanguage="">
@@ -140,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5" data-path="grpc.html">
+        <li class="chapter active" data-level="5" data-path="grpc.html">
             
                 
                     <a href="./grpc.html">
@@ -155,7 +157,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="other_references.html">
+        <li class="chapter " data-level="6" data-path="other_references.html">
             
                 
                     <a href="./other_references.html">
@@ -203,10 +205,18 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x305D;&#x306E;&#x4ED6;&#x8CC7;&#x6599;">&#x305D;&#x306E;&#x4ED6;&#x8CC7;&#x6599;</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cQdMyjHjbn8" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RYaro4VFsxc" frameborder="0" allowfullscreen></iframe>
+                        <h1 id="grpc">gRPC</h1>
+<p>gRPC&#x3068;&#x306F;&#x3001;<a href="http://googledevjp.blogspot.jp/2015/03/http2-rpc-grpc.html" target="_blank">2015&#x5E74;2&#x6708;&#x306B;Google&#x304C;&#x767A;&#x8868;</a>&#x3057;&#x305F;&#x3001;http2&#x4E0A;&#x306E;RPC&#x30D7;&#x30ED;&#x30C8;&#x30B3;&#x30EB;&#x3067;&#x3059;&#x3002;
+gRPC&#x305D;&#x306E;&#x3082;&#x306E;&#x306F;&#x3001;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30B6;&#x90E8;&#x5206;&#x304C;&#x5165;&#x308C;&#x66FF;&#x3048;&#x53EF;&#x80FD;&#x306A;&#x4ED5;&#x69D8;&#x3089;&#x3057;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;Protocol Buffers&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3001;gRPC&#x81EA;&#x4F53;&#x304C;&#x307E;&#x3060;&#x305D;&#x3053;&#x307E;&#x3067;&#x6210;&#x719F;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3053;&#x3068;&#x3082;&#x3042;&#x308A;&#x3001;
+Protocol Buffers&#x4EE5;&#x5916;&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306F;&#x3042;&#x307E;&#x308A;&#x591A;&#x304F;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x3053;&#x3067;&#x306F;gRPC&#x81EA;&#x4F53;&#x306E;&#x8A73;&#x3057;&#x3044;&#x8AAC;&#x660E;&#x306F;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x516C;&#x5F0F;&#x30B5;&#x30A4;&#x30C8;&#x306A;&#x3069;&#x3092;&#x53C2;&#x8003;&#x306B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p><a href="http://www.grpc.io/" target="_blank">http://www.grpc.io/</a></p>
+<p>ScalaPB&#x306F;&#x3001;version 0.5.18&#x304B;&#x3089;gRPC&#x7528;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+ScalaPB&#x3067;&#x306F;&#x3001;&#x73FE;&#x72B6;service&#x306E;&#x5B9A;&#x7FA9;&#x304C;&#x3042;&#x308B;&#x3068;&#x81EA;&#x52D5;&#x3067;gRPC&#x7528;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x304C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x30E9;&#x30F3;&#x30BF;&#x30A4;&#x30E0;&#x306E;&#x8FFD;&#x52A0;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;
+(&#x3053;&#x306E;&#x72B6;&#x614B;&#x306F;&#x591A;&#x5C11;&#x4F7F;&#x3044;&#x3065;&#x3089;&#x3044;&#x306E;&#x3067;&#x3001;&#x5F8C;&#x306E;version&#x3067;&#x5909;&#x66F4;&#x306B;&#x306A;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;)</p>
+<p>&#x73FE;&#x72B6;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x4E00;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> %% <span class="hljs-string">&quot;scalapb-runtime-grpc&quot;</span> % <span class="hljs-string">&quot;0.5.18&quot;</span>
+</code></pre>
 
                     
                     </section>
@@ -217,8 +227,10 @@
         </div>
 
         
-        <a href="./grpc.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: gRPC"><i class="fa fa-angle-left"></i></a>
+        <a href="./basic.html" class="navigation navigation-prev " aria-label="Previous page: 基本的な使い方"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="./other_references.html" class="navigation navigation-next " aria-label="Next page: その他資料"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
