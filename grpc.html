@@ -53,7 +53,7 @@
         data-chapter-title="gRPC"
         data-filepath="grpc.md"
         data-basepath="."
-        data-revision="Wed Dec 09 2015 04:08:36 GMT+0000 (UTC)"
+        data-revision="Wed Dec 09 2015 20:25:09 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -221,17 +221,33 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="grpc">gRPC</h1>
+<h2 id="grpc&#x3068;&#x306F;">gRPC&#x3068;&#x306F;</h2>
 <p>gRPC&#x3068;&#x306F;&#x3001;<a href="http://googledevjp.blogspot.jp/2015/03/http2-rpc-grpc.html" target="_blank">2015&#x5E74;2&#x6708;&#x306B;Google&#x304C;&#x767A;&#x8868;</a>&#x3057;&#x305F;&#x3001;http2&#x4E0A;&#x306E;RPC&#x30D7;&#x30ED;&#x30C8;&#x30B3;&#x30EB;&#x3067;&#x3059;&#x3002;
 gRPC&#x305D;&#x306E;&#x3082;&#x306E;&#x306F;&#x3001;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30B6;&#x90E8;&#x5206;&#x304C;&#x5165;&#x308C;&#x66FF;&#x3048;&#x53EF;&#x80FD;&#x306A;&#x4ED5;&#x69D8;&#x3089;&#x3057;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;Protocol Buffers&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3001;gRPC&#x81EA;&#x4F53;&#x304C;&#x307E;&#x3060;&#x305D;&#x3053;&#x307E;&#x3067;&#x6210;&#x719F;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3053;&#x3068;&#x3082;&#x3042;&#x308A;&#x3001;
 Protocol Buffers&#x4EE5;&#x5916;&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306F;&#x3042;&#x307E;&#x308A;&#x591A;&#x304F;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p>
 <p>&#x3053;&#x3053;&#x3067;&#x306F;gRPC&#x81EA;&#x4F53;&#x306E;&#x8A73;&#x3057;&#x3044;&#x8AAC;&#x660E;&#x306F;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x516C;&#x5F0F;&#x30B5;&#x30A4;&#x30C8;&#x306A;&#x3069;&#x3092;&#x53C2;&#x8003;&#x306B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <p><a href="http://www.grpc.io/" target="_blank">http://www.grpc.io/</a></p>
+<h2 id="scalapb&#x3068;grpc">ScalaPB&#x3068;gRPC</h2>
 <p>ScalaPB&#x306F;&#x3001;version 0.5.18&#x304B;&#x3089;gRPC&#x7528;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
 ScalaPB&#x3067;&#x306F;&#x3001;&#x73FE;&#x72B6;service&#x306E;&#x5B9A;&#x7FA9;&#x304C;&#x3042;&#x308B;&#x3068;&#x81EA;&#x52D5;&#x3067;gRPC&#x7528;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x304C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x30E9;&#x30F3;&#x30BF;&#x30A4;&#x30E0;&#x306E;&#x8FFD;&#x52A0;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;
 (&#x3053;&#x306E;&#x72B6;&#x614B;&#x306F;&#x591A;&#x5C11;&#x4F7F;&#x3044;&#x3065;&#x3089;&#x3044;&#x306E;&#x3067;&#x3001;&#x5F8C;&#x306E;version&#x3067;&#x5909;&#x66F4;&#x306B;&#x306A;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;)</p>
 <p>&#x73FE;&#x72B6;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x4E00;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> %% <span class="hljs-string">&quot;scalapb-runtime-grpc&quot;</span> % <span class="hljs-string">&quot;0.5.18&quot;</span>
 </code></pre>
+<h2 id="&#x30B5;&#x30F3;&#x30D7;&#x30EB;">&#x30B5;&#x30F3;&#x30D7;&#x30EB;</h2>
+<p>&#x4EE5;&#x4E0B;&#x306B;&#x3001;&#x516C;&#x5F0F;&#x306E;gRCP&#x306E;Java&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x3001;ScalaPB&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;Scala&#x306B;&#x7FFB;&#x8A33;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a href="https://github.com/xuwei-k/grpc-scala-sample" target="_blank">https://github.com/xuwei-k/grpc-scala-sample</a></p>
+<ul>
+<li><a href="https://github.com/grpc/grpc-java/" target="_blank">gRPC&#x306E;Java</a>&#x3082;sbt&#x4E0A;&#x304B;&#x3089;&#x305D;&#x306E;&#x307E;&#x307E;main&#x3092;run&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;git submodule&#x3067;grpc-java&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x3044;&#x308B;</li>
+<li><code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3084;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x3067;&#x304D;&#x308B;&#x3060;&#x3051;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<code>sourceDirectory in PB.protobufConfig</code> &#x3084; <code>unmanagedResourceDirectories in Compile</code> &#x306A;&#x3069;&#x306E;&#x8A2D;&#x5B9A;&#x3092;Scala&#x5074;&#x306B;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x3044;&#x308B;</li>
+</ul>
+<p>&#x3068;&#x3044;&#x3063;&#x305F;&#x3053;&#x3068;&#x3092;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;&#x305D;&#x308C;&#x4EE5;&#x5916;&#x306F;&#x7279;&#x5225;&#x5909;&#x308F;&#x3063;&#x305F;&#x3053;&#x3068;&#x3092;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3001;&#x4E00;&#x822C;&#x7684;&#x306A;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x69CB;&#x6210;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;&#x516C;&#x5F0F;&#x306E;Java&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x306F;&#x3001;&#x3053;&#x3061;&#x3089; <a href="http://www.grpc.io/docs/tutorials/basic/java.html" target="_blank">http://www.grpc.io/docs/tutorials/basic/java.html</a> &#x306E;&#x516C;&#x5F0F;&#x306E;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;&#x3067;&#x89E3;&#x8AAC;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x306A;&#x306E;&#x3067;&#x3001;&#x5B9F;&#x969B;&#x306B;sbt run&#x3092;&#x3057;&#x3066;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li>Java&#x306E;server&#x5074;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3001;Scala&#x306E;client&#x3092;&#x63A5;&#x7D9A;</li>
+<li>Scala&#x306E;server&#x5074;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3001;Java&#x306E;client&#x3092;&#x63A5;&#x7D9A;</li>
+<li>server&#x3082;client&#x3082;Scala&#x3067;&#x63A5;&#x7D9A;</li>
+</ul>
 
                     
                     </section>
