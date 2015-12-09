@@ -8,6 +8,7 @@
 - https://github.com/trueaccord/sbt-scalapb
 - https://github.com/finagle/finagle-protobuf
 - https://github.com/SandroGrzicic/ScalaBuff
+- https://github.com/Atry/sbt-cppp
 
 
 なぜ他のものではなくScalaPBがオススメなのか?というのを簡単に説明します。
@@ -35,6 +36,9 @@
    - つまりこれ単体で使う場合は、Javaコードを生成して使う、ということ
  - しかし、ScalaPBはこれに依存している(後述)
 
+- [sbt-cppp](https://github.com/Atry/sbt-cppp)
+ - これもprotocを呼び出すのみで、Scalaコード生成機能なし
+ - それほどメンテ活発ではない？
 
 一方ScalaPBですが
 
