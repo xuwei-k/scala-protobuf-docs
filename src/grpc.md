@@ -30,7 +30,7 @@ libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % "0.5
 
 ## サンプル
 
-以下に、公式のgRCPのJavaのサンプルコードを、ScalaPBを使用してScalaに翻訳したものがあります。
+以下に、公式のgRCPのJavaのサンプルコードを、ScalaPBを使用してScalaに翻訳したものがあります[^scala-version]。
 
 https://github.com/xuwei-k/grpc-scala-sample
 
@@ -45,3 +45,6 @@ https://github.com/xuwei-k/grpc-scala-sample
 - Javaのserver側を起動して、Scalaのclientを接続
 - Scalaのserver側を起動して、Javaのclientを接続
 - serverもclientもScalaで接続
+
+
+[^scala-version]: このサンプルコードは、Scala2.10だとコンパイルが通りません。 http://d.hatena.ne.jp/xuwei/20151208/1449568614 Scala2.10で動かしたい場合は `ServerBuilder` ではなく `NettyServerBuilder` を直接使うか、`asInstanceOf` でキャストしてください
