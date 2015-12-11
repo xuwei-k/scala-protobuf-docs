@@ -53,7 +53,7 @@
         data-chapter-title="セットアップ"
         data-filepath="setup.md"
         data-basepath="."
-        data-revision="Fri Dec 11 2015 02:40:38 GMT+0000 (UTC)"
+        data-revision="Fri Dec 11 2015 04:38:25 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -277,6 +277,10 @@ watchSources ++= (((sourceDirectory in <span class="hljs-type">Compile</span>).v
 <script src="gitbook/app.js"></script>
 
     
+    <script src="gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
     <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
     
 
@@ -294,7 +298,7 @@ watchSources ++= (((sourceDirectory in <span class="hljs-type">Compile</span>).v
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"include-codeblock":{},"japanese-support":{},"footnote-string-to-number":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/xuwei-k/scala-protobuf-docs/tree/master/src","label":"このページのソースコード"},"include-codeblock":{},"japanese-support":{},"footnote-string-to-number":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
