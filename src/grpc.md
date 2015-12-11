@@ -18,14 +18,16 @@ ScalaPBでは、現状serviceの定義があると自動でgRPC用のコード�
 しかしランタイムの追加が必要です。
 (この状態は多少使いづらいので、後のversionで変更になるかもしれません)
 
-現状では以下の一行を追加します。
+現状では、通常のprotocol bufferを使う場合の設定に加えて、以下のlibraryDependenciesを追加します。
 
 ```tut:invisible
 import sbt._, Keys._
 ```
 
 ```tut:silent
-libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % "0.5.18"
+import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
+
+libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % (PB.scalapbVersion in PB.protobufConfig).value
 ```
 
 ## サンプル
