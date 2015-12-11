@@ -53,7 +53,7 @@
         data-chapter-title="gRPC"
         data-filepath="grpc.md"
         data-basepath="."
-        data-revision="Thu Dec 10 2015 12:40:32 GMT+0000 (UTC)"
+        data-revision="Fri Dec 11 2015 02:40:38 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -231,8 +231,10 @@ Protocol Buffers&#x4EE5;&#x5916;&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x308B;
 <p>ScalaPB&#x306F;&#x3001;version 0.5.18&#x304B;&#x3089;gRPC&#x7528;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
 ScalaPB&#x3067;&#x306F;&#x3001;&#x73FE;&#x72B6;service&#x306E;&#x5B9A;&#x7FA9;&#x304C;&#x3042;&#x308B;&#x3068;&#x81EA;&#x52D5;&#x3067;gRPC&#x7528;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x304C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x30E9;&#x30F3;&#x30BF;&#x30A4;&#x30E0;&#x306E;&#x8FFD;&#x52A0;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;
 (&#x3053;&#x306E;&#x72B6;&#x614B;&#x306F;&#x591A;&#x5C11;&#x4F7F;&#x3044;&#x3065;&#x3089;&#x3044;&#x306E;&#x3067;&#x3001;&#x5F8C;&#x306E;version&#x3067;&#x5909;&#x66F4;&#x306B;&#x306A;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;)</p>
-<p>&#x73FE;&#x72B6;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x4E00;&#x884C;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> %% <span class="hljs-string">&quot;scalapb-runtime-grpc&quot;</span> % <span class="hljs-string">&quot;0.5.18&quot;</span>
+<p>&#x73FE;&#x72B6;&#x3067;&#x306F;&#x3001;&#x901A;&#x5E38;&#x306E;protocol buffer&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x306E;&#x8A2D;&#x5B9A;&#x306B;&#x52A0;&#x3048;&#x3066;&#x3001;&#x4EE5;&#x4E0B;&#x306E;libraryDependencies&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> com.trueaccord.scalapb.{<span class="hljs-type">ScalaPbPlugin</span> =&gt; <span class="hljs-type">PB</span>}
+
+libraryDependencies += <span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> %% <span class="hljs-string">&quot;scalapb-runtime-grpc&quot;</span> % (<span class="hljs-type">PB</span>.scalapbVersion in <span class="hljs-type">PB</span>.protobufConfig).value
 </code></pre>
 <h2 id="&#x30B5;&#x30F3;&#x30D7;&#x30EB;">&#x30B5;&#x30F3;&#x30D7;&#x30EB;</h2>
 <p>&#x4EE5;&#x4E0B;&#x306B;&#x3001;&#x516C;&#x5F0F;&#x306E;gRCP&#x306E;Java&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x3001;ScalaPB&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;Scala&#x306B;&#x7FFB;&#x8A33;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;<sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x3002;</p>
