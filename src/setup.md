@@ -24,6 +24,16 @@ libraryDependencies += "com.github.os72" % "protoc-jar" % "3.0.0-b1"
 ```
 
 
+Windowsの場合、ローカルにPython(2.x系)のインストールが必要です。[^python-version]
+MacやLinuxではPythonは必要ありません。
+Pythonのインストール後、Pathを通すか、以下のように`pythonExecutable`というkeyを設定してください。
+
+```tut:silent
+import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
+
+PB.pythonExecutable in PB.protobufConfig := "C:\\Python27\\Python.exe" // あくまで例なので、インストールした場所を指定
+```
+
 次に`build.sbt`への設定の説明をします。
 
 ```tut:silent
@@ -47,3 +57,4 @@ watchSources ++= (((sourceDirectory in Compile).value / "protobuf") ** "*.proto"
 
 [^plugin-sbt]: これはsbtの一般的な話ですが、`plugin.sbt`というファイル名は単なる慣習であり、`project/`ディレクトリの下で`.sbt`という拡張子ならば、`a.sbt`や`foo.sbt`など、どんな名前でも構いません
 [^scalapb-sbt-key]: なおかつ、Keyの名前が衝突している
+[^python-version]: Pythonのversion3系では動かない可能性があるため、2系を入れてください。どのversionで動くかの詳細は把握できていませんが、少なくとも2.7で動いた例があります。
