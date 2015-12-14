@@ -23,8 +23,12 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
  - 環境ごとのprotocのバイナリを1つのjarにまとめたもの
  - これを使用せずにprotocをローカルにインストールしてもScalaPB自体は使用可能
    - しかし、makeなどの作業[^protoc]が必要になるため、基本これを使用したほうが楽になるはずなので、特に理由がなければこれを使用するべき
+- [protobuf-scala-runtime](https://github.com/trueaccord/protobuf-scala-runtime)
+ - 主に[scala-js](http://www.scala-js.org/)対応のために、一部の公式のprotobuf-java[^protobuf-java]のclassをScalaで再実装したもの
+ - scala-jsでない場合は、公式のprotobufを使わずにこちらを使うメリットは特にないと思われるので、scala-jsを使わないなら通常必要ない
 
 
 [^scalapb-and-plugin]: 単にクロスビルドやScalaのversionの都合上、リポジトリが分かれていたほうがいい、という判断だと思われる
 [^lens]: つまり、使う必要がなければLensは使わなくてよいです
 [^protoc]: protocol bufferの本体はC++で書かれているため
+[^protobuf-java]: これのこと http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/ https://github.com/google/protobuf/tree/v3.0.0-beta-1/java
