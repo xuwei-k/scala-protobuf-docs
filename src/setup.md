@@ -14,7 +14,7 @@ addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.18")
 
 ただし、[ScalaPBと関連ライブラリやツール](scalapb-and-libraries.html)のページで説明したように、
 [protoc-jar](https://github.com/os72/protoc-jar)を使用したほうが便利なため、
-protoc-jarの設定も`project/plugin.sbt`に追加します。
+protoc-jarの設定も`project/plugin.sbt`に追加します。[^protoc-jar-version]
 
 
 ```tut:silent
@@ -56,5 +56,6 @@ watchSources ++= (((sourceDirectory in Compile).value / "protobuf") ** "*.proto"
 
 
 [^plugin-sbt]: これはsbtの一般的な話ですが、`plugin.sbt`というファイル名は単なる慣習であり、`project/`ディレクトリの下で`.sbt`という拡張子ならば、`a.sbt`や`foo.sbt`など、どんな名前でも構いません
+[^protoc-jar-version]: protoc-jarにもversionがあるため、あえて古いProtocol Buffer2系のversionを使いたい場合などは、version部分を変えてください
 [^scalapb-sbt-key]: なおかつ、Keyの名前が衝突している
 [^python-version]: Pythonのversion3系では動かない可能性があるため、2系を入れてください。どのversionで動くかの詳細は把握できていませんが、少なくとも2.7で動いた例があります。
