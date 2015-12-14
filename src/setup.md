@@ -56,6 +56,6 @@ watchSources ++= (((sourceDirectory in Compile).value / "protobuf") ** "*.proto"
 
 
 [^plugin-sbt]: これはsbtの一般的な話ですが、`plugin.sbt`というファイル名は単なる慣習であり、`project/`ディレクトリの下で`.sbt`という拡張子ならば、`a.sbt`や`foo.sbt`など、どんな名前でも構いません
-[^protoc-jar-version]: protoc-jarにもversionがあるため、あえて古いProtocol Buffer2系のversionを使いたい場合などは、version部分を変えてください
+[^protoc-jar-version]: protoc-jarにもversionがあるため、あえて古いProtocol Buffer2系のversionを使いたい場合などは、version部分を変えてください。ただし、protoc自体は引数で指定すれば3のコンパイラで2をコンパイルすることも可能なはず？(詳細未調査)なので、plugin.sbtのlibraryDependenciesの段階で、わざと古いversionを指定する必要は通常ないと思います
 [^scalapb-sbt-key]: なおかつ、Keyの名前が衝突している
 [^python-version]: Pythonのversion3系では動かない可能性があるため、2系を入れてください。どのversionで動くかの詳細は把握できていませんが、少なくとも2.7で動いた例があります。
