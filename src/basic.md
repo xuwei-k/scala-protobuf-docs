@@ -18,16 +18,7 @@
 例えば、`src/main/protobuf/user.proto`というファイルに、
 以下の様なint64のidとstringのnameを持ったUserというmessageを定義してコンパイルすると
 
-```protobuf
-syntax = "proto3";
-
-package example;
-
-message User {
-  int64 id = 1;
-  string name = 2;
-}
-```
+[include](main/protobuf/user.proto)
 
 大体以下の様なScalaコードが生成されます。[^generated-code]
 いくつかメソッドがありますが、基本的には普通のcase classです。
