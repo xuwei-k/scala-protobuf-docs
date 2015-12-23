@@ -8,6 +8,7 @@ gitbook/*.md
 gitbook/_book
 gitbook/book.epub
 gitbook/book.pdf
+gitbook/main/
 
 ### npm ###
 node_modules

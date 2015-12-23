@@ -3,5 +3,6 @@
 - [セットアップ](setup.md)
 - [基本的な使い方](basic.md)
 - [sbtの設定のカスタマイズ](sbt.md)
+- [Jsonとの相互変換](json.md)
 - [gRPC](grpc.md)
 - [その他資料](other_references.md)

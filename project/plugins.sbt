@@ -5,4 +5,8 @@ resolvers += Resolver.url(
 
 addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.4.0")
 
+addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.18")
+
+libraryDependencies += "com.github.os72" % "protoc-jar" % "3.0.0-b1"
+
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}
