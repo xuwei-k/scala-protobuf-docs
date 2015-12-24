@@ -53,7 +53,7 @@
         data-chapter-title="sbtの設定のカスタマイズ"
         data-filepath="sbt.md"
         data-basepath="."
-        data-revision="Wed Dec 23 2015 01:25:43 GMT+0000 (UTC)"
+        data-revision="Thu Dec 24 2015 15:52:07 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -262,6 +262,14 @@ sourceDirectories in <span class="hljs-type">PB</span>.protobufConfig += file(<s
 
 <span class="hljs-type">PB</span>.javaConversions in <span class="hljs-type">PB</span>.protobufConfig := <span class="hljs-literal">true</span>
 </code></pre>
+<h2 id="jar&#x306E;&#x4E2D;&#x306B;proto&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x308B;">jar&#x306E;&#x4E2D;&#x306B;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x308B;</h2>
+<p>ScalaPB&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x542B;&#x3093;&#x3060;&#x3082;&#x306E;&#x3092;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3068;&#x3057;&#x3066;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x5834;&#x5408;&#x3084;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x3092;&#x3059;&#x308B;sbt&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x8907;&#x6570;&#x3042;&#x3063;&#x3066;&#x305D;&#x308C;&#x3089;&#x306B;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x304C;&#x3042;&#x308B;&#x5834;&#x6570;&#x306A;&#x3069;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;<sup><a href="#fn_4" id="reffn_4">4</a></sup>&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x304A;&#x304D;&#x3001;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x3066;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x3066;&#x304A;&#x304F;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-scala">unmanagedResourceDirectories in <span class="hljs-type">Compile</span> += (sourceDirectory in <span class="hljs-type">PB</span>.protobufConfig).value
+</code></pre>
+<h2 id="jar&#x306E;&#x4E2D;&#x306B;&#x3042;&#x308B;proto&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;">jar&#x306E;&#x4E2D;&#x306B;&#x3042;&#x308B;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;</h2>
+<p><code>sbt-protobuf</code>&#x306E;plugin&#x306B;&#x306F;&#x3001;&#x81EA;&#x52D5;&#x3067;&#x305D;&#x306E;&#x305F;&#x3081;&#x306E;&#x6A5F;&#x80FD;&#x304C;&#x5B58;&#x5728;&#x3057;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;&#x53C2;&#x7167;&#x3057;&#x305F;&#x3044;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;jar&#x3092;<code>% &quot;protobuf&quot;</code>&#x3092;&#x3064;&#x3051;&#x3066;<code>libraryDependencies</code>&#x3092;&#x66F8;&#x304F;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;com.example&quot;</span> %% <span class="hljs-string">&quot;example&quot;</span> % <span class="hljs-string">&quot;0.1.0&quot;</span> % <span class="hljs-string">&quot;protobuf&quot;</span>
+</code></pre>
 <blockquote id="fn_1">
 <sup>1</sup>. &#x95A2;&#x9023;&#x3059;&#x308B;sbt-protobuf&#x306E;&#x5B9A;&#x7FA9;&#x5834;&#x6240; <a href="https://github.com/sbt/sbt-protobuf/blob/v0.3.3/src/main/scala/sbtprotobuf/ProtobufPlugin.scala#L21-L22" target="_blank">https://github.com/sbt/sbt-protobuf/blob/v0.3.3/src/main/scala/sbtprotobuf/ProtobufPlugin.scala#L21-L22</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
 </blockquote>
@@ -270,6 +278,9 @@ sourceDirectories in <span class="hljs-type">PB</span>.protobufConfig += file(<s
 </blockquote>
 <blockquote id="fn_3">
 <sup>3</sup>. sbt plugin&#x5074;&#x3067;&#x81EA;&#x52D5;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x3070;&#x3044;&#x3044;&#x3068;&#x601D;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x73FE;&#x5728;pull request&#x4E2D; <a href="https://github.com/sbt/sbt-protobuf/pull/35" target="_blank">https://github.com/sbt/sbt-protobuf/pull/35</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. &#x3042;&#x304F;&#x307E;&#x3067;&#x6A19;&#x6E96;&#x306E;proto&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x7528;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4EE5;&#x4E0B;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x308B;&#x5834;&#x5408;&#x306E;&#x8A2D;&#x5B9A;&#x4F8B;&#x306A;&#x306E;&#x3067;&#x3001;&#x6A19;&#x6E96;&#x4EE5;&#x5916;&#x306E;&#x5834;&#x6240;&#x306E;proto&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x8A2D;&#x5B9A;&#x3092;&#x5909;&#x3048;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#x21A9;</a>
 </blockquote>
 
                     
