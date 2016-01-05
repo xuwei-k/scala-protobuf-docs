@@ -53,7 +53,7 @@
         data-chapter-title="Jsonとの相互変換"
         data-filepath="json.md"
         data-basepath="."
-        data-revision="Mon Jan 04 2016 13:33:35 GMT+0000 (UTC)"
+        data-revision="Tue Jan 05 2016 07:37:58 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -245,11 +245,11 @@
 
 <span class="hljs-type">PB</span>.javaConversions in <span class="hljs-type">PB</span>.protobufConfig := <span class="hljs-literal">true</span>
 
-libraryDependencies += <span class="hljs-string">&quot;com.google.protobuf&quot;</span> % <span class="hljs-string">&quot;protobuf-java-util&quot;</span> % <span class="hljs-string">&quot;3.0.0-beta-1&quot;</span>
+libraryDependencies += <span class="hljs-string">&quot;com.google.protobuf&quot;</span> % <span class="hljs-string">&quot;protobuf-java-util&quot;</span> % <span class="hljs-string">&quot;3.0.0-beta-2&quot;</span>
 </code></pre>
 <p>ScalaPB&#x306E;<code>javaConversions</code>&#x306E;&#x8A2D;&#x5B9A;&#x306F;&#x3001;&#x4E00;&#x65E6;Java&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x90FD;&#x5408;&#x4E0A;&#x5FC5;&#x8981;&#x306A;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;</p>
 <p>&#x3069;&#x3061;&#x3089;&#x306E;&#x5909;&#x63DB;&#x306E;&#x5834;&#x5408;&#x3082;<code>com.google.protobuf.util.JsonFormat</code>&#x3068;&#x3044;&#x3046;class&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x306E;&#x3067;&#x3001;&#x3055;&#x304D;&#x306B;&#x305D;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3078;&#x306E;&#x30EA;&#x30F3;&#x30AF;&#x3092;&#x8CBC;&#x3063;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<p><a href="https://github.com/google/protobuf/blob/v3.0.0-beta-1/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.0.0-beta-1/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java</a></p>
+<p><a href="https://github.com/google/protobuf/blob/v3.0.0-beta-2/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.0.0-beta-2/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java</a></p>
 <p>&#x307E;&#x305F;&#x3001;Json&#x3068;&#x306E;&#x76F8;&#x4E92;&#x5909;&#x63DB;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x3055;&#x304D;&#x307B;&#x3069;&#x5225;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3067;&#x51FA;&#x3057;&#x305F;User&#x306E;case class&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="case-class&#x304B;&#x3089;json&#x3078;&#x5909;&#x63DB;">case class&#x304B;&#x3089;Json&#x3078;&#x5909;&#x63DB;</h2>
 <pre><code class="lang-scala">scala&gt; <span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
@@ -286,7 +286,7 @@ name: <span class="hljs-string">&quot;foo&quot;</span>
 <sup>1</sup>. &#x73FE;&#x5728;pull request&#x3092;&#x9001;&#x4FE1;&#x6E08;&#x307F;&#x3067;&#x3001;&#x3082;&#x3046;&#x5C11;&#x3057;&#x7C21;&#x5358;&#x306B;&#x5909;&#x63DB;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x4E88;&#x5B9A;&#x3067;&#x3059; <a href="https://github.com/trueaccord/ScalaPB/pull/64" target="_blank">https://github.com/trueaccord/ScalaPB/pull/64</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. &#x3053;&#x306E;protobuf-java-util&#x306F;&#x3001;google&#x306E;gson&#x3084;guava&#x3068;&#x3044;&#x3046;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x307E;&#x3059;&#x3002;&#x4F9D;&#x5B58;&#x304C;&#x885D;&#x7A81;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-1/protobuf-java-util-3.0.0-beta-1.pom" target="_blank">http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-1/protobuf-java-util-3.0.0-beta-1.pom</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+<sup>2</sup>. &#x3053;&#x306E;protobuf-java-util&#x306F;&#x3001;google&#x306E;gson&#x3084;guava&#x3068;&#x3044;&#x3046;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x307E;&#x3059;&#x3002;&#x4F9D;&#x5B58;&#x304C;&#x885D;&#x7A81;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom" target="_blank">http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
 </blockquote>
 
                     
