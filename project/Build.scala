@@ -31,7 +31,7 @@ object build extends Build with NpmCliBase {
     },
     libraryDependencies ++= (
       ("com.github.os72" % "protoc-jar" % "3.0.0-b1") ::
-      ("com.google.protobuf" % "protobuf-java-util" % "3.0.0-beta-1") ::
+      ("com.google.protobuf" % "protobuf-java-util" % "3.0.0-beta-2") ::
       Nil
     ),
     lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,

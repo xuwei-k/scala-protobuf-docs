@@ -31,4 +31,4 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
 [^scalapb-and-plugin]: 単にクロスビルドやScalaのversionの都合上、リポジトリが分かれていたほうがいい、という判断だと思われる
 [^lens]: つまり、使う必要がなければLensは使わなくてよいです
 [^protoc]: protocol bufferの本体はC++で書かれているため
-[^protobuf-java]: これのこと http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/ https://github.com/google/protobuf/tree/v3.0.0-beta-1/java
+[^protobuf-java]: これのこと http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/ https://github.com/google/protobuf/tree/v3.0.0-beta-2/java

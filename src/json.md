@@ -20,14 +20,14 @@ import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
 
 PB.javaConversions in PB.protobufConfig := true
 
-libraryDependencies += "com.google.protobuf" % "protobuf-java-util" % "3.0.0-beta-1"
+libraryDependencies += "com.google.protobuf" % "protobuf-java-util" % "3.0.0-beta-2"
 ```
 
 ScalaPBの`javaConversions`の設定は、一旦Javaのオブジェクトに変換する都合上必要なものです。
 
 どちらの変換の場合も`com.google.protobuf.util.JsonFormat`というclassを使用するので、さきにそのソースコードへのリンクを貼っておきます。
 
-https://github.com/google/protobuf/blob/v3.0.0-beta-1/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java
+https://github.com/google/protobuf/blob/v3.0.0-beta-2/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java
 
 また、Jsonとの相互変換するための例として、さきほど別のページで出したUserのcase classを使います。
 
@@ -58,4 +58,4 @@ jsonStringToUser(userJson)
 ```
 
 [^scalapb-64]: 現在pull requestを送信済みで、もう少し簡単に変換できるようになる予定です https://github.com/trueaccord/ScalaPB/pull/64
-[^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-1/protobuf-java-util-3.0.0-beta-1.pom
+[^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom
