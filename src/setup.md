@@ -20,7 +20,7 @@ protoc-jarの設定も`project/plugin.sbt`に追加します。[^protoc-jar-vers
 ```tut:silent
 addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.19")
 
-libraryDependencies += "com.github.os72" % "protoc-jar" % "3.0.0-b1"
+libraryDependencies += "com.github.os72" % "protoc-jar" % "3.0.0-b2"
 ```
 
 
