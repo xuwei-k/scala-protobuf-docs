@@ -38,6 +38,7 @@
  - これ単体ではScalaのクラスのコード生成機能はない
    - つまりこれ単体で使う場合は、Javaコードを生成して使う、ということ
  - しかし、ScalaPBはこれに依存している(後述)
+ - 最近[@xuwei-k](https://github.com/xuwei-k)はこれの[コミッターになりました](http://d.hatena.ne.jp/xuwei/20160114/1452790299)
 
 - [sbt-cppp](https://github.com/Atry/sbt-cppp)
  - これもprotocを呼び出すのみで、Scalaコード生成機能なし
