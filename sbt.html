@@ -53,7 +53,7 @@
         data-chapter-title="sbtの設定のカスタマイズ"
         data-filepath="sbt.md"
         data-basepath="."
-        data-revision="Thu Jan 14 2016 18:18:56 GMT+0000 (UTC)"
+        data-revision="Thu Jan 14 2016 20:38:15 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -263,7 +263,7 @@ sourceDirectories in <span class="hljs-type">PB</span>.protobufConfig += file(<s
 <span class="hljs-type">PB</span>.javaConversions in <span class="hljs-type">PB</span>.protobufConfig := <span class="hljs-literal">true</span>
 </code></pre>
 <h2 id="jar&#x306E;&#x4E2D;&#x306B;proto&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x308B;">jar&#x306E;&#x4E2D;&#x306B;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x308B;</h2>
-<p>ScalaPB&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x542B;&#x3093;&#x3060;&#x3082;&#x306E;&#x3092;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3068;&#x3057;&#x3066;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x5834;&#x5408;&#x3084;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x3092;&#x3059;&#x308B;sbt&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x8907;&#x6570;&#x3042;&#x3063;&#x3066;&#x305D;&#x308C;&#x3089;&#x306B;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x304C;&#x3042;&#x308B;&#x5834;&#x6570;&#x306A;&#x3069;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;<sup><a href="#fn_4" id="reffn_4">4</a></sup>&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x304A;&#x304D;&#x3001;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x3066;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x3066;&#x304A;&#x304F;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>ScalaPB&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x542B;&#x3093;&#x3060;&#x3082;&#x306E;&#x3092;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3068;&#x3057;&#x3066;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x5834;&#x5408;&#x3084;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x3092;&#x3059;&#x308B;sbt&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x8907;&#x6570;&#x3042;&#x3063;&#x3066;&#x305D;&#x308C;&#x3089;&#x306B;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x304C;&#x3042;&#x308B;&#x3068;&#x304D;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;<sup><a href="#fn_4" id="reffn_4">4</a></sup>&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x304A;&#x304D;&#x3001;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x3066;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x542B;&#x3081;&#x3066;&#x304A;&#x304F;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <pre><code class="lang-scala">unmanagedResourceDirectories in <span class="hljs-type">Compile</span> += (sourceDirectory in <span class="hljs-type">PB</span>.protobufConfig).value
 </code></pre>
 <h2 id="jar&#x306E;&#x4E2D;&#x306B;&#x3042;&#x308B;proto&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;">jar&#x306E;&#x4E2D;&#x306B;&#x3042;&#x308B;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;</h2>
