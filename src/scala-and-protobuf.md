@@ -44,6 +44,12 @@
  - これもprotocを呼び出すのみで、Scalaコード生成機能なし
  - それほどメンテ活発ではない？
 
+- [scala-protobuf](https://github.com/jeffplaisance/scala-protobuf)
+ - メンテされてない
+
+- [protobuf-scala](https://code.google.com/p/protobuf-scala)
+ - メンテされてない
+
 一方ScalaPBですが
 
 - 独自のparserを使用していない
