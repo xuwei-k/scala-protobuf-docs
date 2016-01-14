@@ -51,7 +51,7 @@ PB.javaConversions in PB.protobufConfig := true
 ## jarの中に`.proto`ファイルを含める
 
 ScalaPBでコード生成したものを含んだものをライブラリとして提供する場合や、
-コード生成をするsbtのモジュールが複数あってそれらに依存関係がある場数などは、
+コード生成をするsbtのモジュールが複数あってそれらに依存関係があるときは、
 以下のような設定[^resource-proto]を追加しておき、リソースとして`.proto`ファイルを含めておくとよいでしょう。
 
 ```tut:silent
