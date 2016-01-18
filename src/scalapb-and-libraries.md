@@ -1,6 +1,7 @@
 # ScalaPBと関連ライブラリやツール
 
 ScalaPB自体の説明に入るまえに、関連する依存ライブラリやプロジェクトについて説明します。
+できれば読んでおいたほうがいいですが、とにかくすぐ使いたい人は、このページをとばして次のセットアップのページに進んでください。
 
 
 - [ScalaPB](https://github.com/trueaccord/ScalaPB)
@@ -31,6 +32,10 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
  - protobufには、text formatと呼ばれるデータの表現の形式があり、そのフォーマットをparseするためのもの
  - text formatを使用しない場合は関係ないので気にしなくてよい
  - ちなみにversion0.5.18以前では、一旦Javaのクラスのインスタンスを生成してScalaのクラスのインスタンスに変換していた。[^java-text-format-1] [^java-text-format-2]
+- [protoc-bridge](https://github.com/trueaccord/protoc-bridge)
+ - version0.5.19くらいまでは[ScalaPBの本体リポジトリ](https://github.com/trueaccord/ScalaPB)の中にあった部分
+ - [多少汎用化されて別リポジトリになった](https://github.com/trueaccord/ScalaPB/commit/ad6253260f474d)
+ - 直接使うことはあまりないので、普通のユーザーは気にしなくてよい
 
 
 [^scalapb-and-plugin]: 単にクロスビルドやScalaのversionの都合上、リポジトリが分かれていたほうがいい、という判断だと思われる
