@@ -35,6 +35,30 @@ PB.includePaths in PB.protobufConfig += file("参照したいprotoファイル�
 `includePaths`に限らず、おそらく他の`protoc`に渡されるkeyに関しても共通ですが、
 `getCanonicalFile`を呼び出しておかないと`protoc`がうまく処理できないようなので注意してください[^getCanonicalFile]。
 
+## コンパイルする`.proto`ファイルのフィルター
+
+以下のように`excludeFilter`というkeyを設定すると、特定の`.proto`ファイルをコンパイル対象から除外することが可能です。
+[^exclude]
+
+```tut:silent
+import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
+
+excludeFilter in PB.protobufConfig := {
+  // ここにfilterの定義を書く
+  "*Foo.proto"
+}
+```
+
+`excludeFilter`は`protobufConfig`のスコープになっていますが、Key自体はsbtの標準であり`SettingKey[FileFilter]`という型です。
+
+文字列を書くと、正規表現のようなものと認識されるimplicit defがあったり
+- <https://github.com/sbt/sbt/blob/v0.13.9/util/io/src/main/scala/sbt/NameFilter.scala#L96-L119>
+
+それ以外にもいろいろな種類のfilterが書けます。詳細は以下のコードなどを参考にしてください。
+
+- <https://github.com/sbt/sbt/blob/v0.13.9/util/io/src/main/scala/sbt/NameFilter.scala>
+- <https://github.com/sbt/sbt/blob/v0.13.9/main/src/main/scala/sbt/Keys.scala#L92>
+
 
 ## Javaのclassとの相互変換
 
@@ -69,5 +93,6 @@ libraryDependencies += "com.example" %% "example" % "0.1.0" % "protobuf"
 
 [^src-dir-def]: 関連するsbt-protobufの定義場所 https://github.com/sbt/sbt-protobuf/blob/v0.4.0/src/main/scala/sbtprotobuf/ProtobufPlugin.scala#L22-L23
 [^include]: 外部ライブラリとして、もしくはsbtのマルチプロジェクトの一部として、という意味
-[^getCanonicalFile]: sbt plugin側で自動で呼び出せばいいと思ったので、現在pull request中 https://github.com/sbt/sbt-protobuf/pull/35
+[^getCanonicalFile]: sbt plugin側で自動で呼び出せばいいと思ったので、pull requestして、これに依存したScalaPBがリリースされれば必要なくなるはず https://github.com/sbt/sbt-protobuf/pull/35
+[^exclude]: ただしsbt-scalapbが依存しているsbt-protobufが、0.5.0以降である必要があります。sbt-scalapb 0.5.19時点では対応していません。次のリリースを待つか、sbt-protobufの最新版の依存を明示的に追加することにより上書きしてください。  https://github.com/trueaccord/sbt-scalapb/pull/8 https://github.com/trueaccord/ScalaPB/issues/24 https://github.com/sbt/sbt-protobuf/pull/29
 [^resource-proto]: あくまで標準のprotoファイル用のディレクトリ以下のファイルを含める場合の設定例なので、標準以外の場所のprotoファイルを含めたい場合は設定を変えてください
