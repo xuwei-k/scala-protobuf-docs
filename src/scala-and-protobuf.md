@@ -52,7 +52,7 @@
 
 一方ScalaPBですが
 
-- 独自のparserを使用していない
+- IDLをparseする際に独自のparserを使用していない
  - protobufにはpluginという仕組みがあり、任意の言語でparse済みのASTのようなものを受け取れる仕組み[^protobuf-plugin]があり、ScalaPBはそれを利用している
  - parser部分のバグや互換性を気にしなくてすむという利点
 - version3に対応している
