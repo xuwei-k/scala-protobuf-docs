@@ -35,7 +35,7 @@ libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % (PB.
 
 ## サンプル
 
-以下に、公式のgRCPのJavaのサンプルコードを、ScalaPBを使用してScalaに翻訳したものがあります[^scala-version]。
+以下に、公式のgRPCのJavaのサンプルコードを、ScalaPBを使用してScalaに翻訳したものがあります[^scala-version]。
 
 https://github.com/xuwei-k/grpc-scala-sample
 
