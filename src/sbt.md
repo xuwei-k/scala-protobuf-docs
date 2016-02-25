@@ -52,12 +52,12 @@ excludeFilter in PB.protobufConfig := {
 `excludeFilter`は`protobufConfig`のスコープになっていますが、Key自体はsbtの標準であり`SettingKey[FileFilter]`という型です。
 
 文字列を書くと、正規表現のようなものと認識されるimplicit defがあったり
-- <https://github.com/sbt/sbt/blob/v0.13.9/util/io/src/main/scala/sbt/NameFilter.scala#L96-L119>
+- <https://github.com/sbt/sbt/blob/v0.13.11/util/io/src/main/scala/sbt/NameFilter.scala#L96-L119>
 
 それ以外にもいろいろな種類のfilterが書けます。詳細は以下のコードなどを参考にしてください。
 
-- <https://github.com/sbt/sbt/blob/v0.13.9/util/io/src/main/scala/sbt/NameFilter.scala>
-- <https://github.com/sbt/sbt/blob/v0.13.9/main/src/main/scala/sbt/Keys.scala#L92>
+- <https://github.com/sbt/sbt/blob/v0.13.11/util/io/src/main/scala/sbt/NameFilter.scala>
+- <https://github.com/sbt/sbt/blob/v0.13.11/main/src/main/scala/sbt/Keys.scala#L92>
 
 
 ## Javaのclassとの相互変換
