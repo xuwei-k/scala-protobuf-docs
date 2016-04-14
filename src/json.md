@@ -6,7 +6,7 @@ Protocol Buffersのversion 3からは、Jsonとの相互変換の規則が仕様
 
 このページでは、その方法について説明します。
 
-現状ではJavaのProtocol Buffersのライブラリ経由で変換する方法しか存在しないため、その方法で説明します[^scalapb-64]。
+ここではJavaのProtocol Buffersのライブラリ経由で変換する方法で説明します[^scalapb-json]。
 まず、JavaのProtocol BuffersのJson変換部分には、追加で依存ライブラリが必要です[^gson]。
 `build.sbt`に以下のように設定してください。
 
@@ -57,5 +57,5 @@ def jsonStringToUser(json: String): example.user.User = {
 jsonStringToUser(userJson)
 ```
 
-[^scalapb-64]: 現在pull requestを送信済みで、もう少し簡単に変換できるようになる予定です https://github.com/trueaccord/ScalaPB/pull/64
+[^scalapb-json]: 2016年4月頃に https://github.com/trueaccord/scalapb-json4s というものが出来ましたが、個人的にjson4sは非公式なリフレクションAPI使っていたりするなどの理由でお勧めしたくないので、説明しません
 [^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom
