@@ -53,7 +53,7 @@
         data-chapter-title="Jsonとの相互変換"
         data-filepath="json.md"
         data-basepath="."
-        data-revision="Thu Apr 14 2016 00:35:25 GMT+0000 (UTC)"
+        data-revision="Tue Apr 26 2016 14:52:52 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -270,8 +270,7 @@ userJson: <span class="hljs-type">String</span> =
 </code></pre>
 <h2 id="json&#x6587;&#x5B57;&#x5217;&#x304B;&#x3089;case-class&#x3078;&#x306E;&#x5909;&#x63DB;">Json&#x6587;&#x5B57;&#x5217;&#x304B;&#x3089;case class&#x3078;&#x306E;&#x5909;&#x63DB;</h2>
 <pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">jsonStringToUser</span>(</span>json: <span class="hljs-type">String</span>): example.user.<span class="hljs-type">User</span> = {
-  <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">registry</span> =</span> <span class="hljs-type">JsonFormat</span>.<span class="hljs-type">TypeRegistry</span>.newBuilder().add(example.user.<span class="hljs-type">User</span>.descriptor).build()
-  <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">parser</span> =</span> <span class="hljs-type">JsonFormat</span>.parser().usingTypeRegistry(registry)
+  <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">parser</span> =</span> <span class="hljs-type">JsonFormat</span>.parser()
   <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">builder</span> =</span> example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span>.newBuilder()
   parser.merge(json, builder)
   example.user.<span class="hljs-type">User</span>.fromJavaProto(builder.build())
@@ -282,11 +281,18 @@ res4: example.user.<span class="hljs-type">User</span> =
 id: <span class="hljs-number">1</span>
 name: <span class="hljs-string">&quot;foo&quot;</span>
 </code></pre>
+<p>JSON &#x306B; <a href="https://github.com/google/protobuf/blob/master/src/google/protobuf/any.proto" target="_blank">Any</a> &#x578B;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306B;&#x306F;&#x3001;&#x305D;&#x306E; Any &#x3067;&#x4F7F;&#x308F;&#x308C;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E; <code>Descriptor</code> &#x3092;&#x6CE8;&#x5165;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;Any &#x306B; <code>User</code> &#x3092;&#x683C;&#x7D0D;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x69CB;&#x7BC9;&#x3057;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_3" id="reffn_3">3</a></sup></p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">registry</span> =</span> <span class="hljs-type">JsonFormat</span>.<span class="hljs-type">TypeRegistry</span>.newBuilder().add(example.user.<span class="hljs-type">User</span>.descriptor).build()
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">parser</span> =</span> <span class="hljs-type">JsonFormat</span>.parser().usingTypeRegistry(registry)
+</code></pre>
 <blockquote id="fn_1">
 <sup>1</sup>. 2016&#x5E74;4&#x6708;&#x9803;&#x306B; <a href="https://github.com/trueaccord/scalapb-json4s" target="_blank">https://github.com/trueaccord/scalapb-json4s</a> &#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x304C;&#x51FA;&#x6765;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x500B;&#x4EBA;&#x7684;&#x306B;json4s&#x306F;&#x975E;&#x516C;&#x5F0F;&#x306A;&#x30EA;&#x30D5;&#x30EC;&#x30AF;&#x30B7;&#x30E7;&#x30F3;API&#x4F7F;&#x3063;&#x3066;&#x3044;&#x305F;&#x308A;&#x3059;&#x308B;&#x306A;&#x3069;&#x306E;&#x7406;&#x7531;&#x3067;&#x304A;&#x52E7;&#x3081;&#x3057;&#x305F;&#x304F;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x305B;&#x3093;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
 </blockquote>
 <blockquote id="fn_2">
 <sup>2</sup>. &#x3053;&#x306E;protobuf-java-util&#x306F;&#x3001;google&#x306E;gson&#x3084;guava&#x3068;&#x3044;&#x3046;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x307E;&#x3059;&#x3002;&#x4F9D;&#x5B58;&#x304C;&#x885D;&#x7A81;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom" target="_blank">http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. &#x3042;&#x308B;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E; <code>Descriptor</code> &#x3092; <code>TypeRegistry</code> &#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3068;&#x3001;&#x305D;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B; .proto &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3068;&#x3001;&#x305D;&#x306E; .proto &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#xFF08;&#x76F4;&#x63A5;&#x30FB;&#x9593;&#x63A5;&#x7684;&#x306B;&#xFF09;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x308B; .proto &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x5168;&#x3066;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E; <code>Descriptor</code> &#x304C;&#x540C;&#x6642;&#x306B;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
 </blockquote>
 
                     
