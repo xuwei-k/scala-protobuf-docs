@@ -45,8 +45,7 @@ val userJson = JsonFormat.printer.print(example.user.User.toJavaProto(user))
 
 ```tut:silent
 def jsonStringToUser(json: String): example.user.User = {
-  val registry = JsonFormat.TypeRegistry.newBuilder().add(example.user.User.descriptor).build()
-  val parser = JsonFormat.parser().usingTypeRegistry(registry)
+  val parser = JsonFormat.parser()
   val builder = example.UserOuterClass.User.newBuilder()
   parser.merge(json, builder)
   example.user.User.fromJavaProto(builder.build())
@@ -57,5 +56,13 @@ def jsonStringToUser(json: String): example.user.User = {
 jsonStringToUser(userJson)
 ```
 
+JSON に [Any](https://github.com/google/protobuf/blob/master/src/google/protobuf/any.proto) 型のメッセージが含まれている場合には、その Any で使われているメッセージの `Descriptor` を注入する必要があります。例えば、Any に `User` を格納している場合は以下のようにしてパーサーを構築します。[^type-registry]
+
+```tut:silent
+val registry = JsonFormat.TypeRegistry.newBuilder().add(example.user.User.descriptor).build()
+val parser = JsonFormat.parser().usingTypeRegistry(registry)
+```
+
 [^scalapb-json]: 2016年4月頃に https://github.com/trueaccord/scalapb-json4s というものが出来ましたが、個人的にjson4sは非公式なリフレクションAPI使っていたりするなどの理由でお勧めしたくないので、説明しません
 [^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0-beta-2/protobuf-java-util-3.0.0-beta-2.pom
+[^type-registry]: あるメッセージの `Descriptor` を `TypeRegistry` に追加すると、そのメッセージが定義されている .proto ファイルと、その .proto ファイルが（直接・間接的に）インポートしている .proto ファイルに定義されている全てのメッセージの `Descriptor` が同時に追加されます。
