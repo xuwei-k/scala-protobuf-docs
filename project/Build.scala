@@ -30,8 +30,8 @@ object build extends Build with NpmCliBase {
       com.github.os72.protocjar.Protoc.runProtoc("-v300" +: args.toArray)
     },
     libraryDependencies ++= (
-      ("com.github.os72" % "protoc-jar" % "3.0.0-b2") ::
-      ("com.google.protobuf" % "protobuf-java-util" % "3.0.0-beta-2") ::
+      ("com.github.os72" % "protoc-jar" % "3.0.0-b3") ::
+      ("com.google.protobuf" % "protobuf-java-util" % "3.0.0-beta-3") ::
       Nil
     ),
     lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,
