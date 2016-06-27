@@ -8,7 +8,7 @@ import sbt._, Keys._
 ```
 
 ```tut:silent
-addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.31")
+addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.32")
 ```
 
 
@@ -18,7 +18,7 @@ protoc-jarの設定も`project/plugin.sbt`に追加します。[^protoc-jar-vers
 
 
 ```tut:silent
-addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.31")
+addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.32")
 
 libraryDependencies += "com.github.os72" % "protoc-jar" % "3.0.0-b3"
 ```
