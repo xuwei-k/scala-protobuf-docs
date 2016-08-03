@@ -15,7 +15,7 @@ http://www.grpc.io/
 
 ScalaPBは、version 0.5.18からgRPC用のコード生成に対応しています。
 実行時には、JavaのgRPCに依存します。
-これを書いている2016年7月現在の最新であるScalaPB 0.5.34 時点では、grpc-javaの0.15.0に対応しています。
+これを書いている2016年8月現在の最新であるScalaPB 0.5.38 時点では、grpc-javaの1.0.0-pre1に対応しています。
 
 ScalaPBでは、serviceの定義があると自動でgRPC用のコード生成がされます。
 しかしランタイムの追加が必要です。
@@ -36,7 +36,7 @@ ScalaPB 0.5.26までは、上記の依存の設定のみでOKでしたが、0.5.
 以下は、ひとまずgrpc-javaのすべての依存を追加する場合です。
 
 ```tut:silent
-libraryDependencies += "io.grpc" % "grpc-all" % "0.15.0"
+libraryDependencies += "io.grpc" % "grpc-all" % "1.0.0-pre1"
 ```
 
 grpc-allを追加するのではなく、もう少し細かく依存を選ぶことも可能です。詳細はgrpc-javaの公式のドキュメントを参照してください。
