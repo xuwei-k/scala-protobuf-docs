@@ -41,6 +41,26 @@ val user = example.user.User(id = 1, name = "foo")
 val userJson = JsonFormat.printer.print(example.user.User.toJavaProto(user))
 ```
 
+### 変換用の便利なclass
+
+以下のようなclassを定義しておくと、pimp my libraryパターンで、
+ScalaPBで生成されたどのcase classでも `toJsonString` というメソッド１つで変換できるようになるのでおすすめです。
+
+```tut:silent
+import com.google.protobuf.MessageOrBuilder
+import com.google.protobuf.util.JsonFormat
+import com.trueaccord.scalapb.JavaProtoSupport
+
+implicit class GeneratedMessageOps[A](val self: A) extends AnyVal {
+  def toJsonString[B <: MessageOrBuilder](implicit A: JavaProtoSupport[A, B]): String =
+    JsonFormat.printer.print(A.toJavaProto(self))
+}
+```
+
+```tut
+User(id = 2, name = "bar").toJsonString
+```
+
 ## Json文字列からcase classへの変換
 
 ```tut:silent
