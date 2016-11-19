@@ -94,5 +94,5 @@ libraryDependencies += "com.example" %% "example" % "0.1.0" % "protobuf"
 [^src-dir-def]: 関連するsbt-protobufの定義場所 https://github.com/sbt/sbt-protobuf/blob/v0.5.1/src/main/scala/sbtprotobuf/ProtobufPlugin.scala#L22-L23
 [^include]: 外部ライブラリとして、もしくはsbtのマルチプロジェクトの一部として、という意味
 [^getCanonicalFile]: sbt plugin側で自動で呼び出せばいいと思ったので、pull requestしてmerge済みです。ScalaPB 0.5.21以降は必要ないはずです https://github.com/sbt/sbt-protobuf/pull/35
-[^exclude]: ただしsbt-scalapbが依存しているsbt-protobufが、0.5.0以降である必要があります。sbt-scalapb 0.5.21以降対応済みのはずです https://github.com/trueaccord/sbt-scalapb/pull/8 https://github.com/trueaccord/ScalaPB/issues/24 https://github.com/sbt/sbt-protobuf/pull/29
+[^exclude]: ただしsbt-scalapbが依存しているsbt-protobufが、0.5.0以降である必要があります。sbt-scalapb 0.5.21以降対応済みのはずです https://github.com/scalapb/sbt-scalapb/pull/8 https://github.com/scalapb/ScalaPB/issues/24 https://github.com/sbt/sbt-protobuf/pull/29
 [^resource-proto]: あくまで標準のprotoファイル用のディレクトリ以下のファイルを含める場合の設定例なので、標準以外の場所のprotoファイルを含めたい場合は設定を変えてください

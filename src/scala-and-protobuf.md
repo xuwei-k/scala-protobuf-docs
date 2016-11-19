@@ -1,11 +1,11 @@
 # ScalaにおけるProtocol Buffer事情
 
-この資料では[ScalaPB](https://github.com/trueaccord/ScalaPB)というsbt-pluginを使用します。
+この資料では[ScalaPB](https://github.com/scalapb/ScalaPB)というsbt-pluginを使用します。
 現在、Scalaでは、いくつかのprotocol-bufferに関するsbt pluginやライブラリがあります。
 
 - https://github.com/sbt/sbt-scalabuff
 - https://github.com/sbt/sbt-protobuf
-- https://github.com/trueaccord/sbt-scalapb
+- https://github.com/scalapb/sbt-scalapb
 - https://github.com/finagle/finagle-protobuf
 - https://github.com/SandroGrzicic/ScalaBuff
 - https://github.com/Atry/sbt-cppp
@@ -62,7 +62,7 @@
  - 独自のclassに自動でマッピングする機能
 - ScalaCheck[^scalacheck]でテストされている
 - Lensが自動生成される
-- [gRPCに対応している](https://github.com/trueaccord/ScalaPB/issues/44)
+- [gRPCに対応している](https://github.com/scalapb/ScalaPB/issues/44)
 
 というような理由から、これ以降はScalaPB前提で話を進めます
 
