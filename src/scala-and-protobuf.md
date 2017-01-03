@@ -37,7 +37,7 @@
  - `protoc`[^protoc]を呼びだす薄いラッパー
  - これ単体ではScalaのクラスのコード生成機能はない
    - つまりこれ単体で使う場合は、Javaコードを生成して使う、ということ
- - しかし、ScalaPBはこれに依存している(後述)
+ - 以前ScalaPBはこれに依存していたが、0.5.43以降依存しなくなった
  - 最近[@xuwei-k](https://github.com/xuwei-k)はこれの[コミッターになりました](http://d.hatena.ne.jp/xuwei/20160114/1452790299)
 
 - [sbt-cppp](https://github.com/Atry/sbt-cppp)

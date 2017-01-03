@@ -1,7 +1,7 @@
-addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.4.4")
+addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.4.7")
 
-addSbtPlugin("com.trueaccord.scalapb" % "sbt-scalapb" % "0.5.40")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.3")
 
-libraryDependencies += "com.github.os72" % "protoc-jar" % "3.0.0"
+libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.5.46"
 
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}

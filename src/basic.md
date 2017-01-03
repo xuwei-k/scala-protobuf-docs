@@ -7,7 +7,7 @@
 - その後sbtで`compile`をするだけで、sbtが管理するディレクトリに自動でScalaコードが生成されるため、それを使ったコードを書く
 
 という手順です。
-"sbtが管理するディレクトリ"とは、具体的には`target/scala-2.11/src_managed/main/compiled_protobuf/`
+"sbtが管理するディレクトリ"とは、具体的には`target/scala-2.11/src_managed/main/`
 などです。
 他の大抵のコード生成系のsbt pluginに共通することですが、このディレクトリはsbtが完全に自動で管理するものなので、
 このディレクトリ以下のScalaファイルを直接編集することは想定されていません。

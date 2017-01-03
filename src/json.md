@@ -13,21 +13,19 @@ Protocol Buffersのversion 3からは、Jsonとの相互変換の規則が仕様
 ```tut:invisible
 import sbt._, Keys._
 import example.user.User
+
+import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
 ```tut:silent
-import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
-
-PB.javaConversions in PB.protobufConfig := true
-
-libraryDependencies += "com.google.protobuf" % "protobuf-java-util" % "3.0.0"
+libraryDependencies += "com.google.protobuf" % "protobuf-java-util" % "3.0.2"
 ```
 
-ScalaPBの`javaConversions`の設定は、一旦Javaのオブジェクトに変換する都合上必要なものです。
+一旦Javaのオブジェクトに変換する都合上、`javaConversions`の設定も追加しておいてください。
 
 どちらの変換の場合も`com.google.protobuf.util.JsonFormat`というclassを使用するので、さきにそのソースコードへのリンクを貼っておきます。
 
-https://github.com/google/protobuf/blob/v3.0.0/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java
+https://github.com/google/protobuf/blob/v3.0.2/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java
 
 また、Jsonとの相互変換するための例として、さきほど別のページで出したUserのcase classを使います。
 
@@ -84,5 +82,5 @@ val parser = JsonFormat.parser().usingTypeRegistry(registry)
 ```
 
 [^scalapb-json]: 2016年4月頃に https://github.com/scalapb/scalapb-json4s というものが出来ましたが、個人的にjson4sは非公式なリフレクションAPI使っていたりするなどの理由でお勧めしたくないので、説明しません
-[^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0/protobuf-java-util-3.0.0.pom
+[^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.0.2/protobuf-java-util-3.0.2.pom
 [^type-registry]: あるメッセージの `Descriptor` を `TypeRegistry` に追加すると、そのメッセージが定義されている .proto ファイルと、その .proto ファイルが（直接・間接的に）インポートしている .proto ファイルに定義されている全てのメッセージの `Descriptor` が同時に追加されます。

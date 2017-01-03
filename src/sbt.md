@@ -4,16 +4,16 @@
 
 ## コンパイル対象のprotobufディレクトリを追加
 
-以下のように `sourceDirectories in PB.protobufConfig` に追加します。[^src-dir-def]
+以下のように `PB.protoSources` に追加します。
 
 ```tut:invisible
 import sbt._, Keys._
+
+import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
 ```tut:silent
-import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
-
-sourceDirectories in PB.protobufConfig += file("新たにコンパイル対象に追加したいディレクトリへのpath")
+PB.protoSources in Compile += file("新たにコンパイル対象に追加したいディレクトリへのpath")
 ```
 
 
@@ -27,9 +27,7 @@ protocの`-I`の引数に相当するものです。それほど多くないパ�
 というような場合です。設定方法は、以下のように`includePaths`というKeyに対してディレクトリを追加します。
 
 ```tut:silent
-import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
-
-PB.includePaths in PB.protobufConfig += file("参照したいprotoファイルが置いてあるディレクトリ")
+PB.includePaths in Compile += file("参照したいprotoファイルが置いてあるディレクトリ")
 ```
 
 `includePaths`に限らず、おそらく他の`protoc`に渡されるkeyに関しても共通ですが、
@@ -41,15 +39,13 @@ PB.includePaths in PB.protobufConfig += file("参照したいprotoファイル�
 [^exclude]
 
 ```tut:silent
-import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
-
-excludeFilter in PB.protobufConfig := {
+excludeFilter in PB.generate := {
   // ここにfilterの定義を書く
   "*Foo.proto"
 }
 ```
 
-`excludeFilter`は`protobufConfig`のスコープになっていますが、Key自体はsbtの標準であり`SettingKey[FileFilter]`という型です。
+`excludeFilter`は、Key自体はsbtの標準であり`SettingKey[FileFilter]`という型です。
 
 文字列を書くと、正規表現のようなものと認識されるimplicit defがあったり
 - <https://github.com/sbt/sbt/blob/v0.13.12/util/io/src/main/scala/sbt/NameFilter.scala#L96-L119>
@@ -59,19 +55,6 @@ excludeFilter in PB.protobufConfig := {
 - <https://github.com/sbt/sbt/blob/v0.13.12/util/io/src/main/scala/sbt/NameFilter.scala>
 - <https://github.com/sbt/sbt/blob/v0.13.12/main/src/main/scala/sbt/Keys.scala#L92>
 
-
-## Javaのclassとの相互変換
-
-以下のオプションを設定することで、`toJavaProto`, `fromJavaProto` などの、Javaのclassとの相互変換のためのメソッドがScalaのコンパニオンobjectに追加されます。
-デフォルトはoffです。
-もし何らかの理由でJavaのclassとの相互変換が必要になった場合は設定してください。
-
-```tut:silent
-import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
-
-PB.javaConversions in PB.protobufConfig := true
-```
-
 ## jarの中に`.proto`ファイルを含める
 
 ScalaPBでコード生成したものを含んだものをライブラリとして提供する場合や、
@@ -79,7 +62,7 @@ ScalaPBでコード生成したものを含んだものをライブラリとし�
 以下のような設定[^resource-proto]を追加しておき、リソースとして`.proto`ファイルを含めておくとよいでしょう。
 
 ```tut:silent
-unmanagedResourceDirectories in Compile += (sourceDirectory in PB.protobufConfig).value
+unmanagedResourceDirectories in Compile ++= (PB.protoSources in Compile).value
 ```
 
 ## jarの中にある`.proto`ファイルを参照する
@@ -91,7 +74,6 @@ libraryDependencies += "com.example" %% "example" % "0.1.0" % "protobuf"
 ```
 
 
-[^src-dir-def]: 関連するsbt-protobufの定義場所 https://github.com/sbt/sbt-protobuf/blob/v0.5.1/src/main/scala/sbtprotobuf/ProtobufPlugin.scala#L22-L23
 [^include]: 外部ライブラリとして、もしくはsbtのマルチプロジェクトの一部として、という意味
 [^getCanonicalFile]: sbt plugin側で自動で呼び出せばいいと思ったので、pull requestしてmerge済みです。ScalaPB 0.5.21以降は必要ないはずです https://github.com/sbt/sbt-protobuf/pull/35
 [^exclude]: ただしsbt-scalapbが依存しているsbt-protobufが、0.5.0以降である必要があります。sbt-scalapb 0.5.21以降対応済みのはずです https://github.com/scalapb/sbt-scalapb/pull/8 https://github.com/scalapb/ScalaPB/issues/24 https://github.com/sbt/sbt-protobuf/pull/29
