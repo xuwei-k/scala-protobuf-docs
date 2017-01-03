@@ -53,7 +53,7 @@
         data-chapter-title="セットアップ"
         data-filepath="setup.md"
         data-basepath="."
-        data-revision="Sat Nov 19 2016 23:43:07 GMT+0000 (UTC)"
+        data-revision="Tue Jan 03 2017 04:40:09 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -236,49 +236,38 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;">&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;</h1>
-<p>sbt-scalapb&#x81EA;&#x4F53;&#x306F;&#x3001;&#x3042;&#x304F;&#x307E;&#x3067;&#x3082;&#x901A;&#x5E38;&#x306E;sbt plugin&#x306A;&#x306E;&#x3067;&#x3001;&#x4ED6;&#x306E;sbt plugin&#x3068;&#x540C;&#x69D8;&#x3001;&#x307E;&#x305A;&#x306F;<code>project/plugin.sbt</code><sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;<code>addSbtPlugin</code>&#x3067;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-scala">addSbtPlugin(<span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> % <span class="hljs-string">&quot;sbt-scalapb&quot;</span> % <span class="hljs-string">&quot;0.5.40&quot;</span>)
-</code></pre>
-<p>&#x305F;&#x3060;&#x3057;&#x3001;<a href="scalapb-and-libraries.html">ScalaPB&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;</a>&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3067;&#x8AAC;&#x660E;&#x3057;&#x305F;&#x3088;&#x3046;&#x306B;&#x3001;
-<a href="https://github.com/os72/protoc-jar" target="_blank">protoc-jar</a>&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;&#x307B;&#x3046;&#x304C;&#x4FBF;&#x5229;&#x306A;&#x305F;&#x3081;&#x3001;
-protoc-jar&#x306E;&#x8A2D;&#x5B9A;&#x3082;<code>project/plugin.sbt</code>&#x306B;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
-<pre><code class="lang-scala">addSbtPlugin(<span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> % <span class="hljs-string">&quot;sbt-scalapb&quot;</span> % <span class="hljs-string">&quot;0.5.40&quot;</span>)
+<p>sbt-protoc&#x81EA;&#x4F53;&#x306F;&#x3001;&#x3042;&#x304F;&#x307E;&#x3067;&#x3082;&#x901A;&#x5E38;&#x306E;sbt plugin&#x306A;&#x306E;&#x3067;&#x3001;&#x4ED6;&#x306E;sbt plugin&#x3068;&#x540C;&#x69D8;&#x3001;&#x307E;&#x305A;&#x306F;<code>project/plugin.sbt</code><sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;<code>addSbtPlugin</code>&#x3067;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;scalapb&#x3068;sbt-protoc&#x306F;&#x72EC;&#x7ACB;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;scalapb&#x306E;compilerplugin&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x3001;
+libraryDependencies&#x3068;&#x3057;&#x3066;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x3001;&#x666E;&#x901A;&#x306E;sbt plugin&#x3068;&#x306F;&#x9055;&#x3046;&#x5C11;&#x3057;&#x5909;&#x308F;&#x3063;&#x305F;&#x8A2D;&#x5B9A;&#x3082;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-scala">addSbtPlugin(<span class="hljs-string">&quot;com.thesamet&quot;</span> % <span class="hljs-string">&quot;sbt-protoc&quot;</span> % <span class="hljs-string">&quot;0.99.3&quot;</span>)
 
-libraryDependencies += <span class="hljs-string">&quot;com.github.os72&quot;</span> % <span class="hljs-string">&quot;protoc-jar&quot;</span> % <span class="hljs-string">&quot;3.0.0&quot;</span>
+libraryDependencies += <span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> %% <span class="hljs-string">&quot;compilerplugin&quot;</span> % <span class="hljs-string">&quot;0.5.46&quot;</span>
 </code></pre>
-<p>Windows&#x306E;&#x5834;&#x5408;&#x3001;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x306B;Python(2.x&#x7CFB;)&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;<sup><a href="#fn_3" id="reffn_3">3</a></sup>
+<p>Windows&#x306E;&#x5834;&#x5408;&#x3001;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x306B;Python(2.x&#x7CFB;)&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;<sup><a href="#fn_2" id="reffn_2">2</a></sup>
 Mac&#x3084;Linux&#x3067;&#x306F;Python&#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
-Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Path&#x3092;&#x901A;&#x3059;&#x304B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;<code>pythonExecutable</code>&#x3068;&#x3044;&#x3046;key&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-scala"><span class="hljs-keyword">import</span> com.trueaccord.scalapb.{<span class="hljs-type">ScalaPbPlugin</span> =&gt; <span class="hljs-type">PB</span>}
-
-<span class="hljs-type">PB</span>.pythonExecutable in <span class="hljs-type">PB</span>.protobufConfig := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// &#x3042;&#x304F;&#x307E;&#x3067;&#x4F8B;&#x306A;&#x306E;&#x3067;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;&#x5834;&#x6240;&#x3092;&#x6307;&#x5B9A;</span>
+Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Path&#x3092;&#x901A;&#x3059;&#x304B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B; <a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.3/src/main/scala/sbtprotoc/ProtocPlugin.scala#L24" target="_blank"><code>pythonExe</code></a> &#x3068;&#x3044;&#x3046;key&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-type">PB</span>.pythonExe := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// &#x3042;&#x304F;&#x307E;&#x3067;&#x4F8B;&#x306A;&#x306E;&#x3067;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;&#x5834;&#x6240;&#x3092;&#x6307;&#x5B9A;</span>
 </code></pre>
 <p>&#x6B21;&#x306B;<code>build.sbt</code>&#x3078;&#x306E;&#x8A2D;&#x5B9A;&#x306E;&#x8AAC;&#x660E;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-scala"><span class="hljs-keyword">import</span> com.trueaccord.scalapb.{<span class="hljs-type">ScalaPbPlugin</span> =&gt; <span class="hljs-type">PB</span>}
-
-<span class="hljs-type">PB</span>.protobufSettings
-
-<span class="hljs-type">PB</span>.runProtoc in <span class="hljs-type">PB</span>.protobufConfig := { args =&gt;
-  com.github.os72.protocjar.<span class="hljs-type">Protoc</span>.runProtoc(<span class="hljs-string">&quot;-v300&quot;</span> +: args.toArray)
-}
+<pre><code class="lang-scala"><span class="hljs-type">PB</span>.targets in <span class="hljs-type">Compile</span> := <span class="hljs-type">Seq</span>(
+  <span class="hljs-type">PB</span>.gens.java -&gt; ((sourceManaged in <span class="hljs-type">Compile</span>).value / <span class="hljs-string">&quot;protobuf-java&quot;</span>),
+  scalapb.gen(javaConversions=<span class="hljs-literal">true</span>) -&gt; ((sourceManaged in <span class="hljs-type">Compile</span>).value / <span class="hljs-string">&quot;protobuf-scala&quot;</span>)
+)
 </code></pre>
 <ul>
-<li>import&#x306E;<code>ScalaPbPlugin =&gt; PB</code>&#x306E;&#x90E8;&#x5206;&#x306F;&#x3001;ScalaPB&#x306E;plugin&#x304C;&#x5225;&#x306E;sbt plugin&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;<sup><a href="#fn_4" id="reffn_4">4</a></sup>&#x3068;&#x3044;&#x3046;&#x5C11;&#x3057;&#x5909;&#x308F;&#x3063;&#x305F;&#x69CB;&#x6210;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x90FD;&#x5408;&#x4E0A;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;&#x3067;&#x306F;&#x53C2;&#x7167;&#x3067;&#x304D;&#x306A;&#x3044;&#x305F;&#x3081;&#x5FC5;&#x8981;</li>
-<li><code>PB.protobufSettings</code>&#x306F;&#x3001;&#x5FC5;&#x305A;&#x5FC5;&#x8981;&#x306A;&#x8A2D;&#x5B9A;</li>
-<li><code>PB.runProtoc in PB.protobufConfig</code>&#x306F;&#x3001;protoc-jar&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x8A2D;&#x5B9A;&#x3002;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x306B;protoc&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x3001;&#x305D;&#x308C;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x5FC5;&#x8981;&#x306A;&#x3044;</li>
-<li><code>&quot;-v300&quot;</code>&#x3068;&#x3044;&#x3046;&#x306E;&#x306F;protocol buffer&#x306E;version 3&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3001;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x3002;&#x305D;&#x306E;&#x4ED6;&#x306E;version&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;protoc-jar&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002; <a href="https://github.com/os72/protoc-jar" target="_blank">https://github.com/os72/protoc-jar</a></li>
+<li>sbt-protoc&#x306F;&#x3001;<a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.3/src/main/scala/sbtprotoc/ProtocPlugin.scala#L79" target="_blank">&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;</a> addSbtPlugin &#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x6709;&#x52B9;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<ul>
+<li>&#x30DE;&#x30EB;&#x30C1;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5834;&#x5408;&#x306B;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&#x3051;&#x3067;&#x6709;&#x52B9;&#x306B;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x7121;&#x52B9;&#x306B;&#x3057;&#x305F;&#x3044;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;disablePlugins&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</li>
+</ul>
+</li>
+<li>sbt-protoc 0.99.3&#x6642;&#x70B9;&#x3067;&#x306F;&#x3001;&#x8907;&#x6570;&#x306E;Scala version&#x3067;&#x30AF;&#x30ED;&#x30B9;&#x30D3;&#x30EB;&#x30C9;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x3001;&#x5FAE;&#x5999;&#x306B;&#x30D0;&#x30B0;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="https://github.com/thesamet/sbt-protoc/pull/9" target="_blank">https://github.com/thesamet/sbt-protoc/pull/9</a></li>
+<li><code>PB.gens.java</code> &#x306F;&#x3001;Java&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x5834;&#x5408;&#x306E;&#x8A2D;&#x5B9A;&#x3067;&#x3059;&#x3002;Java&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x5FC5;&#x8981;&#x306A;&#x3044;&#x306A;&#x3089;&#x3053;&#x306E;&#x884C;&#x306F;&#x3044;&#x308A;&#x307E;&#x305B;&#x3093;</li>
+<li><code>javaConversions=true</code> &#x306F;&#x3001;Java&#x306E;class&#x3068;Scala&#x306E;class&#x306E;&#x7DCF;&#x5408;&#x5909;&#x63DB;&#x7528;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x5834;&#x5408;&#x3067;&#x3059;</li>
+<li>&#x53E4;&#x3044;version&#x3068;&#x306F;&#x8272;&#x3005;&#x3068;&#x66F8;&#x304D;&#x65B9;&#x304C;&#x5909;&#x308F;&#x3063;&#x305F;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="https://scalapb.github.io/migrating.html" target="_blank">https://scalapb.github.io/migrating.html</a></li>
 </ul>
 <blockquote id="fn_1">
 <sup>1</sup>. &#x3053;&#x308C;&#x306F;sbt&#x306E;&#x4E00;&#x822C;&#x7684;&#x306A;&#x8A71;&#x3067;&#x3059;&#x304C;&#x3001;<code>plugin.sbt</code>&#x3068;&#x3044;&#x3046;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x306F;&#x5358;&#x306A;&#x308B;&#x6163;&#x7FD2;&#x3067;&#x3042;&#x308A;&#x3001;<code>project/</code>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x4E0B;&#x3067;<code>.sbt</code>&#x3068;&#x3044;&#x3046;&#x62E1;&#x5F35;&#x5B50;&#x306A;&#x3089;&#x3070;&#x3001;<code>a.sbt</code>&#x3084;<code>foo.sbt</code>&#x306A;&#x3069;&#x3001;&#x3069;&#x3093;&#x306A;&#x540D;&#x524D;&#x3067;&#x3082;&#x69CB;&#x3044;&#x307E;&#x305B;&#x3093;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. protoc-jar&#x306B;&#x3082;version&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x3042;&#x3048;&#x3066;&#x53E4;&#x3044;Protocol Buffer2&#x7CFB;&#x306E;version&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x5834;&#x5408;&#x306A;&#x3069;&#x306F;&#x3001;version&#x90E8;&#x5206;&#x3092;&#x5909;&#x3048;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;protoc&#x81EA;&#x4F53;&#x306F;&#x5F15;&#x6570;&#x3067;&#x6307;&#x5B9A;&#x3059;&#x308C;&#x3070;3&#x306E;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30E9;&#x3067;2&#x3092;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x306A;&#x306F;&#x305A;&#xFF1F;(&#x8A73;&#x7D30;&#x672A;&#x8ABF;&#x67FB;)&#x306A;&#x306E;&#x3067;&#x3001;plugin.sbt&#x306E;libraryDependencies&#x306E;&#x6BB5;&#x968E;&#x3067;&#x3001;&#x308F;&#x3056;&#x3068;&#x53E4;&#x3044;version&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x901A;&#x5E38;&#x306A;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
-</blockquote>
-<blockquote id="fn_4">
-<sup>4</sup>. &#x306A;&#x304A;&#x304B;&#x3064;&#x3001;Key&#x306E;&#x540D;&#x524D;&#x304C;&#x885D;&#x7A81;&#x3057;&#x3066;&#x3044;&#x308B;<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#x21A9;</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. Python&#x306E;version3&#x7CFB;&#x3067;&#x306F;&#x52D5;&#x304B;&#x306A;&#x3044;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;2&#x7CFB;&#x3092;&#x5165;&#x308C;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#x3069;&#x306E;version&#x3067;&#x52D5;&#x304F;&#x304B;&#x306E;&#x8A73;&#x7D30;&#x306F;&#x628A;&#x63E1;&#x3067;&#x304D;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x5C11;&#x306A;&#x304F;&#x3068;&#x3082;2.7&#x3067;&#x52D5;&#x3044;&#x305F;&#x4F8B;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+<sup>2</sup>. Python&#x306E;version3&#x7CFB;&#x3067;&#x306F;&#x52D5;&#x304B;&#x306A;&#x3044;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;2&#x7CFB;&#x3092;&#x5165;&#x308C;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#x3069;&#x306E;version&#x3067;&#x52D5;&#x304F;&#x304B;&#x306E;&#x8A73;&#x7D30;&#x306F;&#x628A;&#x63E1;&#x3067;&#x304D;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x5C11;&#x306A;&#x304F;&#x3068;&#x3082;2.7&#x3067;&#x52D5;&#x3044;&#x305F;&#x4F8B;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
 </blockquote>
 
                     
