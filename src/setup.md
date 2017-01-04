@@ -40,6 +40,7 @@ PB.targets in Compile := Seq(
 - `PB.gens.java` は、Javaコードを生成する場合の設定です。Javaコードが必要ないならこの行はいりません
 - `javaConversions=true` は、JavaのclassとScalaのclassの総合変換用メソッドを追加する場合です
 - 古いversionとは色々と書き方が変わったので注意してください <https://scalapb.github.io/migrating.html>
+- `(sourceManaged in Compile).value` だけでは、他のコード生成系のpluginと組み合わせた場合に不具合が生じるため、さらにサブディレクトリを指定しています <https://github.com/thesamet/sbt-protoc/issues/6>
 
 
 [^plugin-sbt]: これはsbtの一般的な話ですが、`plugin.sbt`というファイル名は単なる慣習であり、`project/`ディレクトリの下で`.sbt`という拡張子ならば、`a.sbt`や`foo.sbt`など、どんな名前でも構いません
