@@ -30,27 +30,29 @@ final case class User(
     id: Long = 0L,
     name: String = ""
     ) extends com.trueaccord.scalapb.GeneratedMessage with com.trueaccord.scalapb.Message[User] with com.trueaccord.lenses.Updatable[User] {
-    @transient
-    lazy val serializedSize: Int = ??? // 実装省略
-    def writeTo(output: com.google.protobuf.CodedOutputStream): Unit = ??? // 実装省略
-    def mergeFrom(__input: com.google.protobuf.CodedInputStream): User = ??? // 実装省略
+    final override def serializedSize: Int = ??? // 実装省略
+    def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): Unit = ??? // 実装省略
+    def mergeFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): example.user.User = ??? // 実装省略
     def withId(__v: Long): User = copy(id = __v)
     def withName(__v: String): User = copy(name = __v)
-    def getField(__field: com.google.protobuf.Descriptors.FieldDescriptor): Any = ??? // 実装省略
-    def companion = User
+    def getField(__field: _root_.com.google.protobuf.Descriptors.FieldDescriptor): scala.Any = ??? // 実装省略
+    override def toString: String = _root_.com.trueaccord.scalapb.TextFormat.printToUnicodeString(this)
+    def companion = example.user.User
 }
 
-object User extends com.trueaccord.scalapb.GeneratedMessageCompanion[User]  {
-  implicit def messageCompanion: com.trueaccord.scalapb.GeneratedMessageCompanion[User]  = this
-  def fromFieldsMap(__fieldsMap: Map[com.google.protobuf.Descriptors.FieldDescriptor, Any]): User = ??? // 実装省略
-  def descriptor: com.google.protobuf.Descriptors.Descriptor = UserProto.descriptor.getMessageTypes.get(0)
-  def messageCompanionForField(__field: com.google.protobuf.Descriptors.FieldDescriptor): com.trueaccord.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__field)
-  def enumCompanionForField(__field: com.google.protobuf.Descriptors.FieldDescriptor): com.trueaccord.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__field)
-  lazy val defaultInstance = User(
+object User extends com.trueaccord.scalapb.GeneratedMessageCompanion[example.user.User] with com.trueaccord.scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] {
+  implicit def messageCompanion: com.trueaccord.scalapb.GeneratedMessageCompanion[example.user.User] with com.trueaccord.scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] = this
+  def toJavaProto(scalaPbSource: example.user.User): example.UserOuterClass.User = ??? // 実装省略
+  def fromJavaProto(javaPbSource: example.UserOuterClass.User): example.user.User = ??? // 実装省略
+  def fromFieldsMap(__fieldsMap: scala.collection.immutable.Map[_root_.com.google.protobuf.Descriptors.FieldDescriptor, scala.Any]): example.user.User = ??? // 実装省略
+  def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = UserProto.javaDescriptor.getMessageTypes.get(0)
+  def messageCompanionForField(__field: _root_.com.google.protobuf.Descriptors.FieldDescriptor): _root_.com.trueaccord.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__field)
+  def enumCompanionForField(__field: _root_.com.google.protobuf.Descriptors.FieldDescriptor): _root_.com.trueaccord.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__field)
+  lazy val defaultInstance = example.user.User(
   )
-  implicit class UserLens[UpperPB](_l: com.trueaccord.lenses.Lens[UpperPB, User]) extends com.trueaccord.lenses.ObjectLens[UpperPB, User](_l) {
-    def id: com.trueaccord.lenses.Lens[UpperPB, Long] = field(_.id)((c_, f_) => c_.copy(id = f_))
-    def name: com.trueaccord.lenses.Lens[UpperPB, String] = field(_.name)((c_, f_) => c_.copy(name = f_))
+  implicit class UserLens[UpperPB](_l: _root_.com.trueaccord.lenses.Lens[UpperPB, example.user.User]) extends _root_.com.trueaccord.lenses.ObjectLens[UpperPB, example.user.User](_l) {
+    def id: _root_.com.trueaccord.lenses.Lens[UpperPB, Long] = field(_.id)((c_, f_) => c_.copy(id = f_))
+    def name: _root_.com.trueaccord.lenses.Lens[UpperPB, String] = field(_.name)((c_, f_) => c_.copy(name = f_))
   }
   final val ID_FIELD_NUMBER = 1
   final val NAME_FIELD_NUMBER = 2
