@@ -17,6 +17,7 @@ val root = project.in(file(".")).settings(
   TextLint.settings,
   LinkTest.settings,
   libraryDependencies += sbtDependency.value,
+  tutScalacOptions ++= "-deprecation" :: Nil,
   resolvers += Classpaths.sbtPluginReleases,
   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.3"),
   libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % com.trueaccord.scalapb.compiler.Version.scalapbVersion,
