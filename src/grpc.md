@@ -36,7 +36,7 @@ ScalaPB 0.5.26までは、上記の依存の設定のみでOKでしたが、0.5.
 以下は、ひとまずgrpc-javaのすべての依存を追加する場合です。
 
 ```tut:silent
-libraryDependencies += "io.grpc" % "grpc-all" % "1.0.1"
+libraryDependencies += "io.grpc" % "grpc-all" % "1.0.3"
 ```
 
 grpc-allを追加するのではなく、もう少し細かく依存を選ぶことも可能です。詳細はgrpc-javaの公式のドキュメントを参照してください。
