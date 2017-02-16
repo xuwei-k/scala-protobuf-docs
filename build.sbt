@@ -22,7 +22,6 @@ val root = project.in(file(".")).settings(
   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.3"),
   libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % com.trueaccord.scalapb.compiler.Version.scalapbVersion,
   libraryDependencies ++= (
-    ("com.github.os72" % "protoc-jar" % "3.0.0.1") ::
     ("com.google.protobuf" % "protobuf-java-util" % "3.0.2") ::
     Nil
   ),
