@@ -35,8 +35,8 @@ object GitBook extends NpmCliBase {
     pluginInstall := printRun(Process(s"$gitbookBin install")),
     helpGitBook := printRun(Process(s"$gitbookBin help")),
     html := buildBook(Format.Html).dependsOn(tut).evaluated,
-    build <<= html.toTask(""),
+    build := html.toTask("").value,
     epub := buildBook(Format.Epub).dependsOn(tut).evaluated,
-    buildAll <<= epub.toTask("") dependsOn html.toTask("")
+    buildAll := epub.toTask("").dependsOn(html.toTask("")).value
   )
 }

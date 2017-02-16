@@ -28,5 +28,5 @@ val root = project.in(file(".")).settings(
   ),
   lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,
   testAll := Def.sequential(compile in Test, LinkTest.linkTest).value,
-  buildWithCheck := Def.sequential(lintAll, testAll, GitBook.build)
+  buildWithCheck := Def.sequential(lintAll, testAll, GitBook.build).value
 )
