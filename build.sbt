@@ -19,10 +19,10 @@ val root = project.in(file(".")).settings(
   libraryDependencies += sbtDependency.value,
   tutScalacOptions ++= "-deprecation" :: Nil,
   resolvers += Classpaths.sbtPluginReleases,
-  addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.3"),
+  addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.6"),
   libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % com.trueaccord.scalapb.compiler.Version.scalapbVersion,
   libraryDependencies ++= (
-    ("com.google.protobuf" % "protobuf-java-util" % "3.0.2") ::
+    ("com.google.protobuf" % "protobuf-java-util" % "3.1.0") ::
     Nil
   ),
   lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,
