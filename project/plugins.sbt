@@ -2,7 +2,7 @@ addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.4.8")
 
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.6")
 
-libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.0-pre1"
+libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.0-pre2"
 
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 
