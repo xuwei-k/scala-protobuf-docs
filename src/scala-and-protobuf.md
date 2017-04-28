@@ -69,7 +69,7 @@
 
 [^ScalaBuff-parser]: 具体的には、普通にScala標準のparser combinatorを使っている https://github.com/SandroGrzicic/ScalaBuff/blob/1.4.0/project/ScalaBuffBuild.scala#L52
 [^protobuf-parser]: protocol bufferの仕様のページはあまり厳密に書かれておらず、ちゃんと実装しようとするとC++の実装コードを読まないとならないため、必要ない限り独自にparserを書くべきではないと思われる https://developers.google.com/protocol-buffers/docs/reference/proto3-spec http://d.hatena.ne.jp/xuwei/20151012/1444617489
-[^protobuf-parser-cpp]: 公式のparserはC++で書かれている https://github.com/google/protobuf/blob/v3.1.0/src/google/protobuf/compiler/parser.cc
+[^protobuf-parser-cpp]: 公式のparserはC++で書かれている https://github.com/google/protobuf/blob/v3.2.0/src/google/protobuf/compiler/parser.cc
 [^protoc]: ここで言う`protoc`とは、protocol bufferの公式のコンパイラのこと。C++で書かれており、通常はmakeなどを使ってローカルにインストールしないといけない。
-[^protobuf-plugin]: protocol bufferのpluginに関しての詳細はここを参照 https://github.com/google/protobuf/blob/v3.1.0/src/google/protobuf/compiler/plugin.proto CodeGeneratorRequestを標準入力から受け取り、CodeGeneratorResponseを返す、というインターフェイス
+[^protobuf-plugin]: protocol bufferのpluginに関しての詳細はここを参照 https://github.com/google/protobuf/blob/v3.2.0/src/google/protobuf/compiler/plugin.proto CodeGeneratorRequestを標準入力から受け取り、CodeGeneratorResponseを返す、というインターフェイス
 [^scalacheck]: https://www.scalacheck.org/ property based testingと呼ばれる、テストデータを自動生成してテストする方式。あくまで、ScalaPB自体のテストにつかわれているだけなので、ScalaPBを単に使う側からすると直接関係はない。
