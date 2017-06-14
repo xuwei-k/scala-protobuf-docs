@@ -53,7 +53,7 @@
         data-chapter-title="セットアップ"
         data-filepath="setup.md"
         data-basepath="."
-        data-revision="Sun Jun 11 2017 12:59:23 GMT+0000 (UTC)"
+        data-revision="Wed Jun 14 2017 07:58:25 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -248,8 +248,10 @@ Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Pa
 <pre><code class="lang-scala"><span class="hljs-type">PB</span>.pythonExe := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// &#x3042;&#x304F;&#x307E;&#x3067;&#x4F8B;&#x306A;&#x306E;&#x3067;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;&#x5834;&#x6240;&#x3092;&#x6307;&#x5B9A;</span>
 </code></pre>
 <p>&#x6B21;&#x306B;<code>build.sbt</code>&#x3078;&#x306E;&#x8A2D;&#x5B9A;&#x306E;&#x8AAC;&#x660E;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-scala"><span class="hljs-type">PB</span>.targets in <span class="hljs-type">Compile</span> := <span class="hljs-type">Seq</span>(
-  <span class="hljs-type">PB</span>.gens.java -&gt; ((sourceManaged in <span class="hljs-type">Compile</span>).value / <span class="hljs-string">&quot;protobuf-java&quot;</span>),
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> com.trueaccord.scalapb.compiler.<span class="hljs-type">Version</span>.protobufVersion
+
+<span class="hljs-type">PB</span>.targets in <span class="hljs-type">Compile</span> := <span class="hljs-type">Seq</span>(
+  <span class="hljs-type">PB</span>.gens.java(protobufVersion) -&gt; ((sourceManaged in <span class="hljs-type">Compile</span>).value / <span class="hljs-string">&quot;protobuf-java&quot;</span>),
   scalapb.gen(javaConversions=<span class="hljs-literal">true</span>) -&gt; ((sourceManaged in <span class="hljs-type">Compile</span>).value / <span class="hljs-string">&quot;protobuf-scala&quot;</span>)
 )
 </code></pre>
