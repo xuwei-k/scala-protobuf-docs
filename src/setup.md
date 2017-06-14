@@ -28,8 +28,10 @@ PB.pythonExe := "C:\\Python27\\Python.exe" // あくまで例なので、イン�
 次に`build.sbt`への設定の説明をします。
 
 ```tut:silent
+import com.trueaccord.scalapb.compiler.Version.protobufVersion
+
 PB.targets in Compile := Seq(
-  PB.gens.java -> ((sourceManaged in Compile).value / "protobuf-java"),
+  PB.gens.java(protobufVersion) -> ((sourceManaged in Compile).value / "protobuf-java"),
   scalapb.gen(javaConversions=true) -> ((sourceManaged in Compile).value / "protobuf-scala")
 )
 ```

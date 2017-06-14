@@ -1,4 +1,5 @@
 import NpmCliBase._
+import com.trueaccord.scalapb.compiler.Version.protobufVersion
 
 val lintAll = taskKey[Unit]("lint text, html")
 val testAll = taskKey[Unit]("test scala, links")
@@ -7,7 +8,7 @@ val buildWithCheck = taskKey[Unit]("lintAll testAll build")
   // tutでsbtの設定を書く都合上、scalaVersionはわざと指定しないでsbtと同じ2.10.xを使う
 val root = project.in(file(".")).settings(
   PB.targets in Compile := Seq(
-    PB.gens.java -> (sourceManaged in Compile).value,
+    PB.gens.java(protobufVersion) -> (sourceManaged in Compile).value,
     scalapb.gen(javaConversions=true) -> (sourceManaged in Compile).value
   ),
   tutSettings,
