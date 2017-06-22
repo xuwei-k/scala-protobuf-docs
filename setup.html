@@ -53,7 +53,7 @@
         data-chapter-title="セットアップ"
         data-filepath="setup.md"
         data-basepath="."
-        data-revision="Wed Jun 14 2017 07:58:25 GMT+0000 (UTC)"
+        data-revision="Thu Jun 22 2017 07:12:15 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -238,13 +238,13 @@
                         <h1 id="&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;">&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;</h1>
 <p>sbt-protoc&#x81EA;&#x4F53;&#x306F;&#x3001;&#x3042;&#x304F;&#x307E;&#x3067;&#x3082;&#x901A;&#x5E38;&#x306E;sbt plugin&#x306A;&#x306E;&#x3067;&#x3001;&#x4ED6;&#x306E;sbt plugin&#x3068;&#x540C;&#x69D8;&#x3001;&#x307E;&#x305A;&#x306F;<code>project/plugin.sbt</code><sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;<code>addSbtPlugin</code>&#x3067;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;scalapb&#x3068;sbt-protoc&#x306F;&#x72EC;&#x7ACB;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;scalapb&#x306E;compilerplugin&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x3001;
 libraryDependencies&#x3068;&#x3057;&#x3066;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x3001;&#x666E;&#x901A;&#x306E;sbt plugin&#x3068;&#x306F;&#x9055;&#x3046;&#x5C11;&#x3057;&#x5909;&#x308F;&#x3063;&#x305F;&#x8A2D;&#x5B9A;&#x3082;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
-<pre><code class="lang-scala">addSbtPlugin(<span class="hljs-string">&quot;com.thesamet&quot;</span> % <span class="hljs-string">&quot;sbt-protoc&quot;</span> % <span class="hljs-string">&quot;0.99.8&quot;</span>)
+<pre><code class="lang-scala">addSbtPlugin(<span class="hljs-string">&quot;com.thesamet&quot;</span> % <span class="hljs-string">&quot;sbt-protoc&quot;</span> % <span class="hljs-string">&quot;0.99.9&quot;</span>)
 
 libraryDependencies += <span class="hljs-string">&quot;com.trueaccord.scalapb&quot;</span> %% <span class="hljs-string">&quot;compilerplugin&quot;</span> % <span class="hljs-string">&quot;0.6.0-pre5&quot;</span>
 </code></pre>
 <p>Windows&#x306E;&#x5834;&#x5408;&#x3001;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x306B;Python(2.x&#x7CFB;)&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;<sup><a href="#fn_2" id="reffn_2">2</a></sup>
 Mac&#x3084;Linux&#x3067;&#x306F;Python&#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
-Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Path&#x3092;&#x901A;&#x3059;&#x304B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B; <a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.8/src/main/scala/sbtprotoc/ProtocPlugin.scala#L24" target="_blank"><code>pythonExe</code></a> &#x3068;&#x3044;&#x3046;key&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Path&#x3092;&#x901A;&#x3059;&#x304B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B; <a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.9/src/main/scala/sbtprotoc/ProtocPlugin.scala#L24" target="_blank"><code>pythonExe</code></a> &#x3068;&#x3044;&#x3046;key&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <pre><code class="lang-scala"><span class="hljs-type">PB</span>.pythonExe := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// &#x3042;&#x304F;&#x307E;&#x3067;&#x4F8B;&#x306A;&#x306E;&#x3067;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;&#x5834;&#x6240;&#x3092;&#x6307;&#x5B9A;</span>
 </code></pre>
 <p>&#x6B21;&#x306B;<code>build.sbt</code>&#x3078;&#x306E;&#x8A2D;&#x5B9A;&#x306E;&#x8AAC;&#x660E;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
@@ -256,7 +256,7 @@ Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Pa
 )
 </code></pre>
 <ul>
-<li>sbt-protoc&#x306F;&#x3001;<a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.8/src/main/scala/sbtprotoc/ProtocPlugin.scala#L107" target="_blank">&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;</a> addSbtPlugin &#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x6709;&#x52B9;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<ul>
+<li>sbt-protoc&#x306F;&#x3001;<a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.9/src/main/scala/sbtprotoc/ProtocPlugin.scala#L54" target="_blank">&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;</a> addSbtPlugin &#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x6709;&#x52B9;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<ul>
 <li>&#x30DE;&#x30EB;&#x30C1;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5834;&#x5408;&#x306B;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&#x3051;&#x3067;&#x6709;&#x52B9;&#x306B;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x7121;&#x52B9;&#x306B;&#x3057;&#x305F;&#x3044;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;disablePlugins&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</li>
 </ul>
 </li>
