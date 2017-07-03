@@ -38,7 +38,7 @@
  - これ単体ではScalaのクラスのコード生成機能はない
    - つまりこれ単体で使う場合は、Javaコードを生成して使う、ということ
  - 以前ScalaPBはこれに依存していたが、0.5.43以降依存しなくなった
- - 最近[@xuwei-k](https://github.com/xuwei-k)はこれの[コミッターになりました](http://d.hatena.ne.jp/xuwei/20160114/1452790299)
+ - 最近[@xuwei-k](https://github.com/xuwei-k)はこれの[コミッターになりました](http://xuwei-k.hatenablog.com/entry/20160114/1452790299)
 
 - [sbt-cppp](https://github.com/Atry/sbt-cppp)
  - これもprotocを呼び出すのみで、Scalaコード生成機能なし
@@ -68,7 +68,7 @@
 
 
 [^ScalaBuff-parser]: 具体的には、普通にScala標準のparser combinatorを使っている https://github.com/SandroGrzicic/ScalaBuff/blob/1.4.0/project/ScalaBuffBuild.scala#L52
-[^protobuf-parser]: protocol bufferの仕様のページはあまり厳密に書かれておらず、ちゃんと実装しようとするとC++の実装コードを読まないとならないため、必要ない限り独自にparserを書くべきではないと思われる https://developers.google.com/protocol-buffers/docs/reference/proto3-spec http://d.hatena.ne.jp/xuwei/20151012/1444617489
+[^protobuf-parser]: protocol bufferの仕様のページはあまり厳密に書かれておらず、ちゃんと実装しようとするとC++の実装コードを読まないとならないため、必要ない限り独自にparserを書くべきではないと思われる https://developers.google.com/protocol-buffers/docs/reference/proto3-spec http://xuwei-k.hatenablog.com/entry/20151012/1444617489
 [^protobuf-parser-cpp]: 公式のparserはC++で書かれている https://github.com/google/protobuf/blob/v3.3.1/src/google/protobuf/compiler/parser.cc
 [^protoc]: ここで言う`protoc`とは、protocol bufferの公式のコンパイラのこと。C++で書かれており、通常はmakeなどを使ってローカルにインストールしないといけない。
 [^protobuf-plugin]: protocol bufferのpluginに関しての詳細はここを参照 https://github.com/google/protobuf/blob/v3.3.1/src/google/protobuf/compiler/plugin.proto CodeGeneratorRequestを標準入力から受け取り、CodeGeneratorResponseを返す、というインターフェイス
