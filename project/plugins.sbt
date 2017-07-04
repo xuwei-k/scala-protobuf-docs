@@ -1,6 +1,6 @@
 addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.4.8")
 
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.10")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.11")
 
 libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.0"
 

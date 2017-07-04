@@ -12,14 +12,14 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
 ```tut:silent
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.10")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.11")
 
 libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.0"
 ```
 
 Windowsの場合、ローカルにPython(2.x系)のインストールが必要です。[^python-version]
 MacやLinuxではPythonは必要ありません。
-Pythonのインストール後、Pathを通すか、以下のように [`pythonExe`](https://github.com/thesamet/sbt-protoc/blob/v0.99.10/src/main/scala/sbtprotoc/ProtocPlugin.scala#L24) というkeyを設定してください。
+Pythonのインストール後、Pathを通すか、以下のように [`pythonExe`](https://github.com/thesamet/sbt-protoc/blob/v0.99.11/src/main/scala/sbtprotoc/ProtocPlugin.scala#L24) というkeyを設定してください。
 
 ```tut:silent
 PB.pythonExe := "C:\\Python27\\Python.exe" // あくまで例なので、インストールした場所を指定
@@ -36,7 +36,7 @@ PB.targets in Compile := Seq(
 )
 ```
 
-- sbt-protocは、[このような設定になっているため](https://github.com/thesamet/sbt-protoc/blob/v0.99.10/src/main/scala/sbtprotoc/ProtocPlugin.scala#L54) addSbtPlugin を設定しただけで、デフォルトで有効になります。
+- sbt-protocは、[このような設定になっているため](https://github.com/thesamet/sbt-protoc/blob/v0.99.11/src/main/scala/sbtprotoc/ProtocPlugin.scala#L54) addSbtPlugin を設定しただけで、デフォルトで有効になります。
  - マルチプロジェクトの場合に、一部のプロジェクトだけで有効にしたい場合は、無効にしたいプロジェクトでdisablePluginsを呼び出してください
 - sbt-protoc 0.99.5以前では、複数のScala versionでクロスビルドする場合に、微妙にバグがあるので注意してください <https://github.com/thesamet/sbt-protoc/pull/9>
 - `PB.gens.java` は、Javaコードを生成する場合の設定です。Javaコードが必要ないならこの行はいりません
