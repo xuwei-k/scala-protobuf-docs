@@ -18,14 +18,14 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
 ```tut:silent
-libraryDependencies += "com.google.protobuf" % "protobuf-java-util" % "3.3.1"
+libraryDependencies += "com.google.protobuf" % "protobuf-java-util" % "3.4.0"
 ```
 
 一旦Javaのオブジェクトに変換する都合上、`javaConversions`の設定も追加しておいてください。
 
 どちらの変換の場合も`com.google.protobuf.util.JsonFormat`というclassを使用するので、さきにそのソースコードへのリンクを貼っておきます。
 
-https://github.com/google/protobuf/blob/v3.3.1/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java
+https://github.com/google/protobuf/blob/v3.4.0/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java
 
 また、Jsonとの相互変換するための例として、さきほど別のページで出したUserのcase classを使います。
 
@@ -82,5 +82,5 @@ val parser = JsonFormat.parser().usingTypeRegistry(registry)
 ```
 
 [^scalapb-json]: 2016年4月頃に https://github.com/scalapb/scalapb-json4s というものが出来ましたが、個人的にjson4sは非公式なリフレクションAPI使っていたりするなどの理由でお勧めしたくないので、説明しません
-[^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.3.1/protobuf-java-util-3.3.1.pom
+[^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.4.0/protobuf-java-util-3.4.0.pom
 [^type-registry]: あるメッセージの `Descriptor` を `TypeRegistry` に追加すると、そのメッセージが定義されている .proto ファイルと、その .proto ファイルが（直接・間接的に）インポートしている .proto ファイルに定義されている全てのメッセージの `Descriptor` が同時に追加されます。
