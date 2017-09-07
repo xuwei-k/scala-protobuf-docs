@@ -24,6 +24,26 @@
 いくつかメソッドがありますが、基本的には普通のcase classです。
 型の対応(int64がscala.Longになる、など)は、基本的にJavaと同じなので、protocol bufferのJavaの公式ドキュメントを参照してください。
 
+シリアライズ、デシリアライズをするのに、一番良く使うメソッドは以下の2つです。
+最低限これら2つを覚えれば、シリアライズとデシリアライズが可能なはずです。
+
+```scala
+// 生成されたcase classに必ずある
+// 正確には親クラスに定義されているので呼び出せる
+def toByteArray: Array[Byte]
+```
+
+https://github.com/scalapb/ScalaPB/blob/v0.6.3/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L130
+
+```scala
+// 生成されたcase classのコンパニオンオブジェクトに必ずある
+// これも正確には親クラスに定義されているので呼び出せる
+def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
+```
+
+https://github.com/scalapb/ScalaPB/blob/v0.6.3/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L194
+
+
 ```scala
 @SerialVersionUID(0L)
 final case class User(
