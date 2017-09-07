@@ -53,7 +53,7 @@
         data-chapter-title="基本的な使い方"
         data-filepath="basic.md"
         data-basepath="."
-        data-revision="Mon Sep 04 2017 08:56:10 GMT+0000 (UTC)"
+        data-revision="Thu Sep 07 2017 10:33:28 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -259,6 +259,17 @@
 </code></pre>
 <p>&#x5927;&#x4F53;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;Scala&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_1" id="reffn_1">1</a></sup>
 &#x3044;&#x304F;&#x3064;&#x304B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x666E;&#x901A;&#x306E;case class&#x3067;&#x3059;&#x3002;&#x578B;&#x306E;&#x5BFE;&#x5FDC;(int64&#x304C;scala.Long&#x306B;&#x306A;&#x308B;&#x3001;&#x306A;&#x3069;)&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;Java&#x3068;&#x540C;&#x3058;&#x306A;&#x306E;&#x3067;&#x3001;protocol buffer&#x306E;Java&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p>&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3001;&#x30C7;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3092;&#x3059;&#x308B;&#x306E;&#x306B;&#x3001;&#x4E00;&#x756A;&#x826F;&#x304F;&#x4F7F;&#x3046;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;2&#x3064;&#x3067;&#x3059;&#x3002;&#x6700;&#x4F4E;&#x9650;&#x3053;&#x308C;&#x3089;2&#x3064;&#x3092;&#x899A;&#x3048;&#x308C;&#x3070;&#x3001;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3068;&#x30C7;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x304C;&#x53EF;&#x80FD;&#x306A;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-comment">// &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;case class&#x306B;&#x5FC5;&#x305A;&#x3042;&#x308B;</span>
+<span class="hljs-comment">// &#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toByteArray</span>:</span> <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]
+</code></pre>
+<p><a href="https://github.com/scalapb/ScalaPB/blob/v0.6.3/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L130" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.6.3/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L130</a></p>
+<pre><code class="lang-scala"><span class="hljs-comment">// &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;case class&#x306E;&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5FC5;&#x305A;&#x3042;&#x308B;</span>
+<span class="hljs-comment">// &#x3053;&#x308C;&#x3082;&#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parseFrom</span>(</span>s: <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]): &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;<span class="hljs-type">CaseClass</span>&#x306E;&#x578B;
+</code></pre>
+<p><a href="https://github.com/scalapb/ScalaPB/blob/v0.6.3/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L194" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.6.3/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L194</a></p>
 <pre><code class="lang-scala"><span class="hljs-annotation">@SerialVersionUID</span>(<span class="hljs-number">0</span>L)
 <span class="hljs-keyword">final</span> <span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>(</span>
     id: <span class="hljs-type">Long</span> = <span class="hljs-number">0</span>L,
