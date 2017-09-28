@@ -53,7 +53,7 @@
         data-chapter-title="Jsonとの相互変換"
         data-filepath="json.md"
         data-basepath="."
-        data-revision="Thu Sep 07 2017 10:33:28 GMT+0000 (UTC)"
+        data-revision="Thu Sep 28 2017 06:14:55 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -252,13 +252,12 @@
 <span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
 
 scala&gt; <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">user</span> =</span> example.user.<span class="hljs-type">User</span>(id = <span class="hljs-number">1</span>, name = <span class="hljs-string">&quot;foo&quot;</span>)
-user: example.user.<span class="hljs-type">User</span> = 
+user: example.user.<span class="hljs-type">User</span> =
 id: <span class="hljs-number">1</span>
 name: <span class="hljs-string">&quot;foo&quot;</span>
 
-
 scala&gt; <span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">userJson</span> =</span> <span class="hljs-type">JsonFormat</span>.printer.print(example.user.<span class="hljs-type">User</span>.toJavaProto(user))
-userJson: <span class="hljs-type">String</span> = 
+userJson: <span class="hljs-type">String</span> =
 {
   <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>,
   <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;foo&quot;</span>
@@ -277,7 +276,7 @@ ScalaPB&#x3067;&#x751F;&#x6210;&#x3055;&#x308C;&#x305F;&#x3069;&#x306E;case clas
 }
 </code></pre>
 <pre><code class="lang-scala">scala&gt; <span class="hljs-type">User</span>(id = <span class="hljs-number">2</span>, name = <span class="hljs-string">&quot;bar&quot;</span>).toJsonString
-res2: <span class="hljs-type">String</span> = 
+res2: <span class="hljs-type">String</span> =
 {
   <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
   <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
@@ -292,7 +291,7 @@ res2: <span class="hljs-type">String</span> =
 }
 </code></pre>
 <pre><code class="lang-scala">scala&gt; jsonStringToUser(userJson)
-res3: example.user.<span class="hljs-type">User</span> = 
+res3: example.user.<span class="hljs-type">User</span> =
 id: <span class="hljs-number">1</span>
 name: <span class="hljs-string">&quot;foo&quot;</span>
 </code></pre>
