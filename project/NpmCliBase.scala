@@ -1,5 +1,6 @@
 import sbt._
 import sbt.complete.Parser
+import scala.sys.process.ProcessBuilder
 
 object NpmCliBase extends NpmCliBase
 
@@ -19,6 +20,6 @@ trait NpmCliBase {
   }
 
   def printRun(p: ProcessBuilder) : Unit = {
-    p.lines foreach println
+    p.lineStream foreach println
   }
 }

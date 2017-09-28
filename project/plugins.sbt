@@ -1,15 +1,15 @@
-addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.4.8")
+addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.6.1")
 
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.11")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.12")
 
-libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.3"
+libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.6"
 
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 
 scalacOptions ++= (
   "-deprecation" ::
   "-unchecked" ::
-  "-Xlint" ::
+  "-Xlint:-unused,_" ::
   "-Ywarn-value-discard" ::
   "-language:existentials" ::
   "-language:higherKinds" ::

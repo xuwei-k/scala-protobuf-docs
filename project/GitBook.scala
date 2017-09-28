@@ -1,5 +1,6 @@
 import sbt._
-import tut.Plugin._
+import tut.TutPlugin.autoImport._
+import scala.sys.process.Process
 
 object GitBook extends NpmCliBase {
   val gitbookBin = nodeBin / "gitbook"
