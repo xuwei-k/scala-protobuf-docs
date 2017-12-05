@@ -1,5 +1,5 @@
 import NpmCliBase._
-import com.trueaccord.scalapb.compiler.Version.protobufVersion
+import scalapb.compiler.Version.protobufVersion
 
 val lintAll = taskKey[Unit]("lint text, html")
 val testAll = taskKey[Unit]("test scala, links")
@@ -21,9 +21,9 @@ val root = project.in(file(".")).settings(
   scalacOptions in Tut ++= "-deprecation" :: Nil,
   resolvers += Classpaths.sbtPluginReleases,
   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.13"),
-  libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % com.trueaccord.scalapb.compiler.Version.scalapbVersion,
+  libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % scalapb.compiler.Version.scalapbVersion,
   libraryDependencies ++= (
-    ("com.google.protobuf" % "protobuf-java-util" % com.trueaccord.scalapb.compiler.Version.protobufVersion) ::
+    ("com.google.protobuf" % "protobuf-java-util" % scalapb.compiler.Version.protobufVersion) ::
     Nil
   ),
   lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,

@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.6.7/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L130
+https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,38 +41,44 @@ https://github.com/scalapb/ScalaPB/blob/v0.6.7/scalapb-runtime/shared/src/main/s
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.6.7/scalapb-runtime/shared/src/main/scala/com/trueaccord/scalapb/GeneratedMessageCompanion.scala#L194
+https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L195
 
 
-```scala
+```tut:silent
+import scala.collection.JavaConverters._
+
 @SerialVersionUID(0L)
 final case class User(
     id: Long = 0L,
     name: String = ""
-    ) extends com.trueaccord.scalapb.GeneratedMessage with com.trueaccord.scalapb.Message[User] with com.trueaccord.lenses.Updatable[User] {
+    ) extends scalapb.GeneratedMessage with scalapb.Message[User] with scalapb.lenses.Updatable[User] {
     final override def serializedSize: Int = ??? // 実装省略
     def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): Unit = ??? // 実装省略
-    def mergeFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): example.user.User = ??? // 実装省略
+    def mergeFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): User = ??? // 実装省略
     def withId(__v: Long): User = copy(id = __v)
     def withName(__v: String): User = copy(name = __v)
-    def getField(__field: _root_.com.google.protobuf.Descriptors.FieldDescriptor): scala.Any = ??? // 実装省略
-    override def toString: String = _root_.com.trueaccord.scalapb.TextFormat.printToUnicodeString(this)
+    def getFieldByNumber(__fieldNumber: Int): scala.Any = ??? // 実装省略
+    def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = ??? // 実装省略
+    override def toString: String = _root_.scalapb.TextFormat.printToUnicodeString(this)
     def companion = example.user.User
 }
 
-object User extends com.trueaccord.scalapb.GeneratedMessageCompanion[example.user.User] with com.trueaccord.scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] {
-  implicit def messageCompanion: com.trueaccord.scalapb.GeneratedMessageCompanion[example.user.User] with com.trueaccord.scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] = this
+object User extends scalapb.GeneratedMessageCompanion[example.user.User] with scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] {
+  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[example.user.User] with scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] = this
   def toJavaProto(scalaPbSource: example.user.User): example.UserOuterClass.User = ??? // 実装省略
   def fromJavaProto(javaPbSource: example.UserOuterClass.User): example.user.User = ??? // 実装省略
   def fromFieldsMap(__fieldsMap: scala.collection.immutable.Map[_root_.com.google.protobuf.Descriptors.FieldDescriptor, scala.Any]): example.user.User = ??? // 実装省略
-  def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = UserProto.javaDescriptor.getMessageTypes.get(0)
-  def messageCompanionForField(__field: _root_.com.google.protobuf.Descriptors.FieldDescriptor): _root_.com.trueaccord.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__field)
-  def enumCompanionForField(__field: _root_.com.google.protobuf.Descriptors.FieldDescriptor): _root_.com.trueaccord.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__field)
+  implicit def messageReads: _root_.scalapb.descriptors.Reads[example.user.User] = ??? // 実装省略
+  def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = ??? // 実装省略
+  def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = ??? // 実装省略
+  def messageCompanionForFieldNumber(__number: Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
+  lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_]] = Seq.empty
+  def enumCompanionForFieldNumber(__fieldNumber: Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
   lazy val defaultInstance = example.user.User(
   )
-  implicit class UserLens[UpperPB](_l: _root_.com.trueaccord.lenses.Lens[UpperPB, example.user.User]) extends _root_.com.trueaccord.lenses.ObjectLens[UpperPB, example.user.User](_l) {
-    def id: _root_.com.trueaccord.lenses.Lens[UpperPB, Long] = field(_.id)((c_, f_) => c_.copy(id = f_))
-    def name: _root_.com.trueaccord.lenses.Lens[UpperPB, String] = field(_.name)((c_, f_) => c_.copy(name = f_))
+  implicit class UserLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, example.user.User]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, example.user.User](_l) {
+    def id: _root_.scalapb.lenses.Lens[UpperPB, Long] = field(_.id)((c_, f_) => c_.copy(id = f_))
+    def name: _root_.scalapb.lenses.Lens[UpperPB, String] = field(_.name)((c_, f_) => c_.copy(name = f_))
   }
   final val ID_FIELD_NUMBER = 1
   final val NAME_FIELD_NUMBER = 2

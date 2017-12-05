@@ -47,7 +47,7 @@ ScalaPBで生成されたどのcase classでも `toJsonString` というメソ�
 ```tut:silent
 import com.google.protobuf.MessageOrBuilder
 import com.google.protobuf.util.JsonFormat
-import com.trueaccord.scalapb.JavaProtoSupport
+import scalapb.JavaProtoSupport
 
 implicit class GeneratedMessageOps[A](val self: A) extends AnyVal {
   def toJsonString[B <: MessageOrBuilder](implicit A: JavaProtoSupport[A, B]): String =

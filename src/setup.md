@@ -14,7 +14,7 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```tut:silent
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.13")
 
-libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.7"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.7.0-rc6"
 ```
 
 Windowsの場合、ローカルにPython(2.x系)のインストールが必要です。[^python-version]
@@ -28,7 +28,7 @@ PB.pythonExe := "C:\\Python27\\Python.exe" // あくまで例なので、イン�
 次に`build.sbt`への設定の説明をします。
 
 ```tut:silent
-import com.trueaccord.scalapb.compiler.Version.protobufVersion
+import scalapb.compiler.Version.protobufVersion
 
 PB.targets in Compile := Seq(
   PB.gens.java(protobufVersion) -> ((sourceManaged in Compile).value / "protobuf-java"),
