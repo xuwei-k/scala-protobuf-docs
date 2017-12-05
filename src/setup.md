@@ -2,6 +2,7 @@
 
 sbt-protoc自体は、あくまでも通常のsbt pluginなので、他のsbt pluginと同様、
 まずは`project/plugin.sbt`[^plugin-sbt]に以下のように`addSbtPlugin`で追加します。
+sbtのversionは、これ書いてる現在の下記のversionでは、0.13.xと1.x系の両方をサポートしています。
 ただし、scalapbとsbt-protocは独立しているため、scalapbのcompilerpluginのモジュールを、
 libraryDependenciesとして追加するという、普通のsbt pluginとは違う少し変わった設定も必要です。
 
