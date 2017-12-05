@@ -53,7 +53,7 @@
         data-chapter-title="Jsonとの相互変換"
         data-filepath="json.md"
         data-basepath="."
-        data-revision="Tue Nov 28 2017 05:44:18 GMT+0000 (UTC)"
+        data-revision="Tue Dec 05 2017 05:54:18 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -268,7 +268,7 @@ userJson: <span class="hljs-type">String</span> =
 ScalaPB&#x3067;&#x751F;&#x6210;&#x3055;&#x308C;&#x305F;&#x3069;&#x306E;case class&#x3067;&#x3082; <code>toJsonString</code> &#x3068;&#x3044;&#x3046;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#xFF11;&#x3064;&#x3067;&#x5909;&#x63DB;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x306E;&#x3067;&#x304A;&#x3059;&#x3059;&#x3081;&#x3067;&#x3059;&#x3002;</p>
 <pre><code class="lang-scala"><span class="hljs-keyword">import</span> com.google.protobuf.<span class="hljs-type">MessageOrBuilder</span>
 <span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
-<span class="hljs-keyword">import</span> com.trueaccord.scalapb.<span class="hljs-type">JavaProtoSupport</span>
+<span class="hljs-keyword">import</span> scalapb.<span class="hljs-type">JavaProtoSupport</span>
 
 <span class="hljs-keyword">implicit</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GeneratedMessageOps</span>[</span><span class="hljs-type">A</span>](<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">self</span>:</span> <span class="hljs-type">A</span>) <span class="hljs-keyword">extends</span> <span class="hljs-type">AnyVal</span> {
   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toJsonString</span>[</span><span class="hljs-type">B</span> &lt;: <span class="hljs-type">MessageOrBuilder</span>](<span class="hljs-keyword">implicit</span> <span class="hljs-type">A</span>: <span class="hljs-type">JavaProtoSupport</span>[<span class="hljs-type">A</span>, <span class="hljs-type">B</span>]): <span class="hljs-type">String</span> =
