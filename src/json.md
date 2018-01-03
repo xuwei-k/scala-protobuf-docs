@@ -81,6 +81,6 @@ val registry = JsonFormat.TypeRegistry.newBuilder().add(example.user.User.descri
 val parser = JsonFormat.parser().usingTypeRegistry(registry)
 ```
 
-[^scalapb-json]: 2016年4月頃に https://github.com/scalapb/scalapb-json4s というものが出来ましたが、個人的にjson4sは非公式なリフレクションAPI使っていたりするなどの理由でお勧めしたくないので、説明しません。筆者がplay-jsonを使った変換用ライブラリ( https://github.com/xuwei-k/scalapb-playjson )は作っているので、もし使うなら scalapb-json4s よりも scalapb-playjson のほうがおすすめです。(scalapb-playjsonがしっかりメンテナンスされている限りにおいて)
+[^scalapb-json]: 2016年4月頃に https://github.com/scalapb/scalapb-json4s というものが出来ましたが、個人的にjson4sは非公式なリフレクションAPI使っていたりするなどの理由でお勧めしたくないので、説明しません。筆者がplay-jsonを使った変換用ライブラリ( https://github.com/scalapb-json/scalapb-playjson )は作っているので、もし使うなら scalapb-json4s よりも scalapb-playjson のほうがおすすめです。(scalapb-playjsonがしっかりメンテナンスされている限りにおいて)
 [^gson]: このprotobuf-java-utilは、googleのgsonやguavaというライブラリに依存します。依存が衝突しないように注意してください https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.4.0/protobuf-java-util-3.4.0.pom
 [^type-registry]: あるメッセージの `Descriptor` を `TypeRegistry` に追加すると、そのメッセージが定義されている .proto ファイルと、その .proto ファイルが（直接・間接的に）インポートしている .proto ファイルに定義されている全てのメッセージの `Descriptor` が同時に追加されます。
