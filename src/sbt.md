@@ -52,8 +52,8 @@ excludeFilter in PB.generate := {
 
 それ以外にもいろいろな種類のfilterが書けます。詳細は以下のコードなどを参考にしてください。
 
-- <https://github.com/sbt/io/blob/v1.1.1/io/src/main/scala/sbt/io/NameFilter.scala>
-- <https://github.com/sbt/sbt/blob/v1.0.4/main/src/main/scala/sbt/Keys.scala#L160>
+- <https://github.com/sbt/io/blob/v1.1.3/io/src/main/scala/sbt/io/NameFilter.scala>
+- <https://github.com/sbt/sbt/blob/v1.1.0/main/src/main/scala/sbt/Keys.scala#L169>
 
 ## jarの中に`.proto`ファイルを含める
 
