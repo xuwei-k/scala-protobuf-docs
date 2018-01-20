@@ -53,7 +53,7 @@
         data-chapter-title="基本的な使い方"
         data-filepath="basic.md"
         data-basepath="."
-        data-revision="Sat Jan 06 2018 14:00:00 GMT+0000 (UTC)"
+        data-revision="Sat Jan 20 2018 04:02:03 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -264,12 +264,12 @@
 <span class="hljs-comment">// &#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toByteArray</span>:</span> <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]
 </code></pre>
-<p><a href="https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131</a></p>
+<p><a href="https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc7/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc7/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131</a></p>
 <pre><code class="lang-scala"><span class="hljs-comment">// &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;case class&#x306E;&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5FC5;&#x305A;&#x3042;&#x308B;</span>
 <span class="hljs-comment">// &#x3053;&#x308C;&#x3082;&#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parseFrom</span>(</span>s: <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]): &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;<span class="hljs-type">CaseClass</span>&#x306E;&#x578B;
 </code></pre>
-<p><a href="https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L195" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L195</a></p>
+<p><a href="https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc7/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L204" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc7/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L204</a></p>
 <pre><code class="lang-scala"><span class="hljs-keyword">import</span> scala.collection.<span class="hljs-type">JavaConverters</span>._
 
 <span class="hljs-annotation">@SerialVersionUID</span>(<span class="hljs-number">0</span>L)
@@ -284,7 +284,7 @@
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withName</span>(</span>__v: <span class="hljs-type">String</span>): <span class="hljs-type">User</span> = copy(name = __v)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFieldByNumber</span>(</span>__fieldNumber: <span class="hljs-type">Int</span>): scala.<span class="hljs-type">Any</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getField</span>(</span>__field: _root_.scalapb.descriptors.<span class="hljs-type">FieldDescriptor</span>): _root_.scalapb.descriptors.<span class="hljs-type">PValue</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toString</span>:</span> <span class="hljs-type">String</span> = _root_.scalapb.<span class="hljs-type">TextFormat</span>.printToUnicodeString(<span class="hljs-keyword">this</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toProtoString</span>:</span> <span class="hljs-type">String</span> = _root_.scalapb.<span class="hljs-type">TextFormat</span>.printToUnicodeString(<span class="hljs-keyword">this</span>)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">companion</span> =</span> example.user.<span class="hljs-type">User</span>
 }
 
