@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131
+https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc7/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L131
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,7 +41,7 @@ https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/ma
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L195
+https://github.com/scalapb/ScalaPB/blob/v0.7.0-rc7/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L204
 
 
 ```tut:silent
@@ -59,7 +59,7 @@ final case class User(
     def withName(__v: String): User = copy(name = __v)
     def getFieldByNumber(__fieldNumber: Int): scala.Any = ??? // 実装省略
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = ??? // 実装省略
-    override def toString: String = _root_.scalapb.TextFormat.printToUnicodeString(this)
+    def toProtoString: String = _root_.scalapb.TextFormat.printToUnicodeString(this)
     def companion = example.user.User
 }
 
