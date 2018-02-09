@@ -39,7 +39,13 @@ ScalaPB 0.5.26までは、上記の依存の設定のみでOKでしたが、0.5.
 libraryDependencies += "io.grpc" % "grpc-all" % scalapb.compiler.Version.grpcJavaVersion
 ```
 
-grpc-allを追加するのではなく、もう少し細かく依存を選ぶことも可能です。詳細はgrpc-javaの公式のドキュメントを参照してください。
+grpc-allを追加するのではなく、もう少し細かく依存を選ぶことも可能です。
+例えば、Android環境以外での普通の用途では "grpc-netty" を使うことになるはずです。
+また、grpc-nettyはnettyの4.1系に依存しているため、基本的にnetty 4.0系に依存しているライブラリと同時に使えません(例: play 2.5, async-http-client 2.0 系)
+そういう場合には "grpc-netty-shaded" というものを使用することにより、衝突する問題を回避可能です。(grpc-netty-shadedはgrpc-java 1.9から)
+https://github.com/grpc/grpc-java/pull/2485
+
+その他、詳細はgrpc-javaの公式のドキュメントを参照してください。
 
 ## サンプル
 
