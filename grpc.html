@@ -53,7 +53,7 @@
         data-chapter-title="gRPC"
         data-filepath="grpc.md"
         data-basepath="."
-        data-revision="Mon Feb 05 2018 04:32:43 GMT+0000 (UTC)"
+        data-revision="Fri Feb 09 2018 06:29:22 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -251,7 +251,10 @@ Protocol Buffers&#x4EE5;&#x5916;&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x308B;
 <p>ScalaPB 0.5.26&#x307E;&#x3067;&#x306F;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x4F9D;&#x5B58;&#x306E;&#x8A2D;&#x5B9A;&#x306E;&#x307F;&#x3067;OK&#x3067;&#x3057;&#x305F;&#x304C;&#x3001;0.5.27&#x4EE5;&#x964D;&#x306F;&#x8FFD;&#x52A0;&#x3067;&#x8A2D;&#x5B9A;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306F;&#x3001;&#x3072;&#x3068;&#x307E;&#x305A;grpc-java&#x306E;&#x3059;&#x3079;&#x3066;&#x306E;&#x4F9D;&#x5B58;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x5834;&#x5408;&#x3067;&#x3059;&#x3002;</p>
 <pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;io.grpc&quot;</span> % <span class="hljs-string">&quot;grpc-all&quot;</span> % scalapb.compiler.<span class="hljs-type">Version</span>.grpcJavaVersion
 </code></pre>
-<p>grpc-all&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x3082;&#x3046;&#x5C11;&#x3057;&#x7D30;&#x304B;&#x304F;&#x4F9D;&#x5B58;&#x3092;&#x9078;&#x3076;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;&#x8A73;&#x7D30;&#x306F;grpc-java&#x306E;&#x516C;&#x5F0F;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p>grpc-all&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x3082;&#x3046;&#x5C11;&#x3057;&#x7D30;&#x304B;&#x304F;&#x4F9D;&#x5B58;&#x3092;&#x9078;&#x3076;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;Android&#x74B0;&#x5883;&#x4EE5;&#x5916;&#x3067;&#x306E;&#x666E;&#x901A;&#x306E;&#x7528;&#x9014;&#x3067;&#x306F; &quot;grpc-netty&quot; &#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;&#x307E;&#x305F;&#x3001;grpc-netty&#x306F;netty&#x306E;4.1&#x7CFB;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;netty 4.0&#x7CFB;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3068;&#x540C;&#x6642;&#x306B;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;(&#x4F8B;: play 2.5, async-http-client 2.0 &#x7CFB;)
+&#x305D;&#x3046;&#x3044;&#x3046;&#x5834;&#x5408;&#x306B;&#x306F; &quot;grpc-netty-shaded&quot; &#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x308A;&#x3001;&#x885D;&#x7A81;&#x3059;&#x308B;&#x554F;&#x984C;&#x3092;&#x56DE;&#x907F;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;(grpc-netty-shaded&#x306F;grpc-java 1.9&#x304B;&#x3089;)
+<a href="https://github.com/grpc/grpc-java/pull/2485" target="_blank">https://github.com/grpc/grpc-java/pull/2485</a></p>
+<p>&#x305D;&#x306E;&#x4ED6;&#x3001;&#x8A73;&#x7D30;&#x306F;grpc-java&#x306E;&#x516C;&#x5F0F;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <h2 id="&#x30B5;&#x30F3;&#x30D7;&#x30EB;">&#x30B5;&#x30F3;&#x30D7;&#x30EB;</h2>
 <p>&#x4EE5;&#x4E0B;&#x306B;&#x3001;&#x516C;&#x5F0F;&#x306E;gRPC&#x306E;Java&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x3001;ScalaPB&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;Scala&#x306B;&#x7FFB;&#x8A33;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;<sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x3002;</p>
 <p><a href="https://github.com/xuwei-k/grpc-scala-sample" target="_blank">https://github.com/xuwei-k/grpc-scala-sample</a></p>
