@@ -5,7 +5,7 @@
   "description": "scala protobuf docs",
   "repository": {
     "type": "git",
-    "url": "http://github.com/xuwei-k/scala-protobuf-docs"
+    "url": "https://github.com/xuwei-k/scala-protobuf-docs"
   },
   "scripts": {
     "prepublish": "gitbook install"

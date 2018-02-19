@@ -2,14 +2,14 @@
 
 ## gRPCとは
 
-gRPCとは、[2015年2月にGoogleが発表](http://googledevjp.blogspot.jp/2015/03/http2-rpc-grpc.html)した、http2上のRPCプロトコルです。
+gRPCとは、[2015年2月にGoogleが発表](https://developers-jp.googleblog.com/2015/03/http2-rpc-grpc.html)した、http2上のRPCプロトコルです。
 gRPCそのものは、シリアライザ部分が入れ替え可能な仕様らしいですが、
 デフォルトではProtocol Buffersが使用され、gRPC自体がまだそこまで成熟していないこともあり、
 Protocol Buffers以外が使用されることはあまり多くないようです。
 
 ここではgRPC自体の詳しい説明はしないので、以下の公式サイトなどを参考にしてください。
 
-http://www.grpc.io/
+https://grpc.io
 
 ## ScalaPBとgRPC
 
@@ -57,7 +57,7 @@ https://github.com/xuwei-k/grpc-scala-sample
 - `.proto`ファイルやリソースファイルをできるだけコピーしないようにするために、`sourceDirectory in PB.protobufConfig` や `unmanagedResourceDirectories in Compile` などの設定をScala側に追加している
 
 といったことをしていますが、それ以外は特別変わったことをしていない、一般的なプロジェクト構成になっているはずです。
-公式のJavaのサンプルには、こちら http://www.grpc.io/docs/tutorials/basic/java.html の公式のチュートリアルで解説されているものが含まれています。
+公式のJavaのサンプルには、こちら https://grpc.io/docs/tutorials/basic/java.html の公式のチュートリアルで解説されているものが含まれています。
 
 以下のようなことが可能になっているはずなので、実際にsbt runをして確認してみてください。
 

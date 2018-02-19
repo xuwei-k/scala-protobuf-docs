@@ -21,7 +21,7 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
  - 環境ごとのprotocのバイナリを1つのjarにまとめたもの
  - sbt-protocがデフォルトでこれに依存している
 - [protobuf-scala-runtime](https://github.com/scalapb/protobuf-scala-runtime)
- - 主に[scala-js](http://www.scala-js.org/)対応のために、一部の公式のprotobuf-java[^protobuf-java]のclassをScalaで再実装したもの
+ - 主に[scala-js](https://www.scala-js.org/)対応のために、一部の公式のprotobuf-java[^protobuf-java]のclassをScalaで再実装したもの
  - scala-jsでない場合は、公式のprotobufを使わずにこちらを使うメリットは特にないと思われるので、scala-jsを使わないなら通常必要ない
 - [fastparse](https://github.com/lihaoyi/fastparse)
  - version0.5.19以降実行時に依存
@@ -39,6 +39,6 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
 
 [^scalapb-and-plugin]: 単にクロスビルドやScalaのversionの都合上、リポジトリが分かれていたほうがいい、という判断だと思われる
 [^lens]: つまり、使う必要がなければLensは使わなくてよいです
-[^protobuf-java]: これのこと http://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/ https://github.com/google/protobuf/tree/v3.5.1/java
+[^protobuf-java]: これのこと https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/ https://github.com/google/protobuf/tree/v3.5.1/java
 [^java-text-format-1]: https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java
 [^java-text-format-2]: https://github.com/scalapb/ScalaPB/commit/44af26eae9
