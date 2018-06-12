@@ -15,6 +15,7 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
  - ネストしたcase classの一部を更新する場合などに便利
  - 実装は1ファイルだけで、百数十行程度でかなり少ない
  - 自動でLens関連のメソッドが追加されるが、**Lensを理解しないとScalaPBが使えないというわけではない**ので、あまり怖がる必要はない[^lens]
+ - 2018年5月頃に、ScalaPB本体のリポジトリに統合された https://github.com/scalapb/ScalaPB/commit/d3623520d4c
 - [sbt-protobuf](https://github.com/sbt/sbt-protobuf)
  - sbt-scalapbが依存しているが、sbt-scalapb自体が非推奨になったため、関係なくなった
 - [protoc-jar](https://github.com/os72/protoc-jar)
