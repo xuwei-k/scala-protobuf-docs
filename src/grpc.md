@@ -66,4 +66,4 @@ https://github.com/xuwei-k/grpc-scala-sample
 - serverもclientもScalaで接続
 
 
-[^scala-version]: このサンプルコードは、Scala2.10だとコンパイルが通りません。 http://xuwei-k.hatenablog.com/entry/20151208/1449568614 Scala2.10で動かしたい場合は `ServerBuilder` ではなく `NettyServerBuilder` を直接使うか、`asInstanceOf` でキャストしてください
+[^scala-version]: このサンプルコードは、Scala2.10だとコンパイルが通りません。 https://xuwei-k.hatenablog.com/entry/20151208/1449568614 Scala2.10で動かしたい場合は `ServerBuilder` ではなく `NettyServerBuilder` を直接使うか、`asInstanceOf` でキャストしてください
