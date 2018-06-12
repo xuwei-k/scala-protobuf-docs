@@ -6,7 +6,7 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
 
 - [ScalaPB](https://github.com/scalapb/ScalaPB)
  - ScalaPB本体のリポジトリ
- - protocol bufferの公式のparserからASTを受け取って、Scalaコードを生成する本体
+ - protocol buffersの公式のparserからASTを受け取って、Scalaコードを生成する本体
 - [sbt-scalapb](https://github.com/scalapb/sbt-scalapb)
  - ScalaPBをsbtから使うためのpluginだが、非推奨になって、 <https://github.com/scalapb/protoc-bridge>, <https://github.com/thesamet/sbt-protoc> に置き換わった
 - [Lenses](https://github.com/scalapb/Lenses)

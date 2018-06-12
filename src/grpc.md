@@ -20,7 +20,7 @@ ScalaPBは、version 0.5.18からgRPC用のコード生成に対応していま�
 ScalaPBでは、serviceの定義があると自動でgRPC用のコード生成がされます。
 しかしランタイムの追加が必要です。
 
-現状では、通常のprotocol bufferを使う場合の設定に加えて、以下のlibraryDependenciesを追加します。
+現状では、通常のprotocol buffersを使う場合の設定に加えて、以下のlibraryDependenciesを追加します。
 
 ```tut:invisible
 import sbt._, Keys._

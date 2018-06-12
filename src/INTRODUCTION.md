@@ -1,4 +1,4 @@
-# ScalaでのProtocol Buffer
+# ScalaでのProtocol Buffers
 
-これは、ScalaでProtocol Bufferを使用する方法についてのドキュメントです。
+これは、ScalaでProtocol Buffersを使用する方法についてのドキュメントです。
 また、Scalaでの[gRPC](https://grpc.io)についても解説します。
