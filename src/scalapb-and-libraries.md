@@ -22,8 +22,8 @@ ScalaPB自体の説明に入るまえに、関連する依存ライブラリや�
  - 環境ごとのprotocのバイナリを1つのjarにまとめたもの
  - sbt-protocがデフォルトでこれに依存している
 - [protobuf-scala-runtime](https://github.com/scalapb/protobuf-scala-runtime)
- - 主に[scala-js](https://www.scala-js.org/)対応のために、一部の公式のprotobuf-java[^protobuf-java]のclassをScalaで再実装したもの
- - scala-jsでない場合は、公式のprotobufを使わずにこちらを使うメリットは特にないと思われるので、scala-jsを使わないなら通常必要ない
+ - [scala-js](https://www.scala-js.org/)や[scala-native](http://www.scala-native.org/)対応のために、一部の公式のprotobuf-java[^protobuf-java]のclassをScalaで再実装したもの
+ - scala-jsやscala-nativeでない場合は、公式のprotobufを使わずにこちらを使うメリットは特にないと思われるので、JVMのみでScalaPBを使う場合は通常必要ない
 - [fastparse](https://github.com/lihaoyi/fastparse)
  - version0.5.19以降実行時に依存
  - protobufには、text formatと呼ばれるデータの表現の形式があり、そのフォーマットをparseするためのもの
