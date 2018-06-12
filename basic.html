@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>基本的な使い方 | ScalaでのProtocol Buffer</title>
+        <title>基本的な使い方 | ScalaでのProtocol Buffers</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -53,7 +53,7 @@
         data-chapter-title="基本的な使い方"
         data-filepath="basic.md"
         data-basepath="."
-        data-revision="Tue Jun 05 2018 02:22:41 GMT+0000 (UTC)"
+        data-revision="Tue Jun 12 2018 22:44:54 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -91,7 +91,7 @@
                         
                             <b>1.</b>
                         
-                        ScalaにおけるProtocol Buffer事情
+                        ScalaにおけるProtocol Buffers事情
                     </a>
             
             
@@ -225,7 +225,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >ScalaでのProtocol Buffer</a>
+        <a href="./" >ScalaでのProtocol Buffers</a>
     </h1>
 </div>
 
@@ -258,7 +258,7 @@
 }
 </code></pre>
 <p>&#x5927;&#x4F53;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;Scala&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_1" id="reffn_1">1</a></sup>
-&#x3044;&#x304F;&#x3064;&#x304B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x666E;&#x901A;&#x306E;case class&#x3067;&#x3059;&#x3002;&#x578B;&#x306E;&#x5BFE;&#x5FDC;(int64&#x304C;scala.Long&#x306B;&#x306A;&#x308B;&#x3001;&#x306A;&#x3069;)&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;Java&#x3068;&#x540C;&#x3058;&#x306A;&#x306E;&#x3067;&#x3001;protocol buffer&#x306E;Java&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+&#x3044;&#x304F;&#x3064;&#x304B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x666E;&#x901A;&#x306E;case class&#x3067;&#x3059;&#x3002;&#x578B;&#x306E;&#x5BFE;&#x5FDC;(int64&#x304C;scala.Long&#x306B;&#x306A;&#x308B;&#x3001;&#x306A;&#x3069;)&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;Java&#x3068;&#x540C;&#x3058;&#x306A;&#x306E;&#x3067;&#x3001;protocol buffers&#x306E;Java&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <p>&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3001;&#x30C7;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3092;&#x3059;&#x308B;&#x306E;&#x306B;&#x3001;&#x4E00;&#x756A;&#x826F;&#x304F;&#x4F7F;&#x3046;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;2&#x3064;&#x3067;&#x3059;&#x3002;&#x6700;&#x4F4E;&#x9650;&#x3053;&#x308C;&#x3089;2&#x3064;&#x3092;&#x899A;&#x3048;&#x308C;&#x3070;&#x3001;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3068;&#x30C7;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x304C;&#x53EF;&#x80FD;&#x306A;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
 <pre><code class="lang-scala"><span class="hljs-comment">// &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;case class&#x306B;&#x5FC5;&#x305A;&#x3042;&#x308B;</span>
 <span class="hljs-comment">// &#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
