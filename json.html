@@ -53,7 +53,7 @@
         data-chapter-title="Jsonとの相互変換"
         data-filepath="json.md"
         data-basepath="."
-        data-revision="Tue Jun 12 2018 22:44:54 GMT+0000 (UTC)"
+        data-revision="Tue Jul 10 2018 00:53:52 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -274,7 +274,7 @@ ScalaPB&#x3067;&#x751F;&#x6210;&#x3055;&#x308C;&#x305F;&#x3069;&#x306E;case clas
 }
 </code></pre>
 <pre><code class="lang-scala">scala&gt; <span class="hljs-type">User</span>(id = <span class="hljs-number">2</span>, name = <span class="hljs-string">&quot;bar&quot;</span>).toJsonString
-res2: <span class="hljs-type">String</span> =
+res1: <span class="hljs-type">String</span> =
 {
   <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
   <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
@@ -289,7 +289,7 @@ res2: <span class="hljs-type">String</span> =
 }
 </code></pre>
 <pre><code class="lang-scala">scala&gt; jsonStringToUser(userJson)
-res3: example.user.<span class="hljs-type">User</span> = <span class="hljs-type">User</span>(<span class="hljs-number">1</span>,foo)
+res2: example.user.<span class="hljs-type">User</span> = <span class="hljs-type">User</span>(<span class="hljs-number">1</span>,foo)
 </code></pre>
 <p>JSON &#x306B; <a href="https://github.com/google/protobuf/blob/master/src/google/protobuf/any.proto" target="_blank">Any</a> &#x578B;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306B;&#x306F;&#x3001;&#x305D;&#x306E; Any &#x3067;&#x4F7F;&#x308F;&#x308C;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E; <code>Descriptor</code> &#x3092;&#x6CE8;&#x5165;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;Any &#x306B; <code>User</code> &#x3092;&#x683C;&#x7D0D;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x69CB;&#x7BC9;&#x3057;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_3" id="reffn_3">3</a></sup></p>
 <pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">registry</span> =</span> <span class="hljs-type">JsonFormat</span>.<span class="hljs-type">TypeRegistry</span>.newBuilder().add(example.user.<span class="hljs-type">User</span>.descriptor).build()
