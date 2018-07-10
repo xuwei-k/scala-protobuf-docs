@@ -1,4 +1,4 @@
-addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.6.1")
+addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.6.5")
 
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.18")
 
