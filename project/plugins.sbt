@@ -1,8 +1,8 @@
-addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.6.5")
+addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.6.9")
 
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.18")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.19")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.8.0-RC2"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.8.2"
 
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 
