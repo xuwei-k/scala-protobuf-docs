@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.9.0-M1/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L138
+https://github.com/scalapb/ScalaPB/blob/v0.9.0-M3/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L138
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,7 +41,7 @@ https://github.com/scalapb/ScalaPB/blob/v0.9.0-M1/scalapb-runtime/shared/src/mai
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.9.0-M1/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L211
+https://github.com/scalapb/ScalaPB/blob/v0.9.0-M3/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L211
 
 
 ```tut:silent
@@ -72,7 +72,7 @@ object User extends scalapb.GeneratedMessageCompanion[example.user.User] with sc
   def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = ??? // 実装省略
   def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = ??? // 実装省略
   def messageCompanionForFieldNumber(__number: Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
-  lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_]] = Seq.empty
+  lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] = Seq.empty
   def enumCompanionForFieldNumber(__fieldNumber: Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
   lazy val defaultInstance = example.user.User(
   )
