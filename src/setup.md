@@ -13,9 +13,9 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
 ```tut:silent
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.20")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.21")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.9.0-M4"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.9.0-M6"
 ```
 
 Windowsの場合、sbt-protoc 0.99.15より古いversionではローカルにPython(2.x系)のインストールが必要です。[^python-version]
