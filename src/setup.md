@@ -13,7 +13,7 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
 ```tut:silent
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.21")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.23")
 
 libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.9.0-M6"
 ```
