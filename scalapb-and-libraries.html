@@ -1,242 +1,259 @@
+
 <!DOCTYPE HTML>
-<html lang="en" >
-    
+<html lang="" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>ScalaPBと関連ライブラリやツール | ScalaでのProtocol Buffers</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ScalaPBと関連ライブラリやツール · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+    
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
-        
     
+        
     
 
         
     
     
-    <link rel="next" href="./setup.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="setup.html" />
     
     
-    <link rel="prev" href="./scala-and-protobuf.html" />
+    <link rel="prev" href="scala-and-protobuf.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="2"
-        data-chapter-title="ScalaPBと関連ライブラリやツール"
-        data-filepath="scalapb-and-libraries.md"
-        data-basepath="."
-        data-revision="Wed Aug 08 2018 01:54:57 GMT+0000 (UTC)"
-        data-innerlanguage="">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="./index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="scala-and-protobuf.html">
-            
-                
-                    <a href="./scala-and-protobuf.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        ScalaにおけるProtocol Buffers事情
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="2" data-path="scalapb-and-libraries.html">
-            
-                
-                    <a href="./scalapb-and-libraries.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        ScalaPBと関連ライブラリやツール
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="setup.html">
-            
-                
-                    <a href="./setup.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        セットアップ
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="basic.html">
-            
-                
-                    <a href="./basic.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        基本的な使い方
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="sbt.html">
-            
-                
-                    <a href="./sbt.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        sbtの設定のカスタマイズ
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="json.html">
-            
-                
-                    <a href="./json.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Jsonとの相互変換
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="grpc.html">
-            
-                
-                    <a href="./grpc.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        gRPC
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="other_references.html">
-            
-                
-                    <a href="./other_references.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.</b>
-                        
-                        その他資料
-                    </a>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Published with GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="scala-and-protobuf.html">
+            
+                <a href="scala-and-protobuf.html">
+            
+                    
+                    ScalaにおけるProtocol Buffers事情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="scalapb-and-libraries.html">
+            
+                <a href="scalapb-and-libraries.html">
+            
+                    
+                    ScalaPBと関連ライブラリやツール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="setup.html">
+            
+                <a href="setup.html">
+            
+                    
+                    セットアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    基本的な使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="sbt.html">
+            
+                <a href="sbt.html">
+            
+                    
+                    sbtの設定のカスタマイズ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    Jsonとの相互変換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="grpc.html">
+            
+                <a href="grpc.html">
+            
+                    
+                    gRPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="other_references.html">
+            
+                <a href="other_references.html">
+            
+                    
+                    その他資料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >ScalaでのProtocol Buffers</a>
+        <a href="." >ScalaPBと関連ライブラリやツール</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="scalapb&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;">ScalaPB&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;</h1>
-<p>ScalaPB&#x81EA;&#x4F53;&#x306E;&#x8AAC;&#x660E;&#x306B;&#x5165;&#x308B;&#x307E;&#x3048;&#x306B;&#x3001;&#x95A2;&#x9023;&#x3059;&#x308B;&#x4F9D;&#x5B58;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;&#x3067;&#x304D;&#x308C;&#x3070;&#x8AAD;&#x3093;&#x3067;&#x304A;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x3068;&#x306B;&#x304B;&#x304F;&#x3059;&#x3050;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x4EBA;&#x306F;&#x3001;&#x3053;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3092;&#x3068;&#x3070;&#x3057;&#x3066;&#x6B21;&#x306E;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x306B;&#x9032;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="scalapb&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;">ScalaPB&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;</h1>
+<p>ScalaPB&#x81EA;&#x4F53;&#x306E;&#x8AAC;&#x660E;&#x306B;&#x5165;&#x308B;&#x307E;&#x3048;&#x306B;&#x3001;&#x95A2;&#x9023;&#x3059;&#x308B;&#x4F9D;&#x5B58;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3067;&#x304D;&#x308C;&#x3070;&#x8AAD;&#x3093;&#x3067;&#x304A;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x3068;&#x306B;&#x304B;&#x304F;&#x3059;&#x3050;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x4EBA;&#x306F;&#x3001;&#x3053;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3092;&#x3068;&#x3070;&#x3057;&#x3066;&#x6B21;&#x306E;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x306B;&#x9032;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <ul>
 <li><a href="https://github.com/scalapb/ScalaPB" target="_blank">ScalaPB</a><ul>
 <li>ScalaPB&#x672C;&#x4F53;&#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;</li>
@@ -252,7 +269,7 @@
 <li>Lens&#x3068;&#x3044;&#x3046;&#x306E;&#x306F;&#x3001;Haskell&#x754C;&#x9688;&#x306A;&#x3069;&#x3092;&#x4E2D;&#x5FC3;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x95A2;&#x6570;&#x578B;&#x306E;&#x30C6;&#x30AF;&#x30CB;&#x30C3;&#x30AF;</li>
 <li>&#x30CD;&#x30B9;&#x30C8;&#x3057;&#x305F;case class&#x306E;&#x4E00;&#x90E8;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x5834;&#x5408;&#x306A;&#x3069;&#x306B;&#x4FBF;&#x5229;</li>
 <li>&#x5B9F;&#x88C5;&#x306F;1&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3060;&#x3051;&#x3067;&#x3001;&#x767E;&#x6570;&#x5341;&#x884C;&#x7A0B;&#x5EA6;&#x3067;&#x304B;&#x306A;&#x308A;&#x5C11;&#x306A;&#x3044;</li>
-<li>&#x81EA;&#x52D5;&#x3067;Lens&#x95A2;&#x9023;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x304C;&#x3001;<strong>Lens&#x3092;&#x7406;&#x89E3;&#x3057;&#x306A;&#x3044;&#x3068;ScalaPB&#x304C;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x3044;</strong>&#x306E;&#x3067;&#x3001;&#x3042;&#x307E;&#x308A;&#x6016;&#x304C;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;<sup><a href="#fn_1" id="reffn_1">1</a></sup></li>
+<li>&#x81EA;&#x52D5;&#x3067;Lens&#x95A2;&#x9023;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x304C;&#x3001;<strong>Lens&#x3092;&#x7406;&#x89E3;&#x3057;&#x306A;&#x3044;&#x3068;ScalaPB&#x304C;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x3044;</strong>&#x306E;&#x3067;&#x3001;&#x3042;&#x307E;&#x308A;&#x6016;&#x304C;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;<sup><a href="#fn_lens" id="reffn_lens">lens</a></sup></li>
 <li>2018&#x5E74;5&#x6708;&#x9803;&#x306B;&#x3001;ScalaPB&#x672C;&#x4F53;&#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306B;&#x7D71;&#x5408;&#x3055;&#x308C;&#x305F; <a href="https://github.com/scalapb/ScalaPB/commit/d3623520d4c" target="_blank">https://github.com/scalapb/ScalaPB/commit/d3623520d4c</a></li>
 </ul>
 </li>
@@ -266,7 +283,7 @@
 </ul>
 </li>
 <li><a href="https://github.com/scalapb/protobuf-scala-runtime" target="_blank">protobuf-scala-runtime</a><ul>
-<li><a href="https://www.scala-js.org/" target="_blank">scala-js</a>&#x3084;<a href="http://www.scala-native.org/" target="_blank">scala-native</a>&#x5BFE;&#x5FDC;&#x306E;&#x305F;&#x3081;&#x306B;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x516C;&#x5F0F;&#x306E;protobuf-java<sup><a href="#fn_2" id="reffn_2">2</a></sup>&#x306E;class&#x3092;Scala&#x3067;&#x518D;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x3082;&#x306E;</li>
+<li><a href="https://www.scala-js.org/" target="_blank">scala-js</a>&#x3084;<a href="http://www.scala-native.org/" target="_blank">scala-native</a>&#x5BFE;&#x5FDC;&#x306E;&#x305F;&#x3081;&#x306B;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x516C;&#x5F0F;&#x306E;protobuf-java<sup><a href="#fn_protobuf-java" id="reffn_protobuf-java">protobuf-java</a></sup>&#x306E;class&#x3092;Scala&#x3067;&#x518D;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x3082;&#x306E;</li>
 <li>scala-js&#x3084;scala-native&#x3067;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x516C;&#x5F0F;&#x306E;protobuf&#x3092;&#x4F7F;&#x308F;&#x305A;&#x306B;&#x3053;&#x3061;&#x3089;&#x3092;&#x4F7F;&#x3046;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x306F;&#x7279;&#x306B;&#x306A;&#x3044;&#x3068;&#x601D;&#x308F;&#x308C;&#x308B;&#x306E;&#x3067;&#x3001;JVM&#x306E;&#x307F;&#x3067;ScalaPB&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x306F;&#x901A;&#x5E38;&#x5FC5;&#x8981;&#x306A;&#x3044;</li>
 </ul>
 </li>
@@ -274,7 +291,7 @@
 <li>version0.5.19&#x4EE5;&#x964D;&#x5B9F;&#x884C;&#x6642;&#x306B;&#x4F9D;&#x5B58;</li>
 <li>protobuf&#x306B;&#x306F;&#x3001;text format&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8868;&#x73FE;&#x306E;&#x5F62;&#x5F0F;&#x304C;&#x3042;&#x308A;&#x3001;&#x305D;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;&#x3092;parse&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x3082;&#x306E;</li>
 <li>text format&#x3092;&#x4F7F;&#x7528;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x95A2;&#x4FC2;&#x306A;&#x3044;&#x306E;&#x3067;&#x6C17;&#x306B;&#x3057;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;</li>
-<li>&#x3061;&#x306A;&#x307F;&#x306B;version0.5.18&#x4EE5;&#x524D;&#x3067;&#x306F;&#x3001;&#x4E00;&#x65E6;Java&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3057;&#x3066;Scala&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3044;&#x305F;&#x3002;<sup><a href="#fn_3" id="reffn_3">3</a></sup> <sup><a href="#fn_5" id="reffn_5">5</a></sup></li>
+<li>&#x3061;&#x306A;&#x307F;&#x306B;version0.5.18&#x4EE5;&#x524D;&#x3067;&#x306F;&#x3001;&#x4E00;&#x65E6;Java&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3057;&#x3066;Scala&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3044;&#x305F;&#x3002;<sup><a href="#fn_java-text-format-1" id="reffn_java-text-format-1">java-text-format-1</a></sup> <sup><a href="#fn_java-text-format-2" id="reffn_java-text-format-2">java-text-format-2</a></sup></li>
 </ul>
 </li>
 <li><a href="https://github.com/scalapb/protoc-bridge" target="_blank">protoc-bridge</a><ul>
@@ -290,70 +307,98 @@
 </ul>
 </li>
 </ul>
-<blockquote id="fn_4">
-<sup>4</sup>. &#x5358;&#x306B;&#x30AF;&#x30ED;&#x30B9;&#x30D3;&#x30EB;&#x30C9;&#x3084;Scala&#x306E;version&#x306E;&#x90FD;&#x5408;&#x4E0A;&#x3001;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x304C;&#x5206;&#x304B;&#x308C;&#x3066;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;&#x3001;&#x3068;&#x3044;&#x3046;&#x5224;&#x65AD;&#x3060;&#x3068;&#x601D;&#x308F;&#x308C;&#x308B;<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#x21A9;</a>
+<blockquote id="fn_scalapb-and-plugin">
+<sup>scalapb-and-plugin</sup>. &#x5358;&#x306B;&#x30AF;&#x30ED;&#x30B9;&#x30D3;&#x30EB;&#x30C9;&#x3084;Scala&#x306E;version&#x306E;&#x90FD;&#x5408;&#x4E0A;&#x3001;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x304C;&#x5206;&#x304B;&#x308C;&#x3066;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;&#x3001;&#x3068;&#x3044;&#x3046;&#x5224;&#x65AD;&#x3060;&#x3068;&#x601D;&#x308F;&#x308C;&#x308B;<a href="#reffn_scalapb-and-plugin" title="Jump back to footnote [scalapb-and-plugin] in the text."> &#x21A9;</a>
 </blockquote>
-<blockquote id="fn_1">
-<sup>1</sup>. &#x3064;&#x307E;&#x308A;&#x3001;&#x4F7F;&#x3046;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x3051;&#x308C;&#x3070;Lens&#x306F;&#x4F7F;&#x308F;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;&#x3067;&#x3059;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+<blockquote id="fn_lens">
+<sup>lens</sup>. &#x3064;&#x307E;&#x308A;&#x3001;&#x4F7F;&#x3046;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x3051;&#x308C;&#x3070;Lens&#x306F;&#x4F7F;&#x308F;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;&#x3067;&#x3059;<a href="#reffn_lens" title="Jump back to footnote [lens] in the text."> &#x21A9;</a>
 </blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. &#x3053;&#x308C;&#x306E;&#x3053;&#x3068; <a href="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/" target="_blank">https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/</a> <a href="https://github.com/google/protobuf/tree/v3.5.1/java" target="_blank">https://github.com/google/protobuf/tree/v3.5.1/java</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+<blockquote id="fn_protobuf-java">
+<sup>protobuf-java</sup>. &#x3053;&#x308C;&#x306E;&#x3053;&#x3068; <a href="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/" target="_blank">https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/</a> <a href="https://github.com/google/protobuf/tree/v3.5.1/java" target="_blank">https://github.com/google/protobuf/tree/v3.5.1/java</a><a href="#reffn_protobuf-java" title="Jump back to footnote [protobuf-java] in the text."> &#x21A9;</a>
 </blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. <a href="https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+<blockquote id="fn_java-text-format-1">
+<sup>java-text-format-1</sup>. <a href="https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java</a><a href="#reffn_java-text-format-1" title="Jump back to footnote [java-text-format-1] in the text."> &#x21A9;</a>
 </blockquote>
-<blockquote id="fn_5">
-<sup>5</sup>. <a href="https://github.com/scalapb/ScalaPB/commit/44af26eae9" target="_blank">https://github.com/scalapb/ScalaPB/commit/44af26eae9</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> &#x21A9;</a>
+<blockquote id="fn_java-text-format-2">
+<sup>java-text-format-2</sup>. <a href="https://github.com/scalapb/ScalaPB/commit/44af26eae9" target="_blank">https://github.com/scalapb/ScalaPB/commit/44af26eae9</a><a href="#reffn_java-text-format-2" title="Jump back to footnote [java-text-format-2] in the text."> &#x21A9;</a>
 </blockquote>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="./scala-and-protobuf.html" class="navigation navigation-prev " aria-label="Previous page: ScalaにおけるProtocol Buffers事情"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="./setup.html" class="navigation navigation-next " aria-label="Next page: セットアップ"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="scala-and-protobuf.html" class="navigation navigation-prev " aria-label="Previous page: ScalaにおけるProtocol Buffers事情">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="setup.html" class="navigation navigation-next " aria-label="Next page: セットアップ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/xuwei-k/scala-protobuf-docs/tree/master/src","label":"このページのソースコード"},"include-codeblock":{},"japanese-support":{},"footnote-string-to-number":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"next":{"title":"セットアップ","level":"1.4","depth":1,"path":"setup.md","ref":"setup.md","articles":[]},"previous":{"title":"ScalaにおけるProtocol Buffers事情","level":"1.2","depth":1,"path":"scala-and-protobuf.md","ref":"scala-and-protobuf.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"scalapb-and-libraries.md","mtime":"2019-10-02T03:13:30.905Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-10-02T03:14:04.590Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+
