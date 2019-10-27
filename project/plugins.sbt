@@ -1,6 +1,6 @@
 addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.6.13")
 
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.25")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.26")
 
 libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.9.4"
 
