@@ -78,7 +78,7 @@ jsonStringToUser(userJson)
 JSON に [Any](https://github.com/google/protobuf/blob/master/src/google/protobuf/any.proto) 型のメッセージが含まれている場合には、その Any で使われているメッセージの `Descriptor` を注入する必要があります。例えば、Any に `User` を格納している場合は以下のようにしてパーサーを構築します。[^type-registry]
 
 ```tut:silent
-val registry = JsonFormat.TypeRegistry.newBuilder().add(example.user.User.descriptor).build()
+val registry = JsonFormat.TypeRegistry.newBuilder().add(example.user.User.javaDescriptor).build()
 val parser = JsonFormat.parser().usingTypeRegistry(registry)
 ```
 

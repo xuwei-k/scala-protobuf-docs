@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L138
+https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,25 +41,25 @@ https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/s
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L211
+https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174
 
 
 ```tut:silent
-import scala.collection.JavaConverters._
-
 @SerialVersionUID(0L)
 final case class User(
-    id: Long = 0L,
-    name: String = ""
-    ) extends scalapb.GeneratedMessage with scalapb.Message[User] with scalapb.lenses.Updatable[User] {
-    final override def serializedSize: Int = ??? // 実装省略
-    def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): Unit = ??? // 実装省略
-    def mergeFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): User = ??? // 実装省略
-    def withId(__v: Long): User = copy(id = __v)
-    def withName(__v: String): User = copy(name = __v)
-    def getFieldByNumber(__fieldNumber: Int): scala.Any = ??? // 実装省略
+    id: _root_.scala.Long = 0L,
+    name: _root_.scala.Predef.String = "",
+    unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
+    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[User] {
+    override def serializedSize: _root_.scala.Int = ??? // 実装省略
+    def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): _root_.scala.Unit = ??? // 実装省略
+    def withId(__v: _root_.scala.Long): User = copy(id = __v)
+    def withName(__v: _root_.scala.Predef.String): User = copy(name = __v)
+    def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
+    def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
+    def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = ??? // 実装省略
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = ??? // 実装省略
-    def toProtoString: String = _root_.scalapb.TextFormat.printToUnicodeString(this)
+    def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
     def companion = example.user.User
 }
 
@@ -67,21 +67,28 @@ object User extends scalapb.GeneratedMessageCompanion[example.user.User] with sc
   implicit def messageCompanion: scalapb.GeneratedMessageCompanion[example.user.User] with scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] = this
   def toJavaProto(scalaPbSource: example.user.User): example.UserOuterClass.User = ??? // 実装省略
   def fromJavaProto(javaPbSource: example.UserOuterClass.User): example.user.User = ??? // 実装省略
-  def fromFieldsMap(__fieldsMap: scala.collection.immutable.Map[_root_.com.google.protobuf.Descriptors.FieldDescriptor, scala.Any]): example.user.User = ??? // 実装省略
-  implicit def messageReads: _root_.scalapb.descriptors.Reads[example.user.User] = ??? // 実装省略
+  def merge(`_message__`: example.user.User, `_input__`: _root_.com.google.protobuf.CodedInputStream): example.user.User = ??? // 実装省略
+  implicit def messageReads: _root_.scalapb.descriptors.Reads[example.user.User] = ??? 
   def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = ??? // 実装省略
   def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = ??? // 実装省略
-  def messageCompanionForFieldNumber(__number: Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
+  def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
   lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] = Seq.empty
-  def enumCompanionForFieldNumber(__fieldNumber: Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
+  def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
   lazy val defaultInstance = example.user.User(
+    id = 0L,
+    name = ""
   )
   implicit class UserLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, example.user.User]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, example.user.User](_l) {
-    def id: _root_.scalapb.lenses.Lens[UpperPB, Long] = field(_.id)((c_, f_) => c_.copy(id = f_))
-    def name: _root_.scalapb.lenses.Lens[UpperPB, String] = field(_.name)((c_, f_) => c_.copy(name = f_))
+    def id: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Long] = field(_.id)((c_, f_) => c_.copy(id = f_))
+    def name: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.name)((c_, f_) => c_.copy(name = f_))
   }
   final val ID_FIELD_NUMBER = 1
   final val NAME_FIELD_NUMBER = 2
+  def of(
+    id: _root_.scala.Long,
+    name: _root_.scala.Predef.String,
+    unknownFields: _root_.scalapb.UnknownFieldSet
+  ): _root_.example.user.User = ??? // 実装省略
 }
 ```
 
