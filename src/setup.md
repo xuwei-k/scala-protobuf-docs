@@ -15,7 +15,7 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```tut:silent
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.28")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.9.6"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.10.1"
 ```
 
 Windowsの場合、sbt-protoc 0.99.15より古いversionではローカルにPython(2.x系)のインストールが必要です。[^python-version]
@@ -28,7 +28,7 @@ PB.pythonExe := "C:\\Python27\\Python.exe" // あくまで例なので、イン�
 
 次に`build.sbt`への設定の説明をします。
 
-```tut:silent
+```scala
 import scalapb.compiler.Version.protobufVersion
 
 PB.targets in Compile := Seq(
