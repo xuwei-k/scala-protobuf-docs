@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103
+https://github.com/scalapb/ScalaPB/blob/v0.10.2/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,7 +41,7 @@ https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/s
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.9.6/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174
+https://github.com/scalapb/ScalaPB/blob/v0.10.2/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174
 
 
 ```tut:silent
@@ -86,8 +86,7 @@ object User extends scalapb.GeneratedMessageCompanion[example.user.User] with sc
   final val NAME_FIELD_NUMBER = 2
   def of(
     id: _root_.scala.Long,
-    name: _root_.scala.Predef.String,
-    unknownFields: _root_.scalapb.UnknownFieldSet
+    name: _root_.scala.Predef.String
   ): _root_.example.user.User = ??? // 実装省略
 }
 ```
