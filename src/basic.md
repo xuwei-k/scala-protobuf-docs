@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.10.3/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103
+https://github.com/scalapb/ScalaPB/blob/v0.10.4/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,7 +41,7 @@ https://github.com/scalapb/ScalaPB/blob/v0.10.3/scalapb-runtime/shared/src/main/
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.10.3/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174
+https://github.com/scalapb/ScalaPB/blob/v0.10.4/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174
 
 
 ```tut:silent
