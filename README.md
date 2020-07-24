@@ -1,6 +1,6 @@
 # ScalaでProtobufを使用する方法
 
-[![Build Status](https://travis-ci.org/xuwei-k/scala-protobuf-docs.svg?branch=master)](https://travis-ci.org/xuwei-k/scala-protobuf-docs)
+[![Build Status](https://travis-ci.com/xuwei-k/scala-protobuf-docs.svg?branch=master)](https://travis-ci.com/xuwei-k/scala-protobuf-docs)
 
 <https://xuwei-k.github.io/scala-protobuf-docs/scala-protobuf-docs.epub>
 
