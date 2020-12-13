@@ -16,14 +16,6 @@ object GitBook extends NpmCliBase {
     val options = rawStringArg("<gitbook command>").parsed
     val command = s"$gitbookBin  ${format.command} $bookBuildDir --gitbook=3.2.2 $options"
     printRun(Process(command))
-
-    if(format == Format.Html) {
-      val cssPath = s"$bookBuildDir/_book/gitbook/style.css"
-      val src = IO.read(file(cssPath))
-      val modified = src.replace("text-rendering:optimizeLegibility;", "")
-      assert(src.length != modified.length, "CSSの削除に失敗？ " + src.length)
-      IO.write(file(cssPath), modified)
-    }
   }
 
   lazy val helpGitBook = taskKey[Unit]("help GitBook")
