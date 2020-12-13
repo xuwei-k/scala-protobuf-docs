@@ -3,12 +3,12 @@
 *~
 .DS_Store
 
-### gitbook ###
-gitbook/*.md
-gitbook/_book
-gitbook/book.epub
-gitbook/book.pdf
-gitbook/main/
+### honkit ###
+honkit/*.md
+honkit/_book
+honkit/book.epub
+honkit/book.pdf
+honkit/main/
 
 ### npm ###
 node_modules

@@ -2,8 +2,8 @@ import sbt._
 import tut.TutPlugin.autoImport._
 import scala.sys.process.Process
 
-object GitBook extends NpmCliBase {
-  val gitbookBin = nodeBin / "gitbook"
+object Honkit extends NpmCliBase {
+  val honkitBin = nodeBin / "honkit"
 
   sealed trait Format {def command: String}
   object Format {
@@ -13,19 +13,19 @@ object GitBook extends NpmCliBase {
   }
 
   def buildBook(format: Format) = Def.inputTask[Unit] {
-    val options = rawStringArg("<gitbook command>").parsed
-    val command = s"$gitbookBin  ${format.command} $bookBuildDir --gitbook=3.2.2 $options"
+    val options = rawStringArg("<honkit command>").parsed
+    val command = s"$honkitBin  ${format.command} $bookBuildDir $options"
     printRun(Process(command))
   }
 
-  lazy val helpGitBook = taskKey[Unit]("help GitBook")
-  lazy val build = taskKey[Unit]("build GitBook to html (an alias of html)")
-  lazy val html = inputKey[Unit]("build GitBook to html")
-  lazy val epub = inputKey[Unit]("build GitBook to epub")
-  lazy val buildAll = taskKey[Unit]("build GitBook to all format")
+  lazy val helpHonkit = taskKey[Unit]("help Honkit")
+  lazy val build = taskKey[Unit]("build Honkit to html (an alias of html)")
+  lazy val html = inputKey[Unit]("build Honkit to html")
+  lazy val epub = inputKey[Unit]("build Honkit to epub")
+  lazy val buildAll = taskKey[Unit]("build Honkit to all format")
 
   val settings = Seq(
-    helpGitBook := printRun(Process(s"$gitbookBin help")),
+    helpHonkit := printRun(Process(s"$honkitBin help")),
     html := buildBook(Format.Html).dependsOn(tut).evaluated,
     build := html.toTask("").value,
     epub := buildBook(Format.Epub).dependsOn(tut).evaluated,

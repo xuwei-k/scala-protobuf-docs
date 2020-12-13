@@ -14,7 +14,7 @@ val root = project.in(file(".")).settings(
   ),
   tutSourceDirectory := srcDir,
   tutTargetDirectory := compiledSrcDir,
-  GitBook.settings,
+  Honkit.settings,
   TextLint.settings,
   LinkTest.settings,
   libraryDependencies += sbtDependency.value,
@@ -28,5 +28,5 @@ val root = project.in(file(".")).settings(
   ),
   lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,
   testAll := Def.sequential(compile in Test, LinkTest.linkTest).value,
-  buildWithCheck := Def.sequential(lintAll, testAll, GitBook.build).value
+  buildWithCheck := Def.sequential(lintAll, testAll, Honkit.build).value
 ).enablePlugins(TutPlugin)
