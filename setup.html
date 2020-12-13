@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>セットアップ · GitBook</title>
+        <title>セットアップ · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="HonKit 3.6.15">
         
         
         
@@ -66,7 +65,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -212,8 +211,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -251,22 +250,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;">&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;</h1>
-<p>sbt-protoc&#x81EA;&#x4F53;&#x306F;&#x3001;&#x3042;&#x304F;&#x307E;&#x3067;&#x3082;&#x901A;&#x5E38;&#x306E;sbt plugin&#x306A;&#x306E;&#x3067;&#x3001;&#x4ED6;&#x306E;sbt plugin&#x3068;&#x540C;&#x69D8;&#x3001;
-&#x307E;&#x305A;&#x306F;<code>project/plugin.sbt</code><sup><a href="#fn_plugin-sbt" id="reffn_plugin-sbt">plugin-sbt</a></sup>&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;<code>addSbtPlugin</code>&#x3067;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;
-sbt&#x306E;version&#x306F;&#x3001;&#x3053;&#x308C;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x308B;&#x73FE;&#x5728;&#x306E;&#x4E0B;&#x8A18;&#x306E;version&#x3067;&#x306F;&#x3001;0.13.x&#x3068;1.x&#x7CFB;&#x306E;&#x4E21;&#x65B9;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
-&#x305F;&#x3060;&#x3057;&#x3001;scalapb&#x3068;sbt-protoc&#x306F;&#x72EC;&#x7ACB;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;scalapb&#x306E;compilerplugin&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x3001;
-libraryDependencies&#x3068;&#x3057;&#x3066;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x3001;&#x666E;&#x901A;&#x306E;sbt plugin&#x3068;&#x306F;&#x9055;&#x3046;&#x5C11;&#x3057;&#x5909;&#x308F;&#x3063;&#x305F;&#x8A2D;&#x5B9A;&#x3082;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+                                <h1 id="セットアップ">セットアップ</h1>
+<p>sbt-protoc自体は、あくまでも通常のsbt pluginなので、他のsbt pluginと同様、
+まずは<code>project/plugin.sbt</code><sup><a href="#fn_plugin-sbt" id="reffn_plugin-sbt">plugin-sbt</a></sup>に以下のように<code>addSbtPlugin</code>で追加します。
+sbtのversionは、これを書いている現在の下記のversionでは、0.13.xと1.x系の両方をサポートしています。
+ただし、scalapbとsbt-protocは独立しているため、scalapbのcompilerpluginのモジュールを、
+libraryDependenciesとして追加するという、普通のsbt pluginとは違う少し変わった設定も必要です。</p>
 <pre><code class="lang-scala">addSbtPlugin(<span class="hljs-string">&quot;com.thesamet&quot;</span> % <span class="hljs-string">&quot;sbt-protoc&quot;</span> % <span class="hljs-string">&quot;0.99.34&quot;</span>)
 
 libraryDependencies += <span class="hljs-string">&quot;com.thesamet.scalapb&quot;</span> %% <span class="hljs-string">&quot;compilerplugin&quot;</span> % <span class="hljs-string">&quot;0.10.9&quot;</span>
 </code></pre>
-<p>Windows&#x306E;&#x5834;&#x5408;&#x3001;sbt-protoc 0.99.15&#x3088;&#x308A;&#x53E4;&#x3044;version&#x3067;&#x306F;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x306B;Python(2.x&#x7CFB;)&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;<sup><a href="#fn_python-version" id="reffn_python-version">python-version</a></sup>
-Mac&#x3084;Linux&#x3067;&#x306F;Python&#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
-&#x53E4;&#x3044;version&#x306E;sbt-protoc&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x306F;Python&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5F8C;&#x3001;Path&#x3092;&#x901A;&#x3059;&#x304B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B; <a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.15/src/main/scala/sbtprotoc/ProtocPlugin.scala#L26" target="_blank"><code>pythonExe</code></a> &#x3068;&#x3044;&#x3046;key&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-scala"><span class="hljs-type">PB</span>.pythonExe := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// &#x3042;&#x304F;&#x307E;&#x3067;&#x4F8B;&#x306A;&#x306E;&#x3067;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;&#x5834;&#x6240;&#x3092;&#x6307;&#x5B9A;</span>
+<p>Windowsの場合、sbt-protoc 0.99.15より古いversionではローカルにPython(2.x系)のインストールが必要です。<sup><a href="#fn_python-version" id="reffn_python-version">python-version</a></sup>
+MacやLinuxではPythonは必要ありません。
+古いversionのsbt-protocを使う場合はPythonのインストール後、Pathを通すか、以下のように <a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.15/src/main/scala/sbtprotoc/ProtocPlugin.scala#L26" target="_blank"><code>pythonExe</code></a> というkeyを設定してください。</p>
+<pre><code class="lang-scala"><span class="hljs-type">PB</span>.pythonExe := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// あくまで例なので、インストールした場所を指定</span>
 </code></pre>
-<p>&#x6B21;&#x306B;<code>build.sbt</code>&#x3078;&#x306E;&#x8A2D;&#x5B9A;&#x306E;&#x8AAC;&#x660E;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>次に<code>build.sbt</code>への設定の説明をします。</p>
 <pre><code class="lang-scala"><span class="hljs-keyword">import</span> scalapb.compiler.<span class="hljs-type">Version</span>.protobufVersion
 
 <span class="hljs-type">PB</span>.targets in <span class="hljs-type">Compile</span> := <span class="hljs-type">Seq</span>(
@@ -275,21 +274,21 @@ Mac&#x3084;Linux&#x3067;&#x306F;Python&#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#
 )
 </code></pre>
 <ul>
-<li>sbt-protoc&#x306F;&#x3001;<a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.14/src/main/scala/sbtprotoc/ProtocPlugin.scala#L56" target="_blank">&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;</a> addSbtPlugin &#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x6709;&#x52B9;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<ul>
-<li>&#x30DE;&#x30EB;&#x30C1;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5834;&#x5408;&#x306B;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&#x3051;&#x3067;&#x6709;&#x52B9;&#x306B;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x7121;&#x52B9;&#x306B;&#x3057;&#x305F;&#x3044;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;disablePlugins&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</li>
+<li>sbt-protocは、<a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.14/src/main/scala/sbtprotoc/ProtocPlugin.scala#L56" target="_blank">このような設定になっているため</a> addSbtPlugin を設定しただけで、デフォルトで有効になります。<ul>
+<li>マルチプロジェクトの場合に、一部のプロジェクトだけで有効にしたい場合は、無効にしたいプロジェクトでdisablePluginsを呼び出してください</li>
 </ul>
 </li>
-<li>sbt-protoc 0.99.5&#x4EE5;&#x524D;&#x3067;&#x306F;&#x3001;&#x8907;&#x6570;&#x306E;Scala version&#x3067;&#x30AF;&#x30ED;&#x30B9;&#x30D3;&#x30EB;&#x30C9;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x3001;&#x5FAE;&#x5999;&#x306B;&#x30D0;&#x30B0;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="https://github.com/thesamet/sbt-protoc/pull/9" target="_blank">https://github.com/thesamet/sbt-protoc/pull/9</a></li>
-<li><code>PB.gens.java</code> &#x306F;&#x3001;Java&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x5834;&#x5408;&#x306E;&#x8A2D;&#x5B9A;&#x3067;&#x3059;&#x3002;Java&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x5FC5;&#x8981;&#x306A;&#x3044;&#x306A;&#x3089;&#x3053;&#x306E;&#x884C;&#x306F;&#x3044;&#x308A;&#x307E;&#x305B;&#x3093;</li>
-<li><code>javaConversions=true</code> &#x306F;&#x3001;Java&#x306E;class&#x3068;Scala&#x306E;class&#x306E;&#x7DCF;&#x5408;&#x5909;&#x63DB;&#x7528;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x5834;&#x5408;&#x3067;&#x3059;</li>
-<li>&#x53E4;&#x3044;version&#x3068;&#x306F;&#x8272;&#x3005;&#x3068;&#x66F8;&#x304D;&#x65B9;&#x304C;&#x5909;&#x308F;&#x3063;&#x305F;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; <a href="https://scalapb.github.io/migrating.html" target="_blank">https://scalapb.github.io/migrating.html</a></li>
-<li><code>(sourceManaged in Compile).value</code> &#x3060;&#x3051;&#x3067;&#x306F;&#x3001;&#x4ED6;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x7CFB;&#x306E;plugin&#x3068;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x305F;&#x5834;&#x5408;&#x306B;&#x4E0D;&#x5177;&#x5408;&#x304C;&#x751F;&#x3058;&#x308B;&#x305F;&#x3081;&#x3001;&#x3055;&#x3089;&#x306B;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059; <a href="https://github.com/thesamet/sbt-protoc/issues/6" target="_blank">https://github.com/thesamet/sbt-protoc/issues/6</a></li>
+<li>sbt-protoc 0.99.5以前では、複数のScala versionでクロスビルドする場合に、微妙にバグがあるので注意してください <a href="https://github.com/thesamet/sbt-protoc/pull/9" target="_blank">https://github.com/thesamet/sbt-protoc/pull/9</a></li>
+<li><code>PB.gens.java</code> は、Javaコードを生成する場合の設定です。Javaコードが必要ないならこの行はいりません</li>
+<li><code>javaConversions=true</code> は、JavaのclassとScalaのclassの総合変換用メソッドを追加する場合です</li>
+<li>古いversionとは色々と書き方が変わったので注意してください <a href="https://scalapb.github.io/migrating.html" target="_blank">https://scalapb.github.io/migrating.html</a></li>
+<li><code>(sourceManaged in Compile).value</code> だけでは、他のコード生成系のpluginと組み合わせた場合に不具合が生じるため、さらにサブディレクトリを指定しています <a href="https://github.com/thesamet/sbt-protoc/issues/6" target="_blank">https://github.com/thesamet/sbt-protoc/issues/6</a></li>
 </ul>
 <blockquote id="fn_plugin-sbt">
-<sup>plugin-sbt</sup>. &#x3053;&#x308C;&#x306F;sbt&#x306E;&#x4E00;&#x822C;&#x7684;&#x306A;&#x8A71;&#x3067;&#x3059;&#x304C;&#x3001;<code>plugin.sbt</code>&#x3068;&#x3044;&#x3046;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x306F;&#x5358;&#x306A;&#x308B;&#x6163;&#x7FD2;&#x3067;&#x3042;&#x308A;&#x3001;<code>project/</code>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x4E0B;&#x3067;<code>.sbt</code>&#x3068;&#x3044;&#x3046;&#x62E1;&#x5F35;&#x5B50;&#x306A;&#x3089;&#x3070;&#x3001;<code>a.sbt</code>&#x3084;<code>foo.sbt</code>&#x306A;&#x3069;&#x3001;&#x3069;&#x3093;&#x306A;&#x540D;&#x524D;&#x3067;&#x3082;&#x69CB;&#x3044;&#x307E;&#x305B;&#x3093;<a href="#reffn_plugin-sbt" title="Jump back to footnote [plugin-sbt] in the text."> &#x21A9;</a>
+<sup>plugin-sbt</sup>. これはsbtの一般的な話ですが、<code>plugin.sbt</code>というファイル名は単なる慣習であり、<code>project/</code>ディレクトリの下で<code>.sbt</code>という拡張子ならば、<code>a.sbt</code>や<code>foo.sbt</code>など、どんな名前でも構いません<a href="#reffn_plugin-sbt" title="Jump back to footnote [plugin-sbt] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_python-version">
-<sup>python-version</sup>. Python&#x306E;version3&#x7CFB;&#x3067;&#x306F;&#x52D5;&#x304B;&#x306A;&#x3044;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;2&#x7CFB;&#x3092;&#x5165;&#x308C;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#x3069;&#x306E;version&#x3067;&#x52D5;&#x304F;&#x304B;&#x306E;&#x8A73;&#x7D30;&#x306F;&#x628A;&#x63E1;&#x3067;&#x304D;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x5C11;&#x306A;&#x304F;&#x3068;&#x3082;2.7&#x3067;&#x52D5;&#x3044;&#x305F;&#x4F8B;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<a href="#reffn_python-version" title="Jump back to footnote [python-version] in the text."> &#x21A9;</a>
+<sup>python-version</sup>. Pythonのversion3系では動かない可能性があるため、2系を入れてください。どのversionで動くかの詳細は把握できていませんが、少なくとも2.7で動いた例があります。<a href="#reffn_python-version" title="Jump back to footnote [python-version] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -334,12 +333,56 @@ Mac&#x3084;Linux&#x3067;&#x306F;Python&#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"セットアップ","level":"1.4","depth":1,"next":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"previous":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"path":"scalapb-and-libraries.md","ref":"scalapb-and-libraries.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"setup.md","mtime":"2020-12-13T01:51:53.765Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-12-13T01:52:18.201Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"セットアップ","level":"1.4","depth":1,"next":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"previous":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"path":"scalapb-and-libraries.md","ref":"scalapb-and-libraries.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"setup.md","mtime":"2020-12-13T02:09:26.270Z","type":"markdown"},"gitbook":{"version":"3.6.15","time":"2020-12-13T02:09:26.838Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
@@ -357,10 +400,6 @@ Mac&#x3084;Linux&#x3067;&#x306F;Python&#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#
     
         
         <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

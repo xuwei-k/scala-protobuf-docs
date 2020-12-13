@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ScalaPBと関連ライブラリやツール · GitBook</title>
+        <title>ScalaPBと関連ライブラリやツール · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="HonKit 3.6.15">
         
         
         
@@ -66,7 +65,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -212,8 +211,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -251,76 +250,76 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="scalapb&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;">ScalaPB&#x3068;&#x95A2;&#x9023;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30C4;&#x30FC;&#x30EB;</h1>
-<p>ScalaPB&#x81EA;&#x4F53;&#x306E;&#x8AAC;&#x660E;&#x306B;&#x5165;&#x308B;&#x307E;&#x3048;&#x306B;&#x3001;&#x95A2;&#x9023;&#x3059;&#x308B;&#x4F9D;&#x5B58;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3084;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;
-&#x3067;&#x304D;&#x308C;&#x3070;&#x8AAD;&#x3093;&#x3067;&#x304A;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x3068;&#x306B;&#x304B;&#x304F;&#x3059;&#x3050;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x4EBA;&#x306F;&#x3001;&#x3053;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3092;&#x3068;&#x3070;&#x3057;&#x3066;&#x6B21;&#x306E;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x306B;&#x9032;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+                                <h1 id="scalapbと関連ライブラリやツール">ScalaPBと関連ライブラリやツール</h1>
+<p>ScalaPB自体の説明に入るまえに、関連する依存ライブラリやプロジェクトについて説明します。
+できれば読んでおいたほうがいいですが、とにかくすぐ使いたい人は、このページをとばして次のセットアップのページに進んでください。</p>
 <ul>
 <li><a href="https://github.com/scalapb/ScalaPB" target="_blank">ScalaPB</a><ul>
-<li>ScalaPB&#x672C;&#x4F53;&#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;</li>
-<li>protocol buffers&#x306E;&#x516C;&#x5F0F;&#x306E;parser&#x304B;&#x3089;AST&#x3092;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x3066;&#x3001;Scala&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x672C;&#x4F53;</li>
+<li>ScalaPB本体のリポジトリ</li>
+<li>protocol buffersの公式のparserからASTを受け取って、Scalaコードを生成する本体</li>
 </ul>
 </li>
 <li><a href="https://github.com/scalapb/sbt-scalapb" target="_blank">sbt-scalapb</a><ul>
-<li>ScalaPB&#x3092;sbt&#x304B;&#x3089;&#x4F7F;&#x3046;&#x305F;&#x3081;&#x306E;plugin&#x3060;&#x304C;&#x3001;&#x975E;&#x63A8;&#x5968;&#x306B;&#x306A;&#x3063;&#x3066;&#x3001; <a href="https://github.com/scalapb/protoc-bridge" target="_blank">https://github.com/scalapb/protoc-bridge</a>, <a href="https://github.com/thesamet/sbt-protoc" target="_blank">https://github.com/thesamet/sbt-protoc</a> &#x306B;&#x7F6E;&#x304D;&#x63DB;&#x308F;&#x3063;&#x305F;</li>
+<li>ScalaPBをsbtから使うためのpluginだが、非推奨になって、 <a href="https://github.com/scalapb/protoc-bridge" target="_blank">https://github.com/scalapb/protoc-bridge</a>, <a href="https://github.com/thesamet/sbt-protoc" target="_blank">https://github.com/thesamet/sbt-protoc</a> に置き換わった</li>
 </ul>
 </li>
 <li><a href="https://github.com/scalapb/Lenses" target="_blank">Lenses</a><ul>
-<li>ScalaPB&#x304C;&#x81EA;&#x52D5;&#x3067;&#x751F;&#x6210;&#x3059;&#x308B;case class&#x304C;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x5F37;&#x5236;&#x7684;&#x306B;&#x4F9D;&#x5B58;&#x3059;&#x308B;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;</li>
-<li>Lens&#x3068;&#x3044;&#x3046;&#x306E;&#x306F;&#x3001;Haskell&#x754C;&#x9688;&#x306A;&#x3069;&#x3092;&#x4E2D;&#x5FC3;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x95A2;&#x6570;&#x578B;&#x306E;&#x30C6;&#x30AF;&#x30CB;&#x30C3;&#x30AF;</li>
-<li>&#x30CD;&#x30B9;&#x30C8;&#x3057;&#x305F;case class&#x306E;&#x4E00;&#x90E8;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x5834;&#x5408;&#x306A;&#x3069;&#x306B;&#x4FBF;&#x5229;</li>
-<li>&#x5B9F;&#x88C5;&#x306F;1&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3060;&#x3051;&#x3067;&#x3001;&#x767E;&#x6570;&#x5341;&#x884C;&#x7A0B;&#x5EA6;&#x3067;&#x304B;&#x306A;&#x308A;&#x5C11;&#x306A;&#x3044;</li>
-<li>&#x81EA;&#x52D5;&#x3067;Lens&#x95A2;&#x9023;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x304C;&#x3001;<strong>Lens&#x3092;&#x7406;&#x89E3;&#x3057;&#x306A;&#x3044;&#x3068;ScalaPB&#x304C;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x3044;</strong>&#x306E;&#x3067;&#x3001;&#x3042;&#x307E;&#x308A;&#x6016;&#x304C;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;<sup><a href="#fn_lens" id="reffn_lens">lens</a></sup></li>
-<li>2018&#x5E74;5&#x6708;&#x9803;&#x306B;&#x3001;ScalaPB&#x672C;&#x4F53;&#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306B;&#x7D71;&#x5408;&#x3055;&#x308C;&#x305F; <a href="https://github.com/scalapb/ScalaPB/commit/d3623520d4c" target="_blank">https://github.com/scalapb/ScalaPB/commit/d3623520d4c</a></li>
+<li>ScalaPBが自動で生成するcase classがデフォルトで強制的に依存するライブラリ</li>
+<li>Lensというのは、Haskell界隈などを中心に使われる関数型のテクニック</li>
+<li>ネストしたcase classの一部を更新する場合などに便利</li>
+<li>実装は1ファイルだけで、百数十行程度でかなり少ない</li>
+<li>自動でLens関連のメソッドが追加されるが、<strong>Lensを理解しないとScalaPBが使えないというわけではない</strong>ので、あまり怖がる必要はない<sup><a href="#fn_lens" id="reffn_lens">lens</a></sup></li>
+<li>2018年5月頃に、ScalaPB本体のリポジトリに統合された <a href="https://github.com/scalapb/ScalaPB/commit/d3623520d4c" target="_blank">https://github.com/scalapb/ScalaPB/commit/d3623520d4c</a></li>
 </ul>
 </li>
 <li><a href="https://github.com/sbt/sbt-protobuf" target="_blank">sbt-protobuf</a><ul>
-<li>sbt-scalapb&#x304C;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x304C;&#x3001;sbt-scalapb&#x81EA;&#x4F53;&#x304C;&#x975E;&#x63A8;&#x5968;&#x306B;&#x306A;&#x3063;&#x305F;&#x305F;&#x3081;&#x3001;&#x95A2;&#x4FC2;&#x306A;&#x304F;&#x306A;&#x3063;&#x305F;</li>
+<li>sbt-scalapbが依存しているが、sbt-scalapb自体が非推奨になったため、関係なくなった</li>
 </ul>
 </li>
 <li><a href="https://github.com/os72/protoc-jar" target="_blank">protoc-jar</a><ul>
-<li>&#x74B0;&#x5883;&#x3054;&#x3068;&#x306E;protoc&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;1&#x3064;&#x306E;jar&#x306B;&#x307E;&#x3068;&#x3081;&#x305F;&#x3082;&#x306E;</li>
-<li>sbt-protoc&#x304C;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x3053;&#x308C;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;</li>
+<li>環境ごとのprotocのバイナリを1つのjarにまとめたもの</li>
+<li>sbt-protocがデフォルトでこれに依存している</li>
 </ul>
 </li>
 <li><a href="https://github.com/scalapb/protobuf-scala-runtime" target="_blank">protobuf-scala-runtime</a><ul>
-<li><a href="https://www.scala-js.org/" target="_blank">scala-js</a>&#x3084;<a href="http://www.scala-native.org/" target="_blank">scala-native</a>&#x5BFE;&#x5FDC;&#x306E;&#x305F;&#x3081;&#x306B;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x516C;&#x5F0F;&#x306E;protobuf-java<sup><a href="#fn_protobuf-java" id="reffn_protobuf-java">protobuf-java</a></sup>&#x306E;class&#x3092;Scala&#x3067;&#x518D;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x3082;&#x306E;</li>
-<li>scala-js&#x3084;scala-native&#x3067;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x516C;&#x5F0F;&#x306E;protobuf&#x3092;&#x4F7F;&#x308F;&#x305A;&#x306B;&#x3053;&#x3061;&#x3089;&#x3092;&#x4F7F;&#x3046;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x306F;&#x7279;&#x306B;&#x306A;&#x3044;&#x3068;&#x601D;&#x308F;&#x308C;&#x308B;&#x306E;&#x3067;&#x3001;JVM&#x306E;&#x307F;&#x3067;ScalaPB&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x306F;&#x901A;&#x5E38;&#x5FC5;&#x8981;&#x306A;&#x3044;</li>
+<li><a href="https://www.scala-js.org/" target="_blank">scala-js</a>や<a href="http://www.scala-native.org/" target="_blank">scala-native</a>対応のために、一部の公式のprotobuf-java<sup><a href="#fn_protobuf-java" id="reffn_protobuf-java">protobuf-java</a></sup>のclassをScalaで再実装したもの</li>
+<li>scala-jsやscala-nativeでない場合は、公式のprotobufを使わずにこちらを使うメリットは特にないと思われるので、JVMのみでScalaPBを使う場合は通常必要ない</li>
 </ul>
 </li>
 <li><a href="https://github.com/lihaoyi/fastparse" target="_blank">fastparse</a><ul>
-<li>version0.5.19&#x4EE5;&#x964D;&#x5B9F;&#x884C;&#x6642;&#x306B;&#x4F9D;&#x5B58;</li>
-<li>protobuf&#x306B;&#x306F;&#x3001;text format&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8868;&#x73FE;&#x306E;&#x5F62;&#x5F0F;&#x304C;&#x3042;&#x308A;&#x3001;&#x305D;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;&#x3092;parse&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x3082;&#x306E;</li>
-<li>text format&#x3092;&#x4F7F;&#x7528;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x95A2;&#x4FC2;&#x306A;&#x3044;&#x306E;&#x3067;&#x6C17;&#x306B;&#x3057;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;</li>
-<li>&#x3061;&#x306A;&#x307F;&#x306B;version0.5.18&#x4EE5;&#x524D;&#x3067;&#x306F;&#x3001;&#x4E00;&#x65E6;Java&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3057;&#x3066;Scala&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3044;&#x305F;&#x3002;<sup><a href="#fn_java-text-format-1" id="reffn_java-text-format-1">java-text-format-1</a></sup> <sup><a href="#fn_java-text-format-2" id="reffn_java-text-format-2">java-text-format-2</a></sup></li>
+<li>version0.5.19以降実行時に依存</li>
+<li>protobufには、text formatと呼ばれるデータの表現の形式があり、そのフォーマットをparseするためのもの</li>
+<li>text formatを使用しない場合は関係ないので気にしなくてよい</li>
+<li>ちなみにversion0.5.18以前では、一旦Javaのクラスのインスタンスを生成してScalaのクラスのインスタンスに変換していた。<sup><a href="#fn_java-text-format-1" id="reffn_java-text-format-1">java-text-format-1</a></sup> <sup><a href="#fn_java-text-format-2" id="reffn_java-text-format-2">java-text-format-2</a></sup></li>
 </ul>
 </li>
 <li><a href="https://github.com/scalapb/protoc-bridge" target="_blank">protoc-bridge</a><ul>
-<li>version0.5.19&#x304F;&#x3089;&#x3044;&#x307E;&#x3067;&#x306F;<a href="https://github.com/scalapb/ScalaPB" target="_blank">ScalaPB&#x306E;&#x672C;&#x4F53;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;</a>&#x306E;&#x4E2D;&#x306B;&#x3042;&#x3063;&#x305F;&#x90E8;&#x5206;</li>
-<li><a href="https://github.com/scalapb/ScalaPB/commit/ad6253260f474d" target="_blank">&#x591A;&#x5C11;&#x6C4E;&#x7528;&#x5316;&#x3055;&#x308C;&#x3066;&#x5225;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306B;&#x306A;&#x3063;&#x305F;</a></li>
-<li>&#x76F4;&#x63A5;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x306F;&#x3042;&#x307E;&#x308A;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x666E;&#x901A;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306F;&#x6C17;&#x306B;&#x3057;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;</li>
+<li>version0.5.19くらいまでは<a href="https://github.com/scalapb/ScalaPB" target="_blank">ScalaPBの本体リポジトリ</a>の中にあった部分</li>
+<li><a href="https://github.com/scalapb/ScalaPB/commit/ad6253260f474d" target="_blank">多少汎用化されて別リポジトリになった</a></li>
+<li>直接使うことはあまりないので、普通のユーザーは気にしなくてよい</li>
 </ul>
 </li>
 <li><a href="https://github.com/thesamet/sbt-protoc" target="_blank">sbt-protoc</a><ul>
-<li>ScalaPB&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x969B;&#x306B;&#x4F7F;&#x3046;sbt plugin</li>
-<li>&#x4F5C;&#x6210;&#x8005;&#x306F;ScalaPB&#x4F5C;&#x8005;&#x3068;&#x540C;&#x3058;</li>
-<li>ScalaPB&#x4EE5;&#x5916;&#x3067;&#x3082;&#x4F7F;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x3088;&#x3046;&#x306B;&#x3001;&#x6C4E;&#x7528;&#x7684;&#x306B;&#x4F5C;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;</li>
+<li>ScalaPBを使用する際に使うsbt plugin</li>
+<li>作成者はScalaPB作者と同じ</li>
+<li>ScalaPB以外でも使用可能なように、汎用的に作られている</li>
 </ul>
 </li>
 </ul>
 <blockquote id="fn_scalapb-and-plugin">
-<sup>scalapb-and-plugin</sup>. &#x5358;&#x306B;&#x30AF;&#x30ED;&#x30B9;&#x30D3;&#x30EB;&#x30C9;&#x3084;Scala&#x306E;version&#x306E;&#x90FD;&#x5408;&#x4E0A;&#x3001;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x304C;&#x5206;&#x304B;&#x308C;&#x3066;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;&#x3001;&#x3068;&#x3044;&#x3046;&#x5224;&#x65AD;&#x3060;&#x3068;&#x601D;&#x308F;&#x308C;&#x308B;<a href="#reffn_scalapb-and-plugin" title="Jump back to footnote [scalapb-and-plugin] in the text."> &#x21A9;</a>
+<sup>scalapb-and-plugin</sup>. 単にクロスビルドやScalaのversionの都合上、リポジトリが分かれていたほうがいい、という判断だと思われる<a href="#reffn_scalapb-and-plugin" title="Jump back to footnote [scalapb-and-plugin] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_lens">
-<sup>lens</sup>. &#x3064;&#x307E;&#x308A;&#x3001;&#x4F7F;&#x3046;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x3051;&#x308C;&#x3070;Lens&#x306F;&#x4F7F;&#x308F;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;&#x3067;&#x3059;<a href="#reffn_lens" title="Jump back to footnote [lens] in the text."> &#x21A9;</a>
+<sup>lens</sup>. つまり、使う必要がなければLensは使わなくてよいです<a href="#reffn_lens" title="Jump back to footnote [lens] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_protobuf-java">
-<sup>protobuf-java</sup>. &#x3053;&#x308C;&#x306E;&#x3053;&#x3068; <a href="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/" target="_blank">https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/</a> <a href="https://github.com/google/protobuf/tree/v3.5.1/java" target="_blank">https://github.com/google/protobuf/tree/v3.5.1/java</a><a href="#reffn_protobuf-java" title="Jump back to footnote [protobuf-java] in the text."> &#x21A9;</a>
+<sup>protobuf-java</sup>. これのこと <a href="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/" target="_blank">https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/</a> <a href="https://github.com/google/protobuf/tree/v3.5.1/java" target="_blank">https://github.com/google/protobuf/tree/v3.5.1/java</a><a href="#reffn_protobuf-java" title="Jump back to footnote [protobuf-java] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_java-text-format-1">
-<sup>java-text-format-1</sup>. <a href="https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java</a><a href="#reffn_java-text-format-1" title="Jump back to footnote [java-text-format-1] in the text."> &#x21A9;</a>
+<sup>java-text-format-1</sup>. <a href="https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.5.1/java/core/src/main/java/com/google/protobuf/TextFormat.java</a><a href="#reffn_java-text-format-1" title="Jump back to footnote [java-text-format-1] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_java-text-format-2">
-<sup>java-text-format-2</sup>. <a href="https://github.com/scalapb/ScalaPB/commit/44af26eae9" target="_blank">https://github.com/scalapb/ScalaPB/commit/44af26eae9</a><a href="#reffn_java-text-format-2" title="Jump back to footnote [java-text-format-2] in the text."> &#x21A9;</a>
+<sup>java-text-format-2</sup>. <a href="https://github.com/scalapb/ScalaPB/commit/44af26eae9" target="_blank">https://github.com/scalapb/ScalaPB/commit/44af26eae9</a><a href="#reffn_java-text-format-2" title="Jump back to footnote [java-text-format-2] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -365,12 +364,56 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"next":{"title":"セットアップ","level":"1.4","depth":1,"path":"setup.md","ref":"setup.md","articles":[]},"previous":{"title":"ScalaにおけるProtocol Buffers事情","level":"1.2","depth":1,"path":"scala-and-protobuf.md","ref":"scala-and-protobuf.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"scalapb-and-libraries.md","mtime":"2020-12-13T01:51:50.465Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-12-13T01:52:18.201Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"next":{"title":"セットアップ","level":"1.4","depth":1,"path":"setup.md","ref":"setup.md","articles":[]},"previous":{"title":"ScalaにおけるProtocol Buffers事情","level":"1.2","depth":1,"path":"scala-and-protobuf.md","ref":"scala-and-protobuf.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"scalapb-and-libraries.md","mtime":"2020-12-13T02:09:22.754Z","type":"markdown"},"gitbook":{"version":"3.6.15","time":"2020-12-13T02:09:26.838Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
@@ -388,10 +431,6 @@
     
         
         <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

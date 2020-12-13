@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>基本的な使い方 · GitBook</title>
+        <title>基本的な使い方 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="HonKit 3.6.15">
         
         
         
@@ -66,7 +65,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -212,8 +211,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -251,36 +250,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x57FA;&#x672C;&#x7684;&#x306A;&#x4F7F;&#x3044;&#x65B9;">&#x57FA;&#x672C;&#x7684;&#x306A;&#x4F7F;&#x3044;&#x65B9;</h1>
-<p>&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x6B21;&#x306B;&#x3001;ScalaPB&#x306E;&#x5177;&#x4F53;&#x7684;&#x306A;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;
-&#x4E00;&#x756A;&#x5358;&#x7D14;&#x306A;&#x4F7F;&#x3044;&#x65B9;&#x3068;&#x3057;&#x3066;&#x306F;</p>
+                                <h1 id="基本的な使い方">基本的な使い方</h1>
+<p>セットアップの次に、ScalaPBの具体的な使用方法を説明していきます。
+一番単純な使い方としては</p>
 <ul>
-<li><code>src/main/protobuf/</code> &#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4EE5;&#x4E0B;&#x306B;<code>.proto</code>&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7F6E;&#x304F;</li>
-<li>&#x305D;&#x306E;&#x5F8C;sbt&#x3067;<code>compile</code>&#x3092;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x3001;sbt&#x304C;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x81EA;&#x52D5;&#x3067;Scala&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x3001;&#x305D;&#x308C;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;</li>
+<li><code>src/main/protobuf/</code> のディレクトリ以下に<code>.proto</code>の拡張子のファイルを置く</li>
+<li>その後sbtで<code>compile</code>をするだけで、sbtが管理するディレクトリに自動でScalaコードが生成されるため、それを使ったコードを書く</li>
 </ul>
-<p>&#x3068;&#x3044;&#x3046;&#x624B;&#x9806;&#x3067;&#x3059;&#x3002;
-&quot;sbt&#x304C;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&quot;&#x3068;&#x306F;&#x3001;&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F;<code>target/scala-2.11/src_managed/main/</code>
-&#x306A;&#x3069;&#x3067;&#x3059;&#x3002;
-&#x4ED6;&#x306E;&#x5927;&#x62B5;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x7CFB;&#x306E;sbt plugin&#x306B;&#x5171;&#x901A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306F;sbt&#x304C;&#x5B8C;&#x5168;&#x306B;&#x81EA;&#x52D5;&#x3067;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x3082;&#x306E;&#x306A;&#x306E;&#x3067;&#x3001;
-&#x3053;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4EE5;&#x4E0B;&#x306E;Scala&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x76F4;&#x63A5;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x60F3;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
-&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x3068;&#x3057;&#x3066;&#x3082;&#x3001;&#x751F;&#x6210;&#x5143;&#x306E;<code>.proto</code>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3092;&#x3084;&#x308A;&#x76F4;&#x3059;&#x3068;&#x3001;&#x7DE8;&#x96C6;&#x5185;&#x5BB9;&#x304C;&#x4E0A;&#x66F8;&#x304D;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x5177;&#x4F53;&#x7684;&#x306B;&#x3001;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
-&#x4F8B;&#x3048;&#x3070;&#x3001;<code>src/main/protobuf/user.proto</code>&#x3068;&#x3044;&#x3046;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3001;
-&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;int64&#x306E;id&#x3068;string&#x306E;name&#x3092;&#x6301;&#x3063;&#x305F;User&#x3068;&#x3044;&#x3046;message&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3059;&#x308B;&#x3068;</p>
+<p>という手順です。
+&quot;sbtが管理するディレクトリ&quot;とは、具体的には<code>target/scala-2.11/src_managed/main/</code>
+などです。
+他の大抵のコード生成系のsbt pluginに共通することですが、このディレクトリはsbtが完全に自動で管理するものなので、
+このディレクトリ以下のScalaファイルを直接編集することは想定されていません。
+編集したとしても、生成元の<code>.proto</code>ファイルを編集してコンパイルをやり直すと、編集内容が上書きされます。</p>
+<p>具体的に、生成されるコードを見てみましょう。
+例えば、<code>src/main/protobuf/user.proto</code>というファイルに、
+以下の様なint64のidとstringのnameを持ったUserというmessageを定義してコンパイルすると</p>
 <p><a href="main/protobuf/user.proto">include</a></p>
-<p>&#x5927;&#x4F53;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;Scala&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_generated-code" id="reffn_generated-code">generated-code</a></sup>
-&#x3044;&#x304F;&#x3064;&#x304B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x666E;&#x901A;&#x306E;case class&#x3067;&#x3059;&#x3002;
-&#x578B;&#x306E;&#x5BFE;&#x5FDC;(int64&#x304C;scala.Long&#x306B;&#x306A;&#x308B;&#x3001;&#x306A;&#x3069;)&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306B;Java&#x3068;&#x540C;&#x3058;&#x306A;&#x306E;&#x3067;&#x3001;protocol buffers&#x306E;Java&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<p>&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3001;&#x30C7;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3092;&#x3059;&#x308B;&#x306E;&#x306B;&#x3001;&#x4E00;&#x756A;&#x826F;&#x304F;&#x4F7F;&#x3046;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;2&#x3064;&#x3067;&#x3059;&#x3002;
-&#x6700;&#x4F4E;&#x9650;&#x3053;&#x308C;&#x3089;2&#x3064;&#x3092;&#x899A;&#x3048;&#x308C;&#x3070;&#x3001;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x3068;&#x30C7;&#x30B7;&#x30EA;&#x30A2;&#x30E9;&#x30A4;&#x30BA;&#x304C;&#x53EF;&#x80FD;&#x306A;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
-<pre><code class="lang-scala"><span class="hljs-comment">// &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;case class&#x306B;&#x5FC5;&#x305A;&#x3042;&#x308B;</span>
-<span class="hljs-comment">// &#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
+<p>大体以下の様なScalaコードが生成されます。<sup><a href="#fn_generated-code" id="reffn_generated-code">generated-code</a></sup>
+いくつかメソッドがありますが、基本的には普通のcase classです。
+型の対応(int64がscala.Longになる、など)は、基本的にJavaと同じなので、protocol buffersのJavaの公式ドキュメントを参照してください。</p>
+<p>シリアライズ、デシリアライズをするのに、一番良く使うメソッドは以下の2つです。
+最低限これら2つを覚えれば、シリアライズとデシリアライズが可能なはずです。</p>
+<pre><code class="lang-scala"><span class="hljs-comment">// 生成されたcase classに必ずある</span>
+<span class="hljs-comment">// 正確には親クラスに定義されているので呼び出せる</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toByteArray</span></span>: <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]
 </code></pre>
 <p><a href="https://github.com/scalapb/ScalaPB/blob/v0.10.9/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.10.9/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103</a></p>
-<pre><code class="lang-scala"><span class="hljs-comment">// &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;case class&#x306E;&#x30B3;&#x30F3;&#x30D1;&#x30CB;&#x30AA;&#x30F3;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5FC5;&#x305A;&#x3042;&#x308B;</span>
-<span class="hljs-comment">// &#x3053;&#x308C;&#x3082;&#x6B63;&#x78BA;&#x306B;&#x306F;&#x89AA;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parseFrom</span></span>(s: <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]): &#x751F;&#x6210;&#x3055;&#x308C;&#x305F;<span class="hljs-type">CaseClass</span>&#x306E;&#x578B;
+<pre><code class="lang-scala"><span class="hljs-comment">// 生成されたcase classのコンパニオンオブジェクトに必ずある</span>
+<span class="hljs-comment">// これも正確には親クラスに定義されているので呼び出せる</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parseFrom</span></span>(s: <span class="hljs-type">Array</span>[<span class="hljs-type">Byte</span>]): 生成された<span class="hljs-type">CaseClass</span>の型
 </code></pre>
 <p><a href="https://github.com/scalapb/ScalaPB/blob/v0.10.9/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174" target="_blank">https://github.com/scalapb/ScalaPB/blob/v0.10.9/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L174</a></p>
 <pre><code class="lang-scala"><span class="hljs-meta">@SerialVersionUID</span>(<span class="hljs-number">0</span>L)
@@ -289,26 +288,26 @@
     name: _root_.scala.<span class="hljs-type">Predef</span>.<span class="hljs-type">String</span> = &quot;&quot;,
     unknownFields: _root_.scalapb.<span class="hljs-type">UnknownFieldSet</span> = _root_.scalapb.<span class="hljs-type">UnknownFieldSet</span>.empty
     </span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">scalapb</span>.<span class="hljs-title">GeneratedMessage</span> <span class="hljs-keyword">with</span> <span class="hljs-title">scalapb</span>.<span class="hljs-title">lenses</span>.<span class="hljs-title">Updatable</span>[<span class="hljs-type">User</span>] </span>{
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">serializedSize</span></span>: _root_.scala.<span class="hljs-type">Int</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writeTo</span></span>(`_output__`: _root_.com.google.protobuf.<span class="hljs-type">CodedOutputStream</span>): _root_.scala.<span class="hljs-type">Unit</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">serializedSize</span></span>: _root_.scala.<span class="hljs-type">Int</span> = ??? <span class="hljs-comment">// 実装省略</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writeTo</span></span>(`_output__`: _root_.com.google.protobuf.<span class="hljs-type">CodedOutputStream</span>): _root_.scala.<span class="hljs-type">Unit</span> = ??? <span class="hljs-comment">// 実装省略</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withId</span></span>(__v: _root_.scala.<span class="hljs-type">Long</span>): <span class="hljs-type">User</span> = copy(id = __v)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withName</span></span>(__v: _root_.scala.<span class="hljs-type">Predef</span>.<span class="hljs-type">String</span>): <span class="hljs-type">User</span> = copy(name = __v)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">withUnknownFields</span></span>(__v: _root_.scalapb.<span class="hljs-type">UnknownFieldSet</span>) = copy(unknownFields = __v)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">discardUnknownFields</span> </span>= copy(unknownFields = _root_.scalapb.<span class="hljs-type">UnknownFieldSet</span>.empty)
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFieldByNumber</span></span>(__fieldNumber: _root_.scala.<span class="hljs-type">Int</span>): _root_.scala.<span class="hljs-type">Any</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getField</span></span>(__field: _root_.scalapb.descriptors.<span class="hljs-type">FieldDescriptor</span>): _root_.scalapb.descriptors.<span class="hljs-type">PValue</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFieldByNumber</span></span>(__fieldNumber: _root_.scala.<span class="hljs-type">Int</span>): _root_.scala.<span class="hljs-type">Any</span> = ??? <span class="hljs-comment">// 実装省略</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getField</span></span>(__field: _root_.scalapb.descriptors.<span class="hljs-type">FieldDescriptor</span>): _root_.scalapb.descriptors.<span class="hljs-type">PValue</span> = ??? <span class="hljs-comment">// 実装省略</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toProtoString</span></span>: _root_.scala.<span class="hljs-type">Predef</span>.<span class="hljs-type">String</span> = _root_.scalapb.<span class="hljs-type">TextFormat</span>.printToUnicodeString(<span class="hljs-keyword">this</span>)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">companion</span> </span>= example.user.<span class="hljs-type">User</span>
 }
 
 <span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">scalapb</span>.<span class="hljs-title">GeneratedMessageCompanion</span>[example.user.<span class="hljs-type">User</span>] <span class="hljs-keyword">with</span> <span class="hljs-title">scalapb</span>.<span class="hljs-title">JavaProtoSupport</span>[example.user.<span class="hljs-type">User</span>, example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span>] </span>{
   <span class="hljs-keyword">implicit</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">messageCompanion</span></span>: scalapb.<span class="hljs-type">GeneratedMessageCompanion</span>[example.user.<span class="hljs-type">User</span>] <span class="hljs-keyword">with</span> scalapb.<span class="hljs-type">JavaProtoSupport</span>[example.user.<span class="hljs-type">User</span>, example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span>] = <span class="hljs-keyword">this</span>
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toJavaProto</span></span>(scalaPbSource: example.user.<span class="hljs-type">User</span>): example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fromJavaProto</span></span>(javaPbSource: example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span>): example.user.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span></span>(`_message__`: example.user.<span class="hljs-type">User</span>, `_input__`: _root_.com.google.protobuf.<span class="hljs-type">CodedInputStream</span>): example.user.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toJavaProto</span></span>(scalaPbSource: example.user.<span class="hljs-type">User</span>): example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// 実装省略</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fromJavaProto</span></span>(javaPbSource: example.<span class="hljs-type">UserOuterClass</span>.<span class="hljs-type">User</span>): example.user.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// 実装省略</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span></span>(`_message__`: example.user.<span class="hljs-type">User</span>, `_input__`: _root_.com.google.protobuf.<span class="hljs-type">CodedInputStream</span>): example.user.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// 実装省略</span>
   <span class="hljs-keyword">implicit</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">messageReads</span></span>: _root_.scalapb.descriptors.<span class="hljs-type">Reads</span>[example.user.<span class="hljs-type">User</span>] = ??? 
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">javaDescriptor</span></span>: _root_.com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">Descriptor</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scalaDescriptor</span></span>: _root_.scalapb.descriptors.<span class="hljs-type">Descriptor</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">javaDescriptor</span></span>: _root_.com.google.protobuf.<span class="hljs-type">Descriptors</span>.<span class="hljs-type">Descriptor</span> = ??? <span class="hljs-comment">// 実装省略</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scalaDescriptor</span></span>: _root_.scalapb.descriptors.<span class="hljs-type">Descriptor</span> = ??? <span class="hljs-comment">// 実装省略</span>
   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">messageCompanionForFieldNumber</span></span>(__number: _root_.scala.<span class="hljs-type">Int</span>): _root_.scalapb.<span class="hljs-type">GeneratedMessageCompanion</span>[_] = <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">MatchError</span>(__number)
   <span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> nestedMessagesCompanions: <span class="hljs-type">Seq</span>[_root_.scalapb.<span class="hljs-type">GeneratedMessageCompanion</span>[_ &lt;: _root_.scalapb.<span class="hljs-type">GeneratedMessage</span>]] = <span class="hljs-type">Seq</span>.empty
   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">enumCompanionForFieldNumber</span></span>(__fieldNumber: _root_.scala.<span class="hljs-type">Int</span>): _root_.scalapb.<span class="hljs-type">GeneratedEnumCompanion</span>[_] = <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">MatchError</span>(__fieldNumber)
@@ -325,11 +324,11 @@
   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">of</span></span>(
     id: _root_.scala.<span class="hljs-type">Long</span>,
     name: _root_.scala.<span class="hljs-type">Predef</span>.<span class="hljs-type">String</span>
-  ): _root_.example.user.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x7701;&#x7565;</span>
+  ): _root_.example.user.<span class="hljs-type">User</span> = ??? <span class="hljs-comment">// 実装省略</span>
 }
 </code></pre>
 <blockquote id="fn_generated-code">
-<sup>generated-code</sup>. &#x5168;&#x90E8;&#x306E;&#x5B9F;&#x88C5;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x8CBC;&#x308B;&#x3068;&#x9577;&#x3044;&#x306E;&#x3067;&#x3001;&#x7701;&#x7565;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;<a href="#reffn_generated-code" title="Jump back to footnote [generated-code] in the text."> &#x21A9;</a>
+<sup>generated-code</sup>. 全部の実装の中身を貼ると長いので、省略してあります<a href="#reffn_generated-code" title="Jump back to footnote [generated-code] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -374,12 +373,56 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な使い方","level":"1.5","depth":1,"next":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"path":"sbt.md","ref":"sbt.md","articles":[]},"previous":{"title":"セットアップ","level":"1.4","depth":1,"path":"setup.md","ref":"setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic.md","mtime":"2020-12-13T01:51:45.800Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-12-13T01:52:18.201Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な使い方","level":"1.5","depth":1,"next":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"path":"sbt.md","ref":"sbt.md","articles":[]},"previous":{"title":"セットアップ","level":"1.4","depth":1,"path":"setup.md","ref":"setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic.md","mtime":"2020-12-13T02:09:17.782Z","type":"markdown"},"gitbook":{"version":"3.6.15","time":"2020-12-13T02:09:26.838Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
@@ -397,10 +440,6 @@
     
         
         <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
