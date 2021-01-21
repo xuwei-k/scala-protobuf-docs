@@ -260,11 +260,6 @@ libraryDependenciesとして追加するという、普通のsbt pluginとは違
 
 libraryDependencies += <span class="hljs-string">&quot;com.thesamet.scalapb&quot;</span> %% <span class="hljs-string">&quot;compilerplugin&quot;</span> % <span class="hljs-string">&quot;0.10.9&quot;</span>
 </code></pre>
-<p>Windowsの場合、sbt-protoc 0.99.15より古いversionではローカルにPython(2.x系)のインストールが必要です。<sup><a href="#fn_python-version" id="reffn_python-version">python-version</a></sup>
-MacやLinuxではPythonは必要ありません。
-古いversionのsbt-protocを使う場合はPythonのインストール後、Pathを通すか、以下のように <a href="https://github.com/thesamet/sbt-protoc/blob/v0.99.15/src/main/scala/sbtprotoc/ProtocPlugin.scala#L26" target="_blank"><code>pythonExe</code></a> というkeyを設定してください。</p>
-<pre><code class="lang-scala"><span class="hljs-type">PB</span>.pythonExe := <span class="hljs-string">&quot;C:\\Python27\\Python.exe&quot;</span> <span class="hljs-comment">// あくまで例なので、インストールした場所を指定</span>
-</code></pre>
 <p>次に<code>build.sbt</code>への設定の説明をします。</p>
 <pre><code class="lang-scala"><span class="hljs-keyword">import</span> scalapb.compiler.<span class="hljs-type">Version</span>.protobufVersion
 
@@ -286,9 +281,6 @@ MacやLinuxではPythonは必要ありません。
 </ul>
 <blockquote id="fn_plugin-sbt">
 <sup>plugin-sbt</sup>. これはsbtの一般的な話ですが、<code>plugin.sbt</code>というファイル名は単なる慣習であり、<code>project/</code>ディレクトリの下で<code>.sbt</code>という拡張子ならば、<code>a.sbt</code>や<code>foo.sbt</code>など、どんな名前でも構いません<a href="#reffn_plugin-sbt" title="Jump back to footnote [plugin-sbt] in the text."> ↩</a>
-</blockquote>
-<blockquote id="fn_python-version">
-<sup>python-version</sup>. Pythonのversion3系では動かない可能性があるため、2系を入れてください。どのversionで動くかの詳細は把握できていませんが、少なくとも2.7で動いた例があります。<a href="#reffn_python-version" title="Jump back to footnote [python-version] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -333,7 +325,7 @@ MacやLinuxではPythonは必要ありません。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"セットアップ","level":"1.4","depth":1,"next":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"previous":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"path":"scalapb-and-libraries.md","ref":"scalapb-and-libraries.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"setup.md","mtime":"2021-01-21T05:10:22.411Z","type":"markdown"},"gitbook":{"version":"3.6.16","time":"2021-01-21T05:10:27.349Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"セットアップ","level":"1.4","depth":1,"next":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"previous":{"title":"ScalaPBと関連ライブラリやツール","level":"1.3","depth":1,"path":"scalapb-and-libraries.md","ref":"scalapb-and-libraries.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"setup.md","mtime":"2021-01-21T22:26:43.443Z","type":"markdown"},"gitbook":{"version":"3.6.16","time":"2021-01-21T22:26:47.743Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
