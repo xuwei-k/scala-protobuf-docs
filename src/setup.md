@@ -18,14 +18,6 @@ addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.34")
 libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.10.9"
 ```
 
-Windowsの場合、sbt-protoc 0.99.15より古いversionではローカルにPython(2.x系)のインストールが必要です。[^python-version]
-MacやLinuxではPythonは必要ありません。
-古いversionのsbt-protocを使う場合はPythonのインストール後、Pathを通すか、以下のように [`pythonExe`](https://github.com/thesamet/sbt-protoc/blob/v0.99.15/src/main/scala/sbtprotoc/ProtocPlugin.scala#L26) というkeyを設定してください。
-
-```tut:silent
-PB.pythonExe := "C:\\Python27\\Python.exe" // あくまで例なので、インストールした場所を指定
-```
-
 次に`build.sbt`への設定の説明をします。
 
 ```scala
@@ -47,4 +39,3 @@ PB.targets in Compile := Seq(
 
 
 [^plugin-sbt]: これはsbtの一般的な話ですが、`plugin.sbt`というファイル名は単なる慣習であり、`project/`ディレクトリの下で`.sbt`という拡張子ならば、`a.sbt`や`foo.sbt`など、どんな名前でも構いません
-[^python-version]: Pythonのversion3系では動かない可能性があるため、2系を入れてください。どのversionで動くかの詳細は把握できていませんが、少なくとも2.7で動いた例があります。
