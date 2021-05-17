@@ -15,7 +15,7 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```tut:silent
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.1")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.10.11"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.3"
 ```
 
 次に`build.sbt`への設定の説明をします。
