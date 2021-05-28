@@ -20,7 +20,7 @@ val root = project.in(file(".")).settings(
   libraryDependencies += sbtDependency.value,
   Tut / scalacOptions ++= "-deprecation" :: Nil,
   resolvers += Classpaths.sbtPluginReleases,
-  addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.3"),
+  addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.4"),
   libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % scalapb.compiler.Version.scalapbVersion,
   libraryDependencies ++= (
     ("com.google.protobuf" % "protobuf-java-util" % scalapb.compiler.Version.protobufVersion) ::
