@@ -42,7 +42,7 @@ val userJson = JsonFormat.printer.print(example.user.User.toJavaProto(user))
 
 ### 変換用の便利なclass
 
-以下のようなclassを定義しておくと、pimp my libraryパターンで、
+以下のようなclassを定義しておくと、enrich my libraryパターンで、
 ScalaPBで生成されたどのcase classでも `toJsonString` というメソッド１つで変換できるようになるのでおすすめです。
 
 ```tut:silent
