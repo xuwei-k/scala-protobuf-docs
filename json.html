@@ -265,18 +265,16 @@
 <p><a href="https://github.com/google/protobuf/blob/v3.5.1/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java" target="_blank">https://github.com/google/protobuf/blob/v3.5.1/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java</a></p>
 <p>また、Jsonとの相互変換するための例として、さきほど別のページで出したUserのcase classを使います。</p>
 <h2 id="case-classからjsonへ変換">case classからJsonへ変換</h2>
-<pre><code class="lang-scala">scala&gt; <span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
-<span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
 
-scala&gt; <span class="hljs-keyword">val</span> user = example.user.<span class="hljs-type">User</span>(id = <span class="hljs-number">1</span>, name = <span class="hljs-string">&quot;foo&quot;</span>)
-user: example.user.<span class="hljs-type">User</span> = <span class="hljs-type">User</span>(<span class="hljs-number">1</span>,foo,<span class="hljs-type">UnknownFieldSet</span>(<span class="hljs-type">Map</span>()))
+<span class="hljs-keyword">val</span> user = example.user.<span class="hljs-type">User</span>(id = <span class="hljs-number">1</span>, name = <span class="hljs-string">&quot;foo&quot;</span>)
+<span class="hljs-comment">// user: User = User(1L, &quot;foo&quot;, UnknownFieldSet(Map()))</span>
 
-scala&gt; <span class="hljs-keyword">val</span> userJson = <span class="hljs-type">JsonFormat</span>.printer.print(example.user.<span class="hljs-type">User</span>.toJavaProto(user))
-userJson: <span class="hljs-type">String</span> =
-{
-  <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>,
-  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;foo&quot;</span>
-}
+<span class="hljs-keyword">val</span> userJson = <span class="hljs-type">JsonFormat</span>.printer.print(example.user.<span class="hljs-type">User</span>.toJavaProto(user))
+<span class="hljs-comment">// userJson: String = &quot;&quot;&quot;{</span>
+<span class="hljs-comment">//   &quot;id&quot;: &quot;1&quot;,</span>
+<span class="hljs-comment">//   &quot;name&quot;: &quot;foo&quot;</span>
+<span class="hljs-comment">// }&quot;&quot;&quot;</span>
 </code></pre>
 <h3 id="変換用の便利なclass">変換用の便利なclass</h3>
 <p>以下のようなclassを定義しておくと、enrich my libraryパターンで、
@@ -285,17 +283,16 @@ ScalaPBで生成されたどのcase classでも <code>toJsonString</code> とい
 <span class="hljs-keyword">import</span> com.google.protobuf.util.<span class="hljs-type">JsonFormat</span>
 <span class="hljs-keyword">import</span> scalapb.<span class="hljs-type">JavaProtoSupport</span>
 
-<span class="hljs-keyword">implicit</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GeneratedMessageOps</span>[<span class="hljs-type">A</span>](<span class="hljs-params">val self: <span class="hljs-type">A</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">AnyVal</span> </span>{
+<span class="hljs-keyword">implicit</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GeneratedMessageOps</span>[<span class="hljs-type">A</span>](<span class="hljs-params">val self: <span class="hljs-type">A</span></span>) </span>{
   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toJsonString</span></span>[<span class="hljs-type">B</span> &lt;: <span class="hljs-type">MessageOrBuilder</span>](<span class="hljs-keyword">implicit</span> <span class="hljs-type">A</span>: <span class="hljs-type">JavaProtoSupport</span>[<span class="hljs-type">A</span>, <span class="hljs-type">B</span>]): <span class="hljs-type">String</span> =
     <span class="hljs-type">JsonFormat</span>.printer.print(<span class="hljs-type">A</span>.toJavaProto(self))
 }
 </code></pre>
-<pre><code class="lang-scala">scala&gt; <span class="hljs-type">User</span>(id = <span class="hljs-number">2</span>, name = <span class="hljs-string">&quot;bar&quot;</span>).toJsonString
-res1: <span class="hljs-type">String</span> =
-{
-  <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
-  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
-}
+<pre><code class="lang-scala"><span class="hljs-type">User</span>(id = <span class="hljs-number">2</span>, name = <span class="hljs-string">&quot;bar&quot;</span>).toJsonString
+<span class="hljs-comment">// res1: String = &quot;&quot;&quot;{</span>
+<span class="hljs-comment">//   &quot;id&quot;: &quot;2&quot;,</span>
+<span class="hljs-comment">//   &quot;name&quot;: &quot;bar&quot;</span>
+<span class="hljs-comment">// }&quot;&quot;&quot;</span>
 </code></pre>
 <h2 id="json文字列からcase-classへの変換">Json文字列からcase classへの変換</h2>
 <pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">jsonStringToUser</span></span>(json: <span class="hljs-type">String</span>): example.user.<span class="hljs-type">User</span> = {
@@ -305,8 +302,8 @@ res1: <span class="hljs-type">String</span> =
   example.user.<span class="hljs-type">User</span>.fromJavaProto(builder.build())
 }
 </code></pre>
-<pre><code class="lang-scala">scala&gt; jsonStringToUser(userJson)
-res2: example.user.<span class="hljs-type">User</span> = <span class="hljs-type">User</span>(<span class="hljs-number">1</span>,foo,<span class="hljs-type">UnknownFieldSet</span>(<span class="hljs-type">Map</span>()))
+<pre><code class="lang-scala">jsonStringToUser(userJson)
+<span class="hljs-comment">// res2: User = User(1L, &quot;foo&quot;, UnknownFieldSet(Map()))</span>
 </code></pre>
 <p>JSON に <a href="https://github.com/google/protobuf/blob/master/src/google/protobuf/any.proto" target="_blank">Any</a> 型のメッセージが含まれている場合には、その Any で使われているメッセージの <code>Descriptor</code> を注入する必要があります。例えば、Any に <code>User</code> を格納している場合は以下のようにしてパーサーを構築します。<sup><a href="#fn_type-registry" id="reffn_type-registry">type-registry</a></sup></p>
 <pre><code class="lang-scala"><span class="hljs-keyword">val</span> registry = <span class="hljs-type">JsonFormat</span>.<span class="hljs-type">TypeRegistry</span>.newBuilder().add(example.user.<span class="hljs-type">User</span>.javaDescriptor).build()
@@ -364,7 +361,7 @@ res2: example.user.<span class="hljs-type">User</span> = <span class="hljs-type"
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"next":{"title":"gRPC","level":"1.8","depth":1,"path":"grpc.md","ref":"grpc.md","articles":[]},"previous":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"path":"sbt.md","ref":"sbt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"json.md","mtime":"2021-09-01T13:03:21.339Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-09-01T13:03:24.375Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"next":{"title":"gRPC","level":"1.8","depth":1,"path":"grpc.md","ref":"grpc.md","articles":[]},"previous":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"path":"sbt.md","ref":"sbt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"json.md","mtime":"2021-09-01T13:04:29.915Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-09-01T13:04:32.355Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

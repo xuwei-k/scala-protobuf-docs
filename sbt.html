@@ -254,7 +254,7 @@
 <p>このページでは、基本的な使い方以外のsbtの設定について説明します。</p>
 <h2 id="コンパイル対象のprotobufディレクトリを追加">コンパイル対象のprotobufディレクトリを追加</h2>
 <p>以下のように <code>PB.protoSources</code> に追加します。</p>
-<pre><code class="lang-scala"><span class="hljs-type">PB</span>.protoSources in <span class="hljs-type">Compile</span> += file(<span class="hljs-string">&quot;新たにコンパイル対象に追加したいディレクトリへのpath&quot;</span>)
+<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.protoSources += file(<span class="hljs-string">&quot;新たにコンパイル対象に追加したいディレクトリへのpath&quot;</span>)
 </code></pre>
 <h2 id="参照するprotobufディレクトリを追加">参照するprotobufディレクトリを追加</h2>
 <p>protocの<code>-I</code>の引数に相当するものです。それほど多くないパターンかもしれませんが、つまり</p>
@@ -263,14 +263,14 @@
 <li>そのScalaコードの生成元となった<code>.proto</code>のメッセージの定義などを参照しつつ、それに依存したさらに別のメッセージやサービスを定義してScalaコード生成をしたい</li>
 </ul>
 <p>というような場合です。設定方法は、以下のように<code>includePaths</code>というKeyに対してディレクトリを追加します。</p>
-<pre><code class="lang-scala"><span class="hljs-type">PB</span>.includePaths in <span class="hljs-type">Compile</span> += file(<span class="hljs-string">&quot;参照したいprotoファイルが置いてあるディレクトリ&quot;</span>)
+<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.includePaths += file(<span class="hljs-string">&quot;参照したいprotoファイルが置いてあるディレクトリ&quot;</span>)
 </code></pre>
 <p><code>includePaths</code>に限らず、おそらく他の<code>protoc</code>に渡されるkeyに関しても共通ですが、
 古いScalaPBでは<code>.getCanonicalFile</code> の呼び出しが必要になる可能性があります<sup><a href="#fn_getCanonicalFile" id="reffn_getCanonicalFile">getCanonicalFile</a></sup>。</p>
 <h2 id="コンパイルするprotoファイルのフィルター">コンパイルする<code>.proto</code>ファイルのフィルター</h2>
 <p>以下のように<code>excludeFilter</code>というkeyを設定すると、特定の<code>.proto</code>ファイルをコンパイル対象から除外することが可能です。
 <sup><a href="#fn_exclude" id="reffn_exclude">exclude</a></sup></p>
-<pre><code class="lang-scala">excludeFilter in <span class="hljs-type">PB</span>.generate := {
+<pre><code class="lang-scala"><span class="hljs-type">PB</span>.generate / excludeFilter := {
   <span class="hljs-comment">// ここにfilterの定義を書く</span>
   <span class="hljs-string">&quot;*Foo.proto&quot;</span>
 }
@@ -289,7 +289,7 @@
 <p>ScalaPBでコード生成したものを含んだものをライブラリとして提供する場合や、
 コード生成をするsbtのモジュールが複数あってそれらに依存関係があるときは、
 以下のような設定<sup><a href="#fn_resource-proto" id="reffn_resource-proto">resource-proto</a></sup>を追加しておき、リソースとして<code>.proto</code>ファイルを含めておくとよいでしょう。</p>
-<pre><code class="lang-scala">unmanagedResourceDirectories in <span class="hljs-type">Compile</span> ++= (<span class="hljs-type">PB</span>.protoSources in <span class="hljs-type">Compile</span>).value
+<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / unmanagedResourceDirectories ++= (<span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.protoSources).value
 </code></pre>
 <h2 id="jarの中にあるprotoファイルを参照する">jarの中にある<code>.proto</code>ファイルを参照する</h2>
 <p><code>sbt-protobuf</code>のpluginには、自動でそのための機能が存在します。以下のように、参照したい<code>.proto</code>ファイルが含まれているjarを<code>% &quot;protobuf&quot;</code>をつけて<code>libraryDependencies</code>を書くだけです。</p>
@@ -350,7 +350,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"next":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"path":"json.md","ref":"json.md","articles":[]},"previous":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sbt.md","mtime":"2021-09-01T13:03:23.751Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-09-01T13:03:24.375Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"next":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"path":"json.md","ref":"json.md","articles":[]},"previous":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sbt.md","mtime":"2021-09-01T13:04:31.099Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-09-01T13:04:32.355Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
