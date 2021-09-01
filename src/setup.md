@@ -6,16 +6,16 @@ sbtのversionは、これを書いている現在の下記のversionでは、0.1
 ただし、scalapbとsbt-protocは独立しているため、scalapbのcompilerpluginのモジュールを、
 libraryDependenciesとして追加するという、普通のsbt pluginとは違う少し変わった設定も必要です。
 
-```tut:invisible
+```scala mdoc:invisible
 import sbt._, Keys._
 
 import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
-```tut:silent
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.1")
+```scala mdoc:silent
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.4")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.10.11"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.5"
 ```
 
 次に`build.sbt`への設定の説明をします。

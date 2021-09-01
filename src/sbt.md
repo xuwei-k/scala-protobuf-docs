@@ -6,14 +6,14 @@
 
 以下のように `PB.protoSources` に追加します。
 
-```tut:invisible
+```scala mdoc:invisible
 import sbt._, Keys._
 
 import sbtprotoc.ProtocPlugin.autoImport._
 ```
 
-```tut:silent
-PB.protoSources in Compile += file("新たにコンパイル対象に追加したいディレクトリへのpath")
+```scala mdoc:silent
+Compile / PB.protoSources += file("新たにコンパイル対象に追加したいディレクトリへのpath")
 ```
 
 
@@ -26,8 +26,8 @@ protocの`-I`の引数に相当するものです。それほど多くないパ�
 
 というような場合です。設定方法は、以下のように`includePaths`というKeyに対してディレクトリを追加します。
 
-```tut:silent
-PB.includePaths in Compile += file("参照したいprotoファイルが置いてあるディレクトリ")
+```scala mdoc:silent
+Compile / PB.includePaths += file("参照したいprotoファイルが置いてあるディレクトリ")
 ```
 
 `includePaths`に限らず、おそらく他の`protoc`に渡されるkeyに関しても共通ですが、
@@ -38,8 +38,8 @@ PB.includePaths in Compile += file("参照したいprotoファイルが置いて
 以下のように`excludeFilter`というkeyを設定すると、特定の`.proto`ファイルをコンパイル対象から除外することが可能です。
 [^exclude]
 
-```tut:silent
-excludeFilter in PB.generate := {
+```scala mdoc:silent
+PB.generate / excludeFilter := {
   // ここにfilterの定義を書く
   "*Foo.proto"
 }
@@ -61,15 +61,15 @@ ScalaPBでコード生成したものを含んだものをライブラリとし�
 コード生成をするsbtのモジュールが複数あってそれらに依存関係があるときは、
 以下のような設定[^resource-proto]を追加しておき、リソースとして`.proto`ファイルを含めておくとよいでしょう。
 
-```tut:silent
-unmanagedResourceDirectories in Compile ++= (PB.protoSources in Compile).value
+```scala mdoc:silent
+Compile / unmanagedResourceDirectories ++= (Compile / PB.protoSources).value
 ```
 
 ## jarの中にある`.proto`ファイルを参照する
 
 `sbt-protobuf`のpluginには、自動でそのための機能が存在します。以下のように、参照したい`.proto`ファイルが含まれているjarを`% "protobuf"`をつけて`libraryDependencies`を書くだけです。
 
-```tut:silent
+```scala mdoc:silent
 libraryDependencies += "com.example" %% "example" % "0.1.0" % "protobuf"
 ```
 

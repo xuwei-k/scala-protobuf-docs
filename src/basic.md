@@ -33,7 +33,7 @@
 def toByteArray: Array[Byte]
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.10.11/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L103
+https://github.com/scalapb/ScalaPB/blob/v0.11.5/scalapb-runtime/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L112
 
 ```scala
 // 生成されたcase classのコンパニオンオブジェクトに必ずある
@@ -41,10 +41,10 @@ https://github.com/scalapb/ScalaPB/blob/v0.10.11/scalapb-runtime/shared/src/main
 def parseFrom(s: Array[Byte]): 生成されたCaseClassの型
 ```
 
-https://github.com/scalapb/ScalaPB/blob/v0.10.11/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L177
+https://github.com/scalapb/ScalaPB/blob/v0.11.5/scalapb-runtime/src/main/scala/scalapb/GeneratedMessageCompanion.scala#L185
 
 
-```tut:silent
+```scala mdoc:silent
 @SerialVersionUID(0L)
 final case class User(
     id: _root_.scala.Long = 0L,
@@ -67,7 +67,7 @@ object User extends scalapb.GeneratedMessageCompanion[example.user.User] with sc
   implicit def messageCompanion: scalapb.GeneratedMessageCompanion[example.user.User] with scalapb.JavaProtoSupport[example.user.User, example.UserOuterClass.User] = this
   def toJavaProto(scalaPbSource: example.user.User): example.UserOuterClass.User = ??? // 実装省略
   def fromJavaProto(javaPbSource: example.UserOuterClass.User): example.user.User = ??? // 実装省略
-  def merge(`_message__`: example.user.User, `_input__`: _root_.com.google.protobuf.CodedInputStream): example.user.User = ??? // 実装省略
+  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): example.user.User = ??? // 実装省略
   implicit def messageReads: _root_.scalapb.descriptors.Reads[example.user.User] = ??? 
   def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = ??? // 実装省略
   def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = ??? // 実装省略
