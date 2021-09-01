@@ -20,12 +20,12 @@ libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.5"
 
 次に`build.sbt`への設定の説明をします。
 
-```scala
+```scala mdoc:silent
 import scalapb.compiler.Version.protobufVersion
 
-PB.targets in Compile := Seq(
-  PB.gens.java(protobufVersion) -> ((sourceManaged in Compile).value / "protobuf-java"),
-  scalapb.gen(javaConversions=true) -> ((sourceManaged in Compile).value / "protobuf-scala")
+Compile / PB.targets := Seq(
+  PB.gens.java(protobufVersion) -> ((Compile / sourceManaged).value / "protobuf-java"),
+  scalapb.gen(javaConversions=true) -> ((Compile / sourceManaged).value / "protobuf-scala")
 )
 ```
 
