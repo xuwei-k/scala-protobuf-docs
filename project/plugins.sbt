@@ -2,7 +2,7 @@ addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.2.24")
 
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.6")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.6"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.8"
 
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 
