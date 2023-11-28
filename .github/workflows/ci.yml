@@ -31,7 +31,7 @@ jobs:
         sbt -v build
     - run: find . -name "*.class" | xargs rm -rf
     - run: find . -name target | xargs rm -rf
-    - uses: JamesIves/github-pages-deploy-action@v4.4.3
+    - uses: JamesIves/github-pages-deploy-action@v4.5.0
       if: ${{ github.repository_owner == 'xuwei-k' && github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
