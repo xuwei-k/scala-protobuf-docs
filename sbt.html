@@ -6,7 +6,7 @@
         <title>sbtの設定のカスタマイズ · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.5">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -254,7 +254,7 @@
 <p>このページでは、基本的な使い方以外のsbtの設定について説明します。</p>
 <h2 id="コンパイル対象のprotobufディレクトリを追加">コンパイル対象のprotobufディレクトリを追加</h2>
 <p>以下のように <code>PB.protoSources</code> に追加します。</p>
-<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.protoSources += file(<span class="hljs-string">&quot;新たにコンパイル対象に追加したいディレクトリへのpath&quot;</span>)
+<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.protoSources += file(<span class="hljs-string">"新たにコンパイル対象に追加したいディレクトリへのpath"</span>)
 </code></pre>
 <h2 id="参照するprotobufディレクトリを追加">参照するprotobufディレクトリを追加</h2>
 <p>protocの<code>-I</code>の引数に相当するものです。それほど多くないパターンかもしれませんが、つまり</p>
@@ -263,7 +263,7 @@
 <li>そのScalaコードの生成元となった<code>.proto</code>のメッセージの定義などを参照しつつ、それに依存したさらに別のメッセージやサービスを定義してScalaコード生成をしたい</li>
 </ul>
 <p>というような場合です。設定方法は、以下のように<code>includePaths</code>というKeyに対してディレクトリを追加します。</p>
-<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.includePaths += file(<span class="hljs-string">&quot;参照したいprotoファイルが置いてあるディレクトリ&quot;</span>)
+<pre><code class="lang-scala"><span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.includePaths += file(<span class="hljs-string">"参照したいprotoファイルが置いてあるディレクトリ"</span>)
 </code></pre>
 <p><code>includePaths</code>に限らず、おそらく他の<code>protoc</code>に渡されるkeyに関しても共通ですが、
 古いScalaPBでは<code>.getCanonicalFile</code> の呼び出しが必要になる可能性があります<sup><a href="#fn_getCanonicalFile" id="reffn_getCanonicalFile">getCanonicalFile</a></sup>。</p>
@@ -272,7 +272,7 @@
 <sup><a href="#fn_exclude" id="reffn_exclude">exclude</a></sup></p>
 <pre><code class="lang-scala"><span class="hljs-type">PB</span>.generate / excludeFilter := {
   <span class="hljs-comment">// ここにfilterの定義を書く</span>
-  <span class="hljs-string">&quot;*Foo.proto&quot;</span>
+  <span class="hljs-string">"*Foo.proto"</span>
 }
 </code></pre>
 <p><code>excludeFilter</code>は、Key自体はsbtの標準であり<code>SettingKey[FileFilter]</code>という型です。</p>
@@ -292,8 +292,8 @@
 <pre><code class="lang-scala"><span class="hljs-type">Compile</span> / unmanagedResourceDirectories ++= (<span class="hljs-type">Compile</span> / <span class="hljs-type">PB</span>.protoSources).value
 </code></pre>
 <h2 id="jarの中にあるprotoファイルを参照する">jarの中にある<code>.proto</code>ファイルを参照する</h2>
-<p><code>sbt-protobuf</code>のpluginには、自動でそのための機能が存在します。以下のように、参照したい<code>.proto</code>ファイルが含まれているjarを<code>% &quot;protobuf&quot;</code>をつけて<code>libraryDependencies</code>を書くだけです。</p>
-<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;com.example&quot;</span> %% <span class="hljs-string">&quot;example&quot;</span> % <span class="hljs-string">&quot;0.1.0&quot;</span> % <span class="hljs-string">&quot;protobuf&quot;</span>
+<p><code>sbt-protobuf</code>のpluginには、自動でそのための機能が存在します。以下のように、参照したい<code>.proto</code>ファイルが含まれているjarを<code>% "protobuf"</code>をつけて<code>libraryDependencies</code>を書くだけです。</p>
+<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">"com.example"</span> %% <span class="hljs-string">"example"</span> % <span class="hljs-string">"0.1.0"</span> % <span class="hljs-string">"protobuf"</span>
 </code></pre>
 <blockquote id="fn_include">
 <sup>include</sup>. 外部ライブラリとして、もしくはsbtのマルチプロジェクトの一部として、という意味<a href="#reffn_include" title="Jump back to footnote [include] in the text."> ↩</a>
@@ -350,7 +350,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"next":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"path":"json.md","ref":"json.md","articles":[]},"previous":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sbt.md","mtime":"2024-12-31T07:52:33.587Z","type":"markdown"},"gitbook":{"version":"5.1.5","time":"2024-12-31T07:52:34.721Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"sbtの設定のカスタマイズ","level":"1.6","depth":1,"next":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"path":"json.md","ref":"json.md","articles":[]},"previous":{"title":"基本的な使い方","level":"1.5","depth":1,"path":"basic.md","ref":"basic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sbt.md","mtime":"2024-12-31T07:58:46.923Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2024-12-31T07:58:48.241Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -420,7 +420,7 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

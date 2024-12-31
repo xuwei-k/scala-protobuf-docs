@@ -6,7 +6,7 @@
         <title>gRPC · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.5">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -265,16 +265,16 @@ Protocol Buffers以外が使用されることはあまり多くないようで�
 <p>ScalaPBでは、serviceの定義があると自動でgRPC用のコード生成がされます。
 しかしランタイムの追加が必要です。</p>
 <p>現状では、通常のprotocol buffersを使う場合の設定に加えて、以下のlibraryDependenciesを追加します。</p>
-<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;com.thesamet.scalapb&quot;</span> %% <span class="hljs-string">&quot;scalapb-runtime-grpc&quot;</span> % scalapb.compiler.<span class="hljs-type">Version</span>.scalapbVersion
+<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">"com.thesamet.scalapb"</span> %% <span class="hljs-string">"scalapb-runtime-grpc"</span> % scalapb.compiler.<span class="hljs-type">Version</span>.scalapbVersion
 </code></pre>
 <p>ScalaPB 0.5.26までは、上記の依存の設定のみでOKでしたが、0.5.27以降は追加で設定が必要です。
 以下は、ひとまずgrpc-javaのすべての依存を追加する場合です。</p>
-<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">&quot;io.grpc&quot;</span> % <span class="hljs-string">&quot;grpc-all&quot;</span> % scalapb.compiler.<span class="hljs-type">Version</span>.grpcJavaVersion
+<pre><code class="lang-scala">libraryDependencies += <span class="hljs-string">"io.grpc"</span> % <span class="hljs-string">"grpc-all"</span> % scalapb.compiler.<span class="hljs-type">Version</span>.grpcJavaVersion
 </code></pre>
 <p>grpc-allを追加するのではなく、もう少し細かく依存を選ぶことも可能です。
-例えば、Android環境以外での普通の用途では &quot;grpc-netty&quot; を使うことになるはずです。
+例えば、Android環境以外での普通の用途では "grpc-netty" を使うことになるはずです。
 また、grpc-nettyはnettyの4.1系に依存しているため、基本的にnetty 4.0系に依存しているライブラリと同時に使えません(例: play 2.5, async-http-client 2.0 系)
-そういう場合には &quot;grpc-netty-shaded&quot; というものを使用することにより、衝突する問題を回避可能です。(grpc-netty-shadedはgrpc-java 1.9から)
+そういう場合には "grpc-netty-shaded" というものを使用することにより、衝突する問題を回避可能です。(grpc-netty-shadedはgrpc-java 1.9から)
 <a href="https://github.com/grpc/grpc-java/pull/2485" target="_blank">https://github.com/grpc/grpc-java/pull/2485</a></p>
 <p>その他、詳細はgrpc-javaの公式のドキュメントを参照してください。</p>
 <h2 id="サンプル">サンプル</h2>
@@ -338,7 +338,7 @@ Protocol Buffers以外が使用されることはあまり多くないようで�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"gRPC","level":"1.8","depth":1,"next":{"title":"その他資料","level":"1.9","depth":1,"path":"other_references.md","ref":"other_references.md","articles":[]},"previous":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"path":"json.md","ref":"json.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grpc.md","mtime":"2024-12-31T07:52:32.071Z","type":"markdown"},"gitbook":{"version":"5.1.5","time":"2024-12-31T07:52:34.721Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gRPC","level":"1.8","depth":1,"next":{"title":"その他資料","level":"1.9","depth":1,"path":"other_references.md","ref":"other_references.md","articles":[]},"previous":{"title":"Jsonとの相互変換","level":"1.7","depth":1,"path":"json.md","ref":"json.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grpc.md","mtime":"2024-12-31T07:58:45.411Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2024-12-31T07:58:48.241Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -408,7 +408,7 @@ Protocol Buffers以外が使用されることはあまり多くないようで�
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 
