@@ -9,7 +9,7 @@
   },
   "scripts": {},
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "babel-core": "^5.8.38",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-power-assert": "3.0.0",
     "cheerio": "1.0.0-rc.12",
@@ -18,7 +18,7 @@
     "gitbook-plugin-anchors": "0.7.1",
     "gitbook-plugin-footnote-string-to-number": "0.0.2",
     "gitbook-plugin-forkmegithub": "^2.2.0",
-    "gitbook-plugin-include-codeblock": "3.2.3",
+    "gitbook-plugin-include-codeblock": "^3.1.4",
     "gitbook-plugin-japanese-support": "0.0.1",
     "gitbook-plugin-regexplace": "2.1.2",
     "honkit": "6.0.2",
@@ -27,7 +27,7 @@
     "npm-check-updates": "^17.1.13",
     "npm-run-all": "4.1.5",
     "power-assert": "1.6.1",
-    "q-io": "^1.13.6",
+    "q-io": "^1.2.0",
     "sleep": "6.3.0",
     "svgexport": "0.4.2",
     "textlint": "14.4.0",
@@ -35,8 +35,5 @@
     "textlint-rule-preset-japanese": "10.0.3",
     "textlint-rule-preset-jtf-style": "3.0.1",
     "textlint-rule-prh": "6.0.0"
-  },
-  "dependencies": {
-    "gitbook-plugin-include-codeblock": "^3.2.3"
   }
 }
