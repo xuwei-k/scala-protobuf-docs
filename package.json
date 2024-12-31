@@ -9,7 +9,7 @@
   },
   "scripts": {},
   "devDependencies": {
-    "babel-core": "^5.8.38",
+    "babel-core": "^6.26.3",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-power-assert": "3.0.0",
     "cheerio": "1.0.0-rc.12",
