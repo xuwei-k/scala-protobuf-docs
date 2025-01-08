@@ -15,6 +15,7 @@ jobs:
         java-version: 11
         distribution: temurin
     - uses: coursier/cache-action@v6
+    - uses: sbt/setup-sbt@v1
     - uses: actions/setup-node@v4
       with:
         node-version: '22.12.0'
