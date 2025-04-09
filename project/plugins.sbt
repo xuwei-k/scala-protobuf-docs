@@ -1,4 +1,4 @@
-addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.6.5")
+addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.7.0")
 
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.7")
 
