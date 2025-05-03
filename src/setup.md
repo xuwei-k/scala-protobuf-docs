@@ -15,7 +15,7 @@ import sbtprotoc.ProtocPlugin.autoImport._
 ```scala mdoc:silent
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.7")
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.8"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.11.17"
 ```
 
 次に`build.sbt`への設定の説明をします。
