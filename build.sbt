@@ -1,8 +1,11 @@
 import NpmCliBase._
 import scalapb.compiler.Version.protobufVersion
 
+@transient
 val lintAll = taskKey[Unit]("lint text, html")
+@transient
 val testAll = taskKey[Unit]("test scala, links")
+@transient
 val buildWithCheck = taskKey[Unit]("lintAll testAll build")
 
 // mdocでsbtの設定を書く都合上、scalaVersionはわざと指定しないで、
