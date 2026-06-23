@@ -15,7 +15,7 @@
     "cheerio": "1.2.0",
     "eslint": "^10.5.0",
     "eslint-config-eslint": "14.0.0",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "gitbook-plugin-anchors": "0.7.1",
     "gitbook-plugin-footnote-string-to-number": "0.0.2",
     "gitbook-plugin-forkmegithub": "^2.2.0",
