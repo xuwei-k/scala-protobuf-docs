@@ -11,6 +11,8 @@ val buildWithCheck = taskKey[Unit]("lintAll testAll build")
 // mdocでsbtの設定を書く都合上、scalaVersionはわざと指定しないで、
 // sbtが使用しているものと同じversionのScalaを使う
 val root = project.in(file(".")).settings(
+  scalaVersion := scalaVersion.value,
+  evictionErrorLevel := Level.Warn,
   (Compile / PB.targets) ++= Seq[protocbridge.Target](
     PB.gens.java(protobufVersion) -> (Compile / sourceManaged).value,
     scalapb.gen(javaConversions=true) -> (Compile / sourceManaged).value
@@ -23,7 +25,7 @@ val root = project.in(file(".")).settings(
   libraryDependencies += sbtDependency.value,
   scalacOptions ++= "-deprecation" :: Nil,
   resolvers += Classpaths.sbtPluginReleases,
-  addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.0.8"),
+  addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.1.0-RC1"),
   libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % scalapb.compiler.Version.scalapbVersion,
   libraryDependencies ++= (
     ("com.google.protobuf" % "protobuf-java-util" % "4.35.1") ::

@@ -20,6 +20,6 @@ trait NpmCliBase {
   }
 
   def printRun(p: ProcessBuilder) : Unit = {
-    p.lineStream foreach println
+    p.lazyLines foreach println
   }
 }
