@@ -28,7 +28,7 @@ val root = project.in(file(".")).settings(
   addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.1.0-RC2"),
   libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % scalapb.compiler.Version.scalapbVersion,
   libraryDependencies ++= (
-    ("com.google.protobuf" % "protobuf-java-util" % "4.35.1") ::
+    ("com.google.protobuf" % "protobuf-java-util" % "4.36.0") ::
     Nil
   ),
   lintAll := Def.sequential(LinkTest.eslint, TextLint.textlint.toTask("")).value,
