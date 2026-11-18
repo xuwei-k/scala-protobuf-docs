@@ -1,23 +1,19 @@
-require([
-    'gitbook',
-    'jquery'
-], function(gitbook, $) {
+require(["gitbook", "jquery"], function (gitbook, $) {
     // Define global search engine
     function LunrSearchEngine() {
         this.index = null;
         this.store = {};
-        this.name = 'LunrSearchEngine';
+        this.name = "LunrSearchEngine";
     }
 
     // Initialize lunr by fetching the search index
-    LunrSearchEngine.prototype.init = function() {
+    LunrSearchEngine.prototype.init = function () {
         var that = this;
         var d = $.Deferred();
 
-        $.getJSON(gitbook.state.basePath+'/search_index.json')
-        .then(function(data) {
-            // eslint-disable-next-line no-undef
-            that.index = lunr.Index.load(data.index);
+        $.getJSON(gitbook.state.basePath + "/search_index.json").then(function (data) {
+            // lunr.min.js defines lunr as a global variable
+            that.index = window.lunr.Index.load(data.index);
             that.store = data.store;
             d.resolve();
         });
@@ -26,12 +22,12 @@ require([
     };
 
     // Search for a term and return results
-    LunrSearchEngine.prototype.search = function(q, offset, length) {
+    LunrSearchEngine.prototype.search = function (q, offset, length) {
         var that = this;
         var results = [];
 
         if (this.index) {
-            results = $.map(this.index.search(q), function(result) {
+            results = $.map(this.index.search(q), function (result) {
                 var doc = that.store[result.ref];
 
                 return {
@@ -42,15 +38,17 @@ require([
             });
         }
 
-        return $.Deferred().resolve({
-            query: q,
-            results: results.slice(0, length),
-            count: results.length
-        }).promise();
+        return $.Deferred()
+            .resolve({
+                query: q,
+                results: results.slice(0, length),
+                count: results.length
+            })
+            .promise();
     };
 
     // Set gitbook research
-    gitbook.events.bind('start', function(e, config) {
+    gitbook.events.bind("start", function (e, config) {
         var engine = gitbook.search.getEngine();
         if (!engine) {
             gitbook.search.setEngine(LunrSearchEngine, config);
