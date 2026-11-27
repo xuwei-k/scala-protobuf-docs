@@ -1,6 +1,6 @@
 addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.10.0")
 
-addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.1.0-RC2")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "1.1.0-RC3")
 
 libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "1.0.0-alpha.6"
 
@@ -10,3 +10,5 @@ scalacOptions ++= Seq(
   "-language:existentials",
   "-language:implicitConversions",
 )
+
+evictionErrorLevel := Level.Warn
